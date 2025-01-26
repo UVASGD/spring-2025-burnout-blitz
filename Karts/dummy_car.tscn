@@ -1,0 +1,61 @@
+[gd_scene load_steps=5 format=3 uid="uid://d7wsfqy3ssmx"]
+
+[ext_resource type="Script" path="res://test_car.gd" id="1_7cghr"]
+
+[sub_resource type="BoxMesh" id="BoxMesh_5mmql"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_swpoy"]
+size = Vector3(4, 0.5, 1.5)
+
+[sub_resource type="CylinderMesh" id="CylinderMesh_8s5tl"]
+top_radius = 0.75
+bottom_radius = 0.75
+
+[node name="VehicleBody3D" type="VehicleBody3D"]
+script = ExtResource("1_7cghr")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+transform = Transform3D(4, 0, 0, 0, 0.5, 0, 0, 0, 1.5, 0, 0, 0)
+mesh = SubResource("BoxMesh_5mmql")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+shape = SubResource("BoxShape3D_swpoy")
+
+[node name="front_left" type="VehicleWheel3D" parent="."]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 1.5, 0, -1)
+use_as_steering = true
+wheel_radius = 0.75
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="front_left"]
+transform = Transform3D(-4.37114e-08, 0.1, -4.37114e-08, -1, -4.37114e-09, -4.37114e-08, -4.37114e-08, 4.37114e-09, 1, 0, 0, 0)
+mesh = SubResource("CylinderMesh_8s5tl")
+
+[node name="front_right" type="VehicleWheel3D" parent="."]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 1.5, 0, 1)
+use_as_steering = true
+wheel_radius = 0.75
+
+[node name="MeshInstance3D2" type="MeshInstance3D" parent="front_right"]
+transform = Transform3D(-4.37114e-08, 0.1, -4.37114e-08, -1, -4.37114e-09, -4.37114e-08, -4.37114e-08, 4.37114e-09, 1, 0, 0, 0)
+mesh = SubResource("CylinderMesh_8s5tl")
+skeleton = NodePath("../../front_left")
+
+[node name="back_left" type="VehicleWheel3D" parent="."]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -1.5, 0, -1)
+use_as_traction = true
+wheel_radius = 0.75
+
+[node name="MeshInstance3D2" type="MeshInstance3D" parent="back_left"]
+transform = Transform3D(-4.37114e-08, 0.1, -4.37114e-08, -1, -4.37114e-09, -4.37114e-08, -4.37114e-08, 4.37114e-09, 1, 0, 0, 0)
+mesh = SubResource("CylinderMesh_8s5tl")
+skeleton = NodePath("../../front_left")
+
+[node name="back_right" type="VehicleWheel3D" parent="."]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -1.5, 0, 1)
+use_as_traction = true
+wheel_radius = 0.75
+
+[node name="MeshInstance3D3" type="MeshInstance3D" parent="back_right"]
+transform = Transform3D(-4.37114e-08, 0.1, -4.37114e-08, -1, -4.37114e-09, -4.37114e-08, -4.37114e-08, 4.37114e-09, 1, 0, 0, 0)
+mesh = SubResource("CylinderMesh_8s5tl")
+skeleton = NodePath("../../front_left")
