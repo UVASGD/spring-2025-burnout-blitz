@@ -1,6 +1,9 @@
 extends VehicleBody3D
 
 @export var MAX_STEER:float = 0.9
+@export var power_curve : Curve
+@export var steering_curve : Curve
+
 @export var default_engine_power: float = 300
 @export var boost_multiplier: float = 2
 
@@ -8,12 +11,42 @@ extends VehicleBody3D
 var ENGINE_POWER:float = 300
 var is_boosting:bool = false
 
+var acceleration_time : float = 0
+var steering_time : float = 0
+
 func _ready():
 	ENGINE_POWER = default_engine_power
 
 func _physics_process(delta):
-	steering = move_toward(steering, Input.get_axis("move_right", "move_left") * MAX_STEER, delta * 10)
-	engine_force = Input.get_axis("move_back", "move_forward") * ENGINE_POWER
+	
+	
+	var factor = 0
+	var dir = Input.get_axis("move_back", "move_forward")
+	var steer_direction = Input.get_axis("move_right", "move_left")
+	
+	var steer_factor
+	
+	if dir == 0:
+		acceleration_time -= delta
+	else:
+		acceleration_time += delta
+		
+	if steer_direction == 0:
+		steer_factor = delta * 10
+		steering_time = 0
+	else:
+		steer_factor = delta * 10 * steering_curve.sample(steering_time)
+		steering_time += delta
+	
+	steering_time = clamp(steering_time, 0, 1)
+	acceleration_time = clamp(acceleration_time, 0, 1)
+	
+	engine_force = power_curve.sample(acceleration_time) * dir * ENGINE_POWER
+	
+	
+	
+	steering = move_toward(steering, steer_direction * MAX_STEER, steer_factor)
+	
 	if !is_boosting:
 		_boost_test()
 	else:
