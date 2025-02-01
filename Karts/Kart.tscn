@@ -493,7 +493,7 @@ _data = {
 "flame": SubResource("Animation_uxnvf")
 }
 
-[node name="VehicleBody3D" type="VehicleBody3D"]
+[node name="VehicleBody3D" type="VehicleBody3D" groups=["driver"]]
 script = ExtResource("1_uqsbg")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="."]
@@ -502,6 +502,7 @@ visible = false
 mesh = SubResource("BoxMesh_5mmql")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.245875, 0)
 shape = SubResource("BoxShape3D_swpoy")
 
 [node name="front_left" type="VehicleWheel3D" parent="."]

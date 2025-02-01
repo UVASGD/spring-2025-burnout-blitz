@@ -78,7 +78,7 @@ _surfaces = [{
 blend_shape_mode = 0
 shadow_mesh = SubResource("ArrayMesh_64edp")
 
-[node name="Player" type="CharacterBody3D"]
+[node name="Player" type="CharacterBody3D" groups=["enemy"]]
 script = ExtResource("1_ddatb")
 
 [node name="twist" type="Node3D" parent="."]
