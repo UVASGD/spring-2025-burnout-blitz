@@ -7,6 +7,9 @@ extends VehicleBody3D
 @onready var animation_player = %AnimationPlayer
 var ENGINE_POWER:float = 300
 var is_boosting:bool = false
+var is_item_being_used:bool = false
+
+
 
 func _ready():
 	ENGINE_POWER = default_engine_power
@@ -27,3 +30,8 @@ func _boost_test():
 		animation_player.play("flame")
 		ENGINE_POWER *= boost_multiplier
 		is_boosting = true
+		
+func use_item():
+	if !is_item_being_used:
+		pass
+	
