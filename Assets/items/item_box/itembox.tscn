@@ -1,4 +1,7 @@
-[gd_scene load_steps=4 format=4 uid="uid://d1tggtsuja0sq"]
+[gd_scene load_steps=14 format=4 uid="uid://d1tggtsuja0sq"]
+
+[ext_resource type="Shader" uid="uid://e67ccuhnce2t" path="res://Assets/shaders/visual_shader_test.tres" id="1_b3g82"]
+[ext_resource type="Script" path="res://Assets/items/item_box/itembox.gd" id="1_evc7v"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_8r71n"]
 resource_name = "Material"
@@ -38,8 +41,195 @@ _surfaces = [{
 blend_shape_mode = 0
 shadow_mesh = SubResource("ArrayMesh_m3mr3")
 
-[node name="Itembox" type="Node3D"]
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_00wqd"]
+resource_local_to_scene = true
+render_priority = 0
+shader = ExtResource("1_b3g82")
+shader_parameter/ColorParameter = Color(2, 3, 10, 1)
+shader_parameter/Strength = 2.0
+shader_parameter/LightColor = Color(0.675228, 0.824033, 1, 1)
+shader_parameter/FloatParameter = -0.12
 
-[node name="Cube" type="MeshInstance3D" parent="."]
+[sub_resource type="BoxShape3D" id="BoxShape3D_cxr7y"]
+size = Vector3(2.51514, 3.99022, 3.8923)
+
+[sub_resource type="Animation" id="Animation_heado"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("pivot:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(0, 0, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_28qsb"]
+resource_name = "idle"
+length = 0.6
+loop_mode = 1
+step = 0.1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("pivot:position")
+tracks/0/interp = 2
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.3, 0.6),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector3(0, 0, 0), Vector3(0, 0.5, 0), Vector3(0, 0, 0)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_323mg"]
+_data = {
+"RESET": SubResource("Animation_heado"),
+"idle": SubResource("Animation_28qsb")
+}
+
+[sub_resource type="Animation" id="Animation_o7l1p"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("pivot/Cube:surface_material_override/0:shader_parameter/FloatParameter")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [-0.12]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("pivot:rotation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(0, 0, 0)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("pivot:scale")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(1, 1, 1)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath(".:visible")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+
+[sub_resource type="Animation" id="Animation_qmqqq"]
+resource_name = "despawn"
+length = 0.8
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("pivot/Cube:surface_material_override/0:shader_parameter/FloatParameter")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.6, 0.8),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [-0.12, 0.505, 1.0]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("pivot:rotation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.4, 0.8),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector3(0, 0, 0), Vector3(0, 6.28319, 0), Vector3(0, 18.8496, 0)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("pivot:scale")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 0.6, 0.8),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector3(1, 1, 1), Vector3(1, 1, 1), Vector3(4, 4, 4)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath(".:visible")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0, 0.733333, 0.8),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 1,
+"values": [true, true, false]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_x6ibr"]
+_data = {
+"RESET": SubResource("Animation_o7l1p"),
+"despawn": SubResource("Animation_qmqqq")
+}
+
+[node name="Itembox" type="Node3D"]
+script = ExtResource("1_evc7v")
+
+[node name="pivot" type="Node3D" parent="."]
+
+[node name="Cube" type="MeshInstance3D" parent="pivot"]
 mesh = SubResource("ArrayMesh_gq4va")
 skeleton = NodePath("")
+surface_material_override/0 = SubResource("ShaderMaterial_00wqd")
+
+[node name="Area3D" type="Area3D" parent="pivot"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="pivot/Area3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.00366211, -0.198586, 0.000289917)
+shape = SubResource("BoxShape3D_cxr7y")
+
+[node name="idle_player" type="AnimationPlayer" parent="."]
+unique_name_in_owner = true
+libraries = {
+"": SubResource("AnimationLibrary_323mg")
+}
+
+[node name="despawn_player" type="AnimationPlayer" parent="."]
+unique_name_in_owner = true
+libraries = {
+"": SubResource("AnimationLibrary_x6ibr")
+}
+
+[node name="regen_timer" type="Timer" parent="."]
+
+[connection signal="body_entered" from="pivot/Area3D" to="." method="_on_area_3d_body_entered"]
+[connection signal="timeout" from="regen_timer" to="." method="_on_regen_timer_timeout"]
