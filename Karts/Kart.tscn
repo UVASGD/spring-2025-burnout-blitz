@@ -585,3 +585,19 @@ script = ExtResource("3_2ro21")
 
 [node name="Camera3D" type="Camera3D" parent="Node3D"]
 transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -6.49116, 2.79808, 0)
+
+[node name="Control" type="Control" parent="Node3D/Camera3D"]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="Label" type="Label" parent="Node3D/Camera3D/Control"]
+modulate = Color(0, 0, 0, 1)
+layout_mode = 0
+offset_left = 7.0
+offset_top = -2.0
+offset_right = 137.0
+offset_bottom = 85.0
+scale = Vector2(3, 3)
+text = "Test"

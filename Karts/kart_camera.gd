@@ -1,5 +1,6 @@
 extends Node3D
 
+# credit: https://www.youtube.com/watch?v=6A6tp-rKy3Y
 
 var direction = Vector3.LEFT
 @export var smooth_speed : float = 3
@@ -7,7 +8,11 @@ var direction = Vector3.LEFT
 
 func _physics_process(delta: float) -> void:
 	var current_velocity = car.get_linear_velocity()
+	$Camera3D/Control/Label.text = str(current_velocity.length()) 
+	
+	
 	current_velocity.y = 0
+	
 	
 	
 	
