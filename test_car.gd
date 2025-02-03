@@ -37,7 +37,8 @@ func _physics_process(delta):
 		steer_factor = delta * 20
 		steering_time = 0
 	else:
-		steer_factor = delta * 20 * steering_curve.sample(steering_time)
+		#steer_factor = delta * 20 * steering_curve.sample(steering_time)
+		steer_factor = delta * 20
 		steering_time += delta
 	
 	steering_time = clamp(steering_time, 0, 1)
@@ -49,23 +50,25 @@ func _physics_process(delta):
 	
 	steering = move_toward(steering, steer_direction * MAX_STEER, steer_factor)
 	
-	if !is_boosting:
-		_boost_test()
-	else:
-		ENGINE_POWER -= 10
-		ENGINE_POWER = max(ENGINE_POWER, default_engine_power)
-		if ENGINE_POWER == default_engine_power:
-			is_boosting = false
+	#if !is_boosting:
+		#_boost_test()
+	#else:
+		#ENGINE_POWER -= 10
+		#ENGINE_POWER = max(ENGINE_POWER, default_engine_power)
+		#if ENGINE_POWER == default_engine_power:
+			#is_boosting = false
 
-func update_engine_power(modifier:String, amount:int):
+func update_engine_power(modifier:String, amount:float):
 	match modifier:
 		"add":
 			ENGINE_POWER += amount
 		"multiply":
 			ENGINE_POWER *= amount
+		"restore":
+			ENGINE_POWER = default_engine_power
 
-func _boost_test():
-	if Input.is_action_just_pressed("use_driver_item") and !is_boosting:
-		animation_player.play("flame")
-		ENGINE_POWER *= boost_multiplier
-		is_boosting = true
+#func _boost_test():
+	#if Input.is_action_just_pressed("use_driver_item") and !is_boosting:
+		#animation_player.play("flame")
+		#ENGINE_POWER *= boost_multiplier
+		#is_boosting = true
