@@ -15,10 +15,10 @@ func _ready():
 
 		
 func _on_area_3d_body_entered(body):
-	if item_available and (body.is_in_group("driver") or body.is_in_group("enemy")):
+	if item_available and (body.is_in_group("driver")):
 		item_available = false
 		despawn_player.play("despawn")
-		SignalBus.emit_signal("item_taken")
+		SignalBus.emit_signal("driver_item_taken")
 		regen_timer.start()
 		
 

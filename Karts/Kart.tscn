@@ -1,14 +1,22 @@
-[gd_scene load_steps=29 format=4 uid="uid://cd1ipr66rv03m"]
+[gd_scene load_steps=32 format=4 uid="uid://cd1ipr66rv03m"]
 
 [ext_resource type="Script" path="res://test_car.gd" id="1_uqsbg"]
 [ext_resource type="Shader" uid="uid://e67ccuhnce2t" path="res://Assets/shaders/visual_shader_test.tres" id="2_6upyx"]
 [ext_resource type="Script" path="res://Karts/kart_camera.gd" id="3_2ro21"]
 [ext_resource type="Script" path="res://Karts/driver_ui.gd" id="4_qpy08"]
+[ext_resource type="Script" path="res://Karts/item_manager.gd" id="4_wa8w0"]
+
+[sub_resource type="Curve" id="Curve_hvsxp"]
+
+[sub_resource type="Curve" id="Curve_l6ljh"]
+max_value = 0.75
+_data = [Vector2(0.90367, 0.010989), 0.0, 0.0, 0, 0]
+point_count = 1
 
 [sub_resource type="BoxMesh" id="BoxMesh_5mmql"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_swpoy"]
-size = Vector3(4, 0.5, 1.5)
+size = Vector3(4, 2.14111, 1.5)
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_kvki2"]
 albedo_color = Color(0, 0, 0, 1)
@@ -326,22 +334,12 @@ shadow_mesh = SubResource("ArrayMesh_by1aq")
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_is1fn"]
 albedo_color = Color(0.150668, 0.0441706, 0.0738868, 1)
 
-[sub_resource type="BoxMesh" id="BoxMesh_5watk"]
-
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_c43kn"]
-render_priority = 0
-shader = ExtResource("2_6upyx")
-shader_parameter/ColorParameter = Color(0.226707, 0.226707, 0.226707, 1)
-shader_parameter/Strength = 2.0
-shader_parameter/LightColor = Color(5, 0.298, 0.236, 1)
-shader_parameter/FloatParameter = 0.375
-
 [sub_resource type="Animation" id="Animation_sa4g8"]
 length = 0.001
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("flame_1:visible")
+tracks/0/path = NodePath("item_manager/boost/flame_1:visible")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
@@ -353,7 +351,7 @@ tracks/0/keys = {
 tracks/1/type = "value"
 tracks/1/imported = false
 tracks/1/enabled = true
-tracks/1/path = NodePath("flame_2:visible")
+tracks/1/path = NodePath("item_manager/boost/flame_2:visible")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
@@ -365,7 +363,7 @@ tracks/1/keys = {
 tracks/2/type = "value"
 tracks/2/imported = false
 tracks/2/enabled = true
-tracks/2/path = NodePath("flame_2:surface_material_override/0:shader_parameter/FloatParameter")
+tracks/2/path = NodePath("item_manager/boost/flame_2:surface_material_override/0:shader_parameter/FloatParameter")
 tracks/2/interp = 1
 tracks/2/loop_wrap = true
 tracks/2/keys = {
@@ -389,7 +387,7 @@ tracks/3/keys = {
 tracks/4/type = "value"
 tracks/4/imported = false
 tracks/4/enabled = true
-tracks/4/path = NodePath("flame_1:scale")
+tracks/4/path = NodePath("item_manager/boost/flame_1:scale")
 tracks/4/interp = 1
 tracks/4/loop_wrap = true
 tracks/4/keys = {
@@ -401,7 +399,7 @@ tracks/4/keys = {
 tracks/5/type = "value"
 tracks/5/imported = false
 tracks/5/enabled = true
-tracks/5/path = NodePath("flame_2:scale")
+tracks/5/path = NodePath("item_manager/boost/flame_2:scale")
 tracks/5/interp = 1
 tracks/5/loop_wrap = true
 tracks/5/keys = {
@@ -418,7 +416,7 @@ step = 0.01
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("flame_1:visible")
+tracks/0/path = NodePath("item_manager/boost/flame_1:visible")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
@@ -430,7 +428,7 @@ tracks/0/keys = {
 tracks/1/type = "value"
 tracks/1/imported = false
 tracks/1/enabled = true
-tracks/1/path = NodePath("flame_2:visible")
+tracks/1/path = NodePath("item_manager/boost/flame_2:visible")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
@@ -442,7 +440,7 @@ tracks/1/keys = {
 tracks/2/type = "value"
 tracks/2/imported = false
 tracks/2/enabled = true
-tracks/2/path = NodePath("flame_2:surface_material_override/0:shader_parameter/FloatParameter")
+tracks/2/path = NodePath("item_manager/boost/flame_2:surface_material_override/0:shader_parameter/FloatParameter")
 tracks/2/interp = 1
 tracks/2/loop_wrap = true
 tracks/2/keys = {
@@ -466,7 +464,7 @@ tracks/3/keys = {
 tracks/4/type = "value"
 tracks/4/imported = false
 tracks/4/enabled = true
-tracks/4/path = NodePath("flame_1:scale")
+tracks/4/path = NodePath("item_manager/boost/flame_1:scale")
 tracks/4/interp = 1
 tracks/4/loop_wrap = true
 tracks/4/keys = {
@@ -478,7 +476,7 @@ tracks/4/keys = {
 tracks/5/type = "value"
 tracks/5/imported = false
 tracks/5/enabled = true
-tracks/5/path = NodePath("flame_2:scale")
+tracks/5/path = NodePath("item_manager/boost/flame_2:scale")
 tracks/5/interp = 1
 tracks/5/loop_wrap = true
 tracks/5/keys = {
@@ -498,9 +496,23 @@ _data = {
 outline_size = 8
 outline_color = Color(0, 0, 0, 1)
 
+[sub_resource type="BoxMesh" id="BoxMesh_5watk"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_c43kn"]
+render_priority = 0
+shader = ExtResource("2_6upyx")
+shader_parameter/ColorParameter = Color(0.226707, 0.226707, 0.226707, 1)
+shader_parameter/Strength = 2.0
+shader_parameter/LightColor = Color(5, 0.298, 0.236, 1)
+shader_parameter/FloatParameter = 0.375
+
 [node name="VehicleBody3D" type="VehicleBody3D" groups=["driver"]]
 mass = 100.0
+center_of_mass_mode = 1
+center_of_mass = Vector3(0, -0.1, 0)
 script = ExtResource("1_uqsbg")
+power_curve = SubResource("Curve_hvsxp")
+steering_curve = SubResource("Curve_l6ljh")
 default_engine_power = 600.0
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="."]
@@ -509,14 +521,14 @@ visible = false
 mesh = SubResource("BoxMesh_5mmql")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.245875, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.06643, 0)
 shape = SubResource("BoxShape3D_swpoy")
 
 [node name="front_left" type="VehicleWheel3D" parent="."]
 transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 1.5, 0, -0.8)
 use_as_traction = true
 use_as_steering = true
-wheel_radius = 0.75
+suspension_stiffness = 50.0
 
 [node name="RF3" type="MeshInstance3D" parent="front_left"]
 transform = Transform3D(-3.51153e-08, -0.465116, -7.02306e-08, -0.465116, 3.51153e-08, 4.06618e-08, -4.06617e-08, 7.02306e-08, -0.465116, 0.336253, 0, 0)
@@ -528,7 +540,7 @@ skeleton = NodePath("")
 transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 1.5, 0, 0.8)
 use_as_traction = true
 use_as_steering = true
-wheel_radius = 0.75
+suspension_stiffness = 50.0
 
 [node name="RF2" type="MeshInstance3D" parent="front_right"]
 transform = Transform3D(-3.51153e-08, -0.465116, -7.02306e-08, -0.465116, 3.51153e-08, 4.06618e-08, -4.06617e-08, 7.02306e-08, -0.465116, 0.336253, 0, 0)
@@ -539,7 +551,8 @@ skeleton = NodePath("")
 [node name="back_left" type="VehicleWheel3D" parent="."]
 transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -1.5, 0, -0.8)
 use_as_traction = true
-wheel_radius = 0.75
+wheel_friction_slip = 21.0
+suspension_stiffness = 50.0
 
 [node name="RF2" type="MeshInstance3D" parent="back_left"]
 transform = Transform3D(-3.51153e-08, -0.465116, -7.02306e-08, -0.465116, 3.51153e-08, 4.06618e-08, -4.06617e-08, 7.02306e-08, -0.465116, 0.336253, 0, 0)
@@ -550,7 +563,8 @@ skeleton = NodePath("")
 [node name="back_right" type="VehicleWheel3D" parent="."]
 transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -1.5, 0, 0.8)
 use_as_traction = true
-wheel_radius = 0.75
+wheel_friction_slip = 21.0
+suspension_stiffness = 50.0
 
 [node name="RF" type="MeshInstance3D" parent="back_right"]
 transform = Transform3D(-3.51153e-08, -0.465116, -7.02306e-08, -0.465116, 3.51153e-08, 4.06618e-08, -4.06617e-08, 7.02306e-08, -0.465116, 0.336253, 0, 0)
@@ -569,18 +583,6 @@ transform = Transform3D(-1.31134e-09, 0, -0.03, 0, 0.03, 0, 0.03, 0, -1.31134e-0
 material_override = SubResource("StandardMaterial3D_is1fn")
 mesh = SubResource("ArrayMesh_anp51")
 skeleton = NodePath("")
-
-[node name="flame_1" type="MeshInstance3D" parent="."]
-transform = Transform3D(-1.50643e-08, 4.92657, 0, -0.344631, -2.15347e-07, 0, 0, 0, 0.159162, -4.84113, 0.409893, -0.538346)
-visible = false
-mesh = SubResource("BoxMesh_5watk")
-surface_material_override/0 = SubResource("ShaderMaterial_c43kn")
-
-[node name="flame_2" type="MeshInstance3D" parent="."]
-transform = Transform3D(-1.50643e-08, 4.92657, 0, -0.344631, -2.15347e-07, 0, 0, 0, 0.159162, -4.84189, 0.409977, 0.538113)
-visible = false
-mesh = SubResource("BoxMesh_5watk")
-surface_material_override/0 = SubResource("ShaderMaterial_c43kn")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 unique_name_in_owner = true
@@ -627,3 +629,20 @@ offset_bottom = 147.0
 label_settings = SubResource("LabelSettings_0wk6h")
 
 [node name="item_manager" type="Node3D" parent="."]
+script = ExtResource("4_wa8w0")
+
+[node name="boost" type="Node3D" parent="item_manager"]
+
+[node name="flame_1" type="MeshInstance3D" parent="item_manager/boost"]
+transform = Transform3D(-1.50643e-08, 4.92657, 0, -0.344631, -2.15347e-07, 0, 0, 0, 0.159162, -4.84113, 0.409893, -0.538346)
+visible = false
+mesh = SubResource("BoxMesh_5watk")
+skeleton = NodePath("../../..")
+surface_material_override/0 = SubResource("ShaderMaterial_c43kn")
+
+[node name="flame_2" type="MeshInstance3D" parent="item_manager/boost"]
+transform = Transform3D(-1.50643e-08, 4.92657, 0, -0.344631, -2.15347e-07, 0, 0, 0, 0.159162, -4.84189, 0.409977, 0.538113)
+visible = false
+mesh = SubResource("BoxMesh_5watk")
+skeleton = NodePath("../../..")
+surface_material_override/0 = SubResource("ShaderMaterial_c43kn")
