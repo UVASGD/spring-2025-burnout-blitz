@@ -1,5 +1,5 @@
 extends Node
 
-signal item_taken
+signal driver_item_taken
 
-signal giving_item
+signal driver_giving_item

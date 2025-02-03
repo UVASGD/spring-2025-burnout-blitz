@@ -34,10 +34,10 @@ func _physics_process(delta):
 		acceleration_time += delta
 		
 	if steer_direction == 0:
-		steer_factor = delta * 10
+		steer_factor = delta * 20
 		steering_time = 0
 	else:
-		steer_factor = delta * 10 * steering_curve.sample(steering_time)
+		steer_factor = delta * 20 * steering_curve.sample(steering_time)
 		steering_time += delta
 	
 	steering_time = clamp(steering_time, 0, 1)
@@ -56,6 +56,13 @@ func _physics_process(delta):
 		ENGINE_POWER = max(ENGINE_POWER, default_engine_power)
 		if ENGINE_POWER == default_engine_power:
 			is_boosting = false
+
+func update_engine_power(modifier:String, amount:int):
+	match modifier:
+		"add":
+			ENGINE_POWER += amount
+		"multiply":
+			ENGINE_POWER *= amount
 
 func _boost_test():
 	if Input.is_action_just_pressed("use_driver_item") and !is_boosting:
