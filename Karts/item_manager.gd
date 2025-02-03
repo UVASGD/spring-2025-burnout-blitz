@@ -1,7 +1,4 @@
 extends Node3D
-
-
-
 @onready var boost = preload("res://Assets/items/driver_items/boost.tscn")
 @onready var animation_player = %AnimationPlayer
 
