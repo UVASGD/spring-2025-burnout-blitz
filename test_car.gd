@@ -14,6 +14,8 @@ var is_boosting:bool = false
 var acceleration_time : float = 0
 var steering_time : float = 0
 
+
+
 func _ready():
 	ENGINE_POWER = default_engine_power
 
@@ -56,7 +58,7 @@ func _physics_process(delta):
 			is_boosting = false
 
 func _boost_test():
-	if Input.is_action_just_pressed("drift") and !is_boosting:
+	if Input.is_action_just_pressed("use_driver_item") and !is_boosting:
 		animation_player.play("flame")
 		ENGINE_POWER *= boost_multiplier
 		is_boosting = true

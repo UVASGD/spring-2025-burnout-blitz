@@ -1,7 +1,7 @@
 [gd_scene load_steps=9 format=3 uid="uid://beukhdyi24jh6"]
 
 [ext_resource type="PackedScene" uid="uid://chmr6lxt7xsdq" path="res://Karts/OLD/RaceCar.glb" id="1_gskib"]
-[ext_resource type="PackedScene" uid="uid://onxc0n3pblmf" path="res://scenes/player.tscn" id="2_14qgg"]
+[ext_resource type="PackedScene" uid="uid://onxc0n3pblmf" path="res://scenes/player/player.tscn" id="2_14qgg"]
 
 [sub_resource type="BoxMesh" id="BoxMesh_age2x"]
 

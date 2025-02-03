@@ -23,6 +23,6 @@ func _physics_process(delta: float) -> void:
 
 func get_rotation_from_direction(look_direction : Vector3):
 	look_direction = look_direction.normalized()
-	print(look_direction)
+	#print(look_direction)
 	var z_axis = look_direction.cross(Vector3.UP)
 	return Basis(-look_direction, Vector3.UP, - z_axis)
