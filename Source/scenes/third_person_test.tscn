@@ -1,0 +1,43 @@
+[gd_scene load_steps=9 format=3 uid="uid://beukhdyi24jh6"]
+
+[ext_resource type="PackedScene" uid="uid://chmr6lxt7xsdq" path="res://Source/Karts/OLD/RaceCar.glb" id="1_gskib"]
+[ext_resource type="PackedScene" uid="uid://onxc0n3pblmf" path="res://Source/scenes/player/player.tscn" id="2_14qgg"]
+
+[sub_resource type="BoxMesh" id="BoxMesh_age2x"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_gxrlx"]
+
+[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_gqtes"]
+
+[sub_resource type="Sky" id="Sky_7b1su"]
+sky_material = SubResource("ProceduralSkyMaterial_gqtes")
+
+[sub_resource type="Environment" id="Environment_i51yu"]
+background_mode = 2
+sky = SubResource("Sky_7b1su")
+
+[sub_resource type="CapsuleMesh" id="CapsuleMesh_57u3w"]
+
+[node name="Node3D" type="Node3D"]
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+transform = Transform3D(100, 0, 0, 0, 1.002, 0, 0, 0, 100, 0, 0, 0)
+mesh = SubResource("BoxMesh_age2x")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="MeshInstance3D"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="MeshInstance3D/StaticBody3D"]
+shape = SubResource("BoxShape3D_gxrlx")
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_i51yu")
+
+[node name="MeshInstance3D2" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 8.22105, 0)
+mesh = SubResource("CapsuleMesh_57u3w")
+
+[node name="RaceCar2" parent="." instance=ExtResource("1_gskib")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -22.2249, 116.315, 60.3419)
+
+[node name="Player" parent="." instance=ExtResource("2_14qgg")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.91285, 0)
