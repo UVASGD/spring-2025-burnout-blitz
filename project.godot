@@ -11,7 +11,7 @@ config_version=5
 [application]
 
 config/name="RacingGame"
-run/main_scene="res://third_person_test.tscn"
+run/main_scene="res://Source/scenes/splitscreen_test.tscn"
 config/features=PackedStringArray("4.3", "Forward Plus")
 config/icon="res://icon.svg"
 
