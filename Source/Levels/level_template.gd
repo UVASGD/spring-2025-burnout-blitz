@@ -1,0 +1,2 @@
+extends track_settings
+class_name LevelTemplate
