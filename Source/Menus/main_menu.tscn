@@ -1,0 +1,30 @@
+[gd_scene load_steps=2 format=3 uid="uid://ck3cs6fa37s45"]
+
+[ext_resource type="Script" path="res://Source/Menus/main_menu.gd" id="1_3oxnt"]
+
+[node name="MainMenu" type="CanvasLayer"]
+script = ExtResource("1_3oxnt")
+
+[node name="Control" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 901.0
+offset_bottom = 568.0
+
+[node name="Label" type="Label" parent="Control"]
+layout_mode = 0
+offset_left = 97.0
+offset_top = 20.0
+offset_right = 277.0
+offset_bottom = 102.0
+text = "Burnout Blitz"
+
+[node name="Button" type="Button" parent="Control"]
+layout_mode = 0
+offset_left = 132.0
+offset_top = 92.0
+offset_right = 173.0
+offset_bottom = 123.0
+text = "Play"
+
+[connection signal="pressed" from="Control/Button" to="." method="_on_button_pressed"]
