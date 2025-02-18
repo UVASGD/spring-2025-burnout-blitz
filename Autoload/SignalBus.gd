@@ -9,3 +9,7 @@ signal update_engine_force(modifier:String, amount:float)
 signal clear_item
 
 signal driver_play_animation
+
+signal out_of_bounds
+
+signal update_checkpoint

@@ -5,7 +5,7 @@ class_name GameContainer
 @onready var map_select_menu_scene = preload("res://Source/Menus/map_select_menu.tscn")
 
 @onready var levels = {
-	1 : preload("res://Source/scenes/driver_item_test/driver_item_test.tscn"),
+	1 : preload("res://Source/Levels/level_example.tscn"),
 	2 : 2,
 	3 : 3
 }

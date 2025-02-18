@@ -1,5 +1,6 @@
 class_name track_settings extends Node3D
 
+@export var num_laps = 3
 @export var driver_items_on_map:Array[String] = []
 
 func _ready():
