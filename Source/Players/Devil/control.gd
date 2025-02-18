@@ -1,9 +1,9 @@
 extends Control
-class_name DriverUI
+class_name DevilUI
 
 func _ready():
-	SignalBus.connect("driver_giving_item", update_item_label)
-	SignalBus.connect("clear_driver_item", clear)
+	SignalBus.connect("devil_giving_item", update_item_label)
+	SignalBus.connect("clear_devil_item", clear)
 	
 func update_item_label(item_name:String):
 	$current_item.text = item_name

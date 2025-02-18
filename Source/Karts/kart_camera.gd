@@ -1,4 +1,5 @@
 extends Node3D
+class_name KartCamera
 
 # credit: https://www.youtube.com/watch?v=6A6tp-rKy3Y
 
@@ -9,12 +10,7 @@ var direction = Vector3.LEFT
 func _physics_process(delta: float) -> void:
 	var current_velocity = car.get_linear_velocity()
 	$Camera3D/Control/Label.text = str(current_velocity.length()) 
-	
-	
 	current_velocity.y = 0
-	
-	
-	
 	
 	if current_velocity.length_squared() > 1:
 		direction = lerp(direction, -current_velocity.normalized(), smooth_speed*delta)

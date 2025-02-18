@@ -39,7 +39,7 @@ shadow_mesh = SubResource("ArrayMesh_rkehm")
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ywv6u"]
 albedo_color = Color(0.270222, 0.270222, 0.270222, 1)
 
-[node name="Spawner" type="Node3D"]
+[node name="ItemSpawner" type="Node3D"]
 script = ExtResource("1_30ot8")
 
 [node name="Cylinder_001" type="MeshInstance3D" parent="."]

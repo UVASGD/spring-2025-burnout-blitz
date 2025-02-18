@@ -519,7 +519,7 @@ _data = {
 "boost": SubResource("Animation_uxnvf")
 }
 
-[node name="VehicleBody3D" type="VehicleBody3D" groups=["driver"]]
+[node name="Kart" type="VehicleBody3D" groups=["driver"]]
 mass = 100.0
 center_of_mass_mode = 1
 center_of_mass = Vector3(0, -0.1, 0)
