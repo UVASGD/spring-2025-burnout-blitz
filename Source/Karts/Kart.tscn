@@ -613,10 +613,10 @@ script = ExtResource("4_qpy08")
 [node name="Label" type="Label" parent="Node3D/Camera3D/Control"]
 modulate = Color(0, 0, 0, 1)
 layout_mode = 0
-offset_left = 7.0
-offset_top = -2.0
-offset_right = 137.0
-offset_bottom = 85.0
+offset_left = 2.0
+offset_top = 40.0
+offset_right = 132.0
+offset_bottom = 127.0
 scale = Vector2(3, 3)
 text = "Test"
 
@@ -626,6 +626,24 @@ offset_top = 101.0
 offset_right = 40.0
 offset_bottom = 124.0
 text = "Current Item: "
+label_settings = SubResource("LabelSettings_0wk6h")
+
+[node name="ll_label" type="Label" parent="Node3D/Camera3D/Control"]
+layout_mode = 0
+offset_left = 9.0
+offset_top = 14.0
+offset_right = 91.0
+offset_bottom = 37.0
+text = "Laps Left:"
+label_settings = SubResource("LabelSettings_0wk6h")
+
+[node name="laps_left" type="Label" parent="Node3D/Camera3D/Control"]
+unique_name_in_owner = true
+layout_mode = 0
+offset_left = 89.0
+offset_top = 14.0
+offset_right = 171.0
+offset_bottom = 37.0
 label_settings = SubResource("LabelSettings_0wk6h")
 
 [node name="current_item" type="Label" parent="Node3D/Camera3D/Control"]

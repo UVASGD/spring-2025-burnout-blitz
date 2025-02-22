@@ -9,6 +9,7 @@ func _ready():
 	if is_startpoint:
 		is_active = true
 	SignalBus.connect("out_of_bounds", tele_to_checkpoint)
+	SignalBus.connect("update_checkpoint", turn_off_checkpoint)
 
 
 func _on_area_3d_body_entered(body):
@@ -16,11 +17,14 @@ func _on_area_3d_body_entered(body):
 		is_active = true
 		has_passed = true
 		print("checkpoint activated!")
-		SignalBus.emit_signal("update_checkpoint")
+		SignalBus.emit_signal("update_checkpoint", name)
 		
 	
 func tele_to_checkpoint():
 	if is_active:
 		%Driver.global_transform.origin = global_transform.origin
 		
+func turn_off_checkpoint(nm:String):
+	if nm != name:
+		is_active = false
 		
