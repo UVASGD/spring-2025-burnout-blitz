@@ -10,7 +10,6 @@ signal out_of_bounds
 signal update_checkpoint(name:String)
 
 signal update_laps_left(laps_left:String)
-signal update_checkpoint
 
 signal devil_item_taken
 signal devil_giving_item
