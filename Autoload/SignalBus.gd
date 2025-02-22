@@ -12,4 +12,6 @@ signal driver_play_animation
 
 signal out_of_bounds
 
-signal update_checkpoint
+signal update_checkpoint(name:String)
+
+signal update_laps_left(laps_left:String)

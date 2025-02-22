@@ -113,7 +113,6 @@ size = Vector3(6.575, 1, 1)
 data = PackedVector3Array(0, 0.5, 0.5, 3.2875, -0.5, 0.5, -3.2875, -0.5, 0.5, 0, 0.5, -0.5, -3.2875, -0.5, -0.5, 3.2875, -0.5, -0.5, 0, 0.5, 0.5, 0, 0.5, -0.5, 3.2875, -0.5, 0.5, 0, 0.5, -0.5, 3.2875, -0.5, -0.5, 3.2875, -0.5, 0.5, 0, 0.5, -0.5, 0, 0.5, 0.5, -3.2875, -0.5, -0.5, 0, 0.5, 0.5, -3.2875, -0.5, 0.5, -3.2875, -0.5, -0.5, -3.2875, -0.5, 0.5, 3.2875, -0.5, 0.5, -3.2875, -0.5, -0.5, 3.2875, -0.5, 0.5, 3.2875, -0.5, -0.5, -3.2875, -0.5, -0.5)
 
 [node name="LevelExample" instance=ExtResource("1_hhipu")]
-num_laps = null
 driver_items_on_map = Array[String](["boost"])
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="." index="0"]
@@ -230,6 +229,7 @@ mesh = SubResource("BoxMesh_qqcik")
 shape = SubResource("BoxShape3D_oor0m")
 
 [node name="checkpoints" type="Node3D" parent="checkpoint_manager" index="1"]
+unique_name_in_owner = true
 
 [node name="startpoint" type="Node3D" parent="checkpoint_manager/checkpoints" index="0"]
 transform = Transform3D(9.71549, 0, 0, 0, 1, 0, 0, 0, 1, 44.0405, 10.7242, -184.355)
