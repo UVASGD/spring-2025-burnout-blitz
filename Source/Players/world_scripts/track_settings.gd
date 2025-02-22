@@ -1,7 +1,9 @@
-class_name track_settings extends Node3D
+extends Node3D
+class_name track_settings 
 
 @export var num_laps:int = 3
 @export var driver_items_on_map:Array[String] = []
+@export var devil_items_on_map:Array[String] = []
 var start_point:Node3D
 var num_laps_left:int
 var num_checkpoints:int
@@ -43,3 +45,19 @@ func add_checkpoint(nm):
 	
 	
 	
+func give_devil_item():
+	if not driver_items_on_map.is_empty():
+		var total_items:int = len(devil_items_on_map) - 1
+		var random_item_number:int = randi_range(0, total_items)
+		var random_item_name:String = devil_items_on_map[random_item_number]		
+		SignalBus.emit_signal("devil_giving_item", random_item_name)
+		print("giving item: " + random_item_name)
+
+#func has_passed_all_checkpoints(checkpoints:Array[Node3D]):
+	#for checkpoint in checkpoints:
+		#
+	#
+	#
+	#
+	#
+	#
