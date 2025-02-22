@@ -6,8 +6,8 @@ var has_passed:bool = false
 
 
 func _ready():
-	if is_startpoint:
-		is_active = true
+	#if is_startpoint:
+		#is_active = true
 	SignalBus.connect("out_of_bounds", tele_to_checkpoint)
 	SignalBus.connect("update_checkpoint", turn_off_checkpoint)
 
