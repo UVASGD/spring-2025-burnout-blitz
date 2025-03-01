@@ -1,8 +1,8 @@
 [gd_scene load_steps=29 format=4 uid="uid://b61bya5xchjk0"]
 
-[ext_resource type="Script" path="res://vehicles/follow_camera.gd" id="1_cmyto"]
+[ext_resource type="Script" path="res://Source/Karts/Newest Kart/follow_camera.gd" id="1_cmyto"]
 [ext_resource type="Script" path="res://Source/Karts/Newest Kart/new_player.gd" id="1_mc15k"]
-[ext_resource type="Texture2D" uid="uid://d4ostmqwgytk" path="res://vehicles/particle_smoke.png" id="2_otqb6"]
+[ext_resource type="Texture2D" uid="uid://d4ostmqwgytk" path="res://Assets/Textures/particle_smoke.png" id="2_otqb6"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_kl36r"]
 resource_name = "rim"
@@ -501,9 +501,10 @@ colors = PackedColorArray(1, 1, 1, 1, 1, 1, 1, 0)
 
 [node name="NewestKart" type="VehicleBody3D" groups=["driver"]]
 transform = Transform3D(0.75, 0, 0, 0, 0.75, 0, 0, 0, 0.75, 0, 0, 0)
+mass = 50.0
 gravity_scale = 4.0
 center_of_mass_mode = 1
-center_of_mass = Vector3(0, 0, 1)
+center_of_mass = Vector3(0, 0, 1.4)
 script = ExtResource("1_mc15k")
 
 [node name="FrontLeft" type="VehicleWheel3D" parent="."]

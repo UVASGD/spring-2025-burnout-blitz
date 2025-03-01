@@ -22,7 +22,7 @@ func _on_area_3d_body_entered(body):
 	
 func tele_to_checkpoint():
 	if is_active:
-		%Driver.global_transform.origin = global_transform.origin
+		%NewestKart.global_transform.origin = global_transform.origin
 		
 func turn_off_checkpoint(nm:String):
 	if nm != name:
