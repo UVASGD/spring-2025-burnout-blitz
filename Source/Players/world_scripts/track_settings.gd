@@ -15,6 +15,7 @@ func _ready():
 	num_laps_left = num_laps
 	SignalBus.emit_signal("update_laps_left", str(num_laps_left))
 	SignalBus.connect("driver_item_taken", give_driver_item)
+	SignalBus.connect("devil_item_taken", give_devil_item)
 	SignalBus.connect("update_checkpoint", add_checkpoint)
 	
 	
