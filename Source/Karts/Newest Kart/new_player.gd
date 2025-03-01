@@ -1,8 +1,8 @@
 extends VehicleBody3D
 
-const STEER_SPEED = 1.5
+const STEER_SPEED = 5
 const STEER_LIMIT = 0.4
-const ENGINE_POWER = 300
+const ENGINE_POWER = 400
 
 var previous_speed := linear_velocity.length()
 
