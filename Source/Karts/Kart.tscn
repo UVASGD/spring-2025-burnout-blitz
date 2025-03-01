@@ -587,7 +587,6 @@ skeleton = NodePath("")
 
 [node name="Cube_001" type="MeshInstance3D" parent="."]
 transform = Transform3D(-1.31134e-09, 0, -0.03, 0, 0.03, 0, 0.03, 0, -1.31134e-09, 2, 0, 0)
-visible = false
 mesh = SubResource("ArrayMesh_anp51")
 skeleton = NodePath("")
 
@@ -598,6 +597,7 @@ mesh = SubResource("ArrayMesh_anp51")
 skeleton = NodePath("")
 
 [node name="Node3D" type="Node3D" parent="."]
+visible = false
 script = ExtResource("3_2ro21")
 
 [node name="Camera3D" type="Camera3D" parent="Node3D"]
