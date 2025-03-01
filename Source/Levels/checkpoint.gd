@@ -2,7 +2,7 @@ class_name checkpoint extends Node3D
 var is_active:bool = false
 var has_passed:bool = false
 @export var is_startpoint:bool = false
-@onready var driver:VehicleBody3D = %Driver
+@onready var driver:VehicleBody3D = %NewestKart
 
 
 func _ready():
