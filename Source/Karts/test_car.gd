@@ -1,31 +1,26 @@
 extends VehicleBody3D
 
-@export var MAX_STEER:float = 0.9
+@export var MAX_STEER : float = 0.9
 @export var power_curve : Curve
 @export var steering_curve : Curve
 
-@export var default_engine_power: float = 300
-@export var boost_multiplier: float = 2
+@export var default_engine_power : float = 300
+@export var boost_multiplier : float = 2
 
 @onready var animation_player = %AnimationPlayer
-var ENGINE_POWER:float = 300
-var is_boosting:bool = false
+var ENGINE_POWER : float = 300
+var is_boosting : bool = false
 
 var acceleration_time : float = 0
 var steering_time : float = 0
-
-
 
 func _ready():
 	ENGINE_POWER = default_engine_power
 
 func _physics_process(delta):
-	
-	
 	var factor = 0
 	var dir = Input.get_axis("move_back", "move_forward")
 	var steer_direction = Input.get_axis("move_right", "move_left")
-	
 	var steer_factor
 	
 	if dir == 0:
