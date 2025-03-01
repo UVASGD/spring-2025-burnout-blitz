@@ -1,0 +1,63 @@
+extends Node3D
+class_name track_settings 
+
+@export var num_laps:int = 3
+@export var driver_items_on_map:Array[String] = []
+@export var devil_items_on_map:Array[String] = []
+var start_point:Node3D
+var num_laps_left:int
+var num_checkpoints:int
+var checkpoints_array:Array[String] = []
+var check_manager:Node3D
+
+
+func _ready():
+	num_laps_left = num_laps
+	SignalBus.emit_signal("update_laps_left", str(num_laps_left))
+	SignalBus.connect("driver_item_taken", give_driver_item)
+	SignalBus.connect("update_checkpoint", add_checkpoint)
+	
+	
+func initialize_num_checkpoints(checkpoints:Node3D):
+	num_checkpoints = checkpoints.get_child_count()
+func give_driver_item():
+	if not driver_items_on_map.is_empty():
+		var total_items:int = len(driver_items_on_map) - 1
+		var random_item_number:int = randi_range(0, total_items)
+		var random_item_name:String = driver_items_on_map[random_item_number]		
+		SignalBus.emit_signal("driver_giving_item", random_item_name)
+		print("giving item: " + random_item_name)
+
+func add_checkpoint(nm):
+	if nm not in checkpoints_array and len(checkpoints_array) < num_checkpoints:
+		checkpoints_array.append(nm)
+	elif len(checkpoints_array) == num_checkpoints and num_laps_left > 0:
+		num_laps_left -= 1
+		print(str(num_laps_left) +  "laps left!")
+		SignalBus.emit_signal("update_laps_left", str(num_laps_left))
+		checkpoints_array = []
+
+#func has_passed_all_checkpoints(checkpoints:Array[Node3D]):
+	#for checkpoint in checkpoints:
+		
+	
+	
+	
+	
+	
+func give_devil_item():
+	if not driver_items_on_map.is_empty():
+		var total_items:int = len(devil_items_on_map) - 1
+		var random_item_number:int = randi_range(0, total_items)
+		var random_item_name:String = devil_items_on_map[random_item_number]		
+		SignalBus.emit_signal("devil_giving_item", random_item_name)
+		print("giving item: " + random_item_name)
+
+#func has_passed_all_checkpoints(checkpoints:Array[Node3D]):
+	#for checkpoint in checkpoints:
+		#
+	#
+	#
+	#
+	#
+	#
