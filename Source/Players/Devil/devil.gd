@@ -32,7 +32,7 @@ func _ready():
 	Input.mouse_mode = Input.MOUSE_MODE_CAPTURED
 
 func _unhandled_input(event):
-	if event is InputEventMouseButton and !top_camera_active:
+	if event is InputEventMouseButton and not top_camera_active:
 		Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
 	elif event.is_action_pressed("ui_cancel"):
 		Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE)
@@ -41,12 +41,13 @@ func _unhandled_input(event):
 		if event is InputEventMouseMotion:
 			rotate_y(deg_to_rad(-event.relative.x * sens))
 			pivot.rotation.x = clamp(
-			pivot.rotation.x - deg_to_rad(event.relative.y * sens),
-			deg_to_rad(-90),  # Minimum pitch angle
-			deg_to_rad(45)    # Maximum pitch angle
+				pivot.rotation.x - deg_to_rad(event.relative.y * sens),
+				deg_to_rad(-90),  # Minimum pitch angle
+				deg_to_rad(45)    # Maximum pitch angle
 			)
 			head.rotation.x = pivot.rotation.x
 			head.rotation.y = pivot.rotation.y
+			#print("marker rotation" + str($head/Node3D.rotation.y))
 
 func _physics_process(delta):
 	if not is_on_floor():
@@ -79,19 +80,12 @@ func move_character(delta):
 	else:
 		velocity.x = move_toward(velocity.x, 0, SPEED)
 		velocity.z = move_toward(velocity.z, 0, SPEED)
-
+		
 func move_top_camera(delta):
 	# Move the top camera instead of the character
 	var input_dir = Input.get_vector("left", "right", "up", "down")
 	var movement = Vector3(input_dir.x, 0, input_dir.y) * top_camera_speed * delta
 	top_camera.global_translate(movement)
-	
-	#if Input.is_action_pressed("devil_camera_up"):
-		#top_camera.global_transform.origin.y += camera_move_speed * delta
-	#elif Input.is_action_pressed("devil_camera_down"):
-		#top_camera.global_transform.origin.y -= camera_move_speed * delta
-		#
-		
 
 func switch_camera():
 	if camera == normal_camera:
@@ -111,3 +105,5 @@ func switch_camera():
 	SignalBus.emit_signal("toggle_crosshair")
 	await get_tree().process_frame  # Ensure changes take effect before continuing
 	camera.current = true
+
+# This is the method to convert the crosshair position (Vector2) to a world position (Vector3)

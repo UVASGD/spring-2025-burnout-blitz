@@ -125,7 +125,7 @@ _data = {
 "explosion": SubResource("Animation_k7cl8")
 }
 
-[node name="explosion" type="Area3D"]
+[node name="explosion" type="Area3D" groups=["explosion"]]
 transform = Transform3D(5, 0, 0, 0, 5, 0, 0, 0, 5, 0, 0, 0)
 script = ExtResource("1_dynrn")
 

@@ -112,6 +112,8 @@ skeleton = NodePath("")
 [node name="trailorigin" type="MeshInstance3D" parent="trident"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -29.5291, 0)
 script = ExtResource("2_oemcj")
+_fromWidth = 4.0
+_toWidth = 0.5
 _startColor = Color(0.958515, 0.485695, 0, 1)
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]
