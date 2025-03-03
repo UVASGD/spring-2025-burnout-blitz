@@ -1,21 +1,10 @@
-[gd_scene load_steps=29 format=4 uid="uid://cd1ipr66rv03m"]
+[gd_scene load_steps=30 format=4 uid="uid://s5cvkju8q3vd"]
 
-[ext_resource type="Script" path="res://Source/Karts/test_car.gd" id="1_uqsbg"]
-[ext_resource type="Script" path="res://Source/Karts/kart_camera.gd" id="3_2ro21"]
-[ext_resource type="Script" path="res://Source/Karts/driver_ui.gd" id="4_qpy08"]
-[ext_resource type="Script" path="res://Source/Karts/item_manager.gd" id="4_wa8w0"]
-
-[sub_resource type="Curve" id="Curve_hvsxp"]
-
-[sub_resource type="Curve" id="Curve_l6ljh"]
-max_value = 0.75
-_data = [Vector2(0.90367, 0.010989), 0.0, 0.0, 0, 0]
-point_count = 1
-
-[sub_resource type="BoxMesh" id="BoxMesh_5mmql"]
-
-[sub_resource type="BoxShape3D" id="BoxShape3D_swpoy"]
-size = Vector3(4, 2.14111, 1.5)
+[ext_resource type="Script" path="res://Source/Karts/new_old_kart_code.gd" id="1_umyah"]
+[ext_resource type="Texture2D" uid="uid://d4ostmqwgytk" path="res://Assets/Textures/particle_smoke.png" id="3_60pa1"]
+[ext_resource type="Script" path="res://Source/Karts/kart_camera.gd" id="4_1u7xl"]
+[ext_resource type="Script" path="res://Source/Karts/driver_ui.gd" id="5_adp6q"]
+[ext_resource type="Script" path="res://Source/Karts/item_manager.gd" id="6_1qoo7"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_kvki2"]
 albedo_color = Color(0, 0, 0, 1)
@@ -330,8 +319,32 @@ _surfaces = [{
 blend_shape_mode = 0
 shadow_mesh = SubResource("ArrayMesh_3bo5x")
 
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_is1fn"]
-albedo_color = Color(0.150668, 0.0441706, 0.0738868, 1)
+[sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_70e1c"]
+points = PackedVector3Array(-6.56874, -1, -1.00102, -6.56874, -0.774727, -14.6719, 6.56423, -1, -1.00102, -6.56874, -1, 0.993353, -22.8097, 0.362904, 135.384, -15.1961, 0.115103, 35.4432, -13.8118, 7.08168, -26.8768, -6.56874, -0.594508, -15.1321, 6.56423, -0.774727, -14.6719, -19.5946, 1.22457, 37.9489, -15.1961, 1.46674, 9.15836, 6.56423, -1, 0.993353, 15.1915, 0.115103, 35.4432, 22.8097, 0.362904, 135.384, -22.8097, 0.678287, 136.338, -22.8097, 0.458645, 134.838, -13.8118, 7.58292, -27.3711, 13.8072, 7.08168, -26.8768, -19.5946, 1.84971, 36.8921, 6.56423, -0.594508, -15.1321, 15.1915, 1.46674, 9.15836, 19.59, 1.22457, 37.9489, 22.8097, 0.458645, 134.838, 22.8097, 0.678287, 136.338, -22.8097, 4.97538, 145.338, -22.8097, 0.71771, 134.599, -13.8118, 9.37947, -27.3711, 13.8072, 7.58292, -27.3711, -19.5946, 4.69942, 35.5114, -19.5946, 12.4207, 33.2784, 19.59, 1.84971, 36.8921, 22.8097, 0.71771, 134.599, 22.8097, 4.97538, 145.338, -22.8097, 5.32455, 146.003, -22.8097, 20.0574, 135.435, -13.8118, 10.1792, -26.979, 13.8072, 9.37947, -27.3711, -19.5946, 13.8117, 33.6363, 19.59, 12.4207, 33.2784, 19.59, 4.69942, 35.5114, 22.8097, 20.0574, 135.435, 22.8097, 5.32455, 146.003, -22.8097, 5.84831, 146.395, -22.8097, 21.6006, 136.065, -13.8118, 13.1979, -22.5812, 13.8072, 10.1792, -26.979, 19.59, 13.8117, 33.6363, -22.8097, 21.8033, 136.321, -19.5946, 14.9212, 36.483, -13.8118, 23.1043, -4.37612, 22.8097, 21.6006, 136.065, 22.8097, 5.84831, 146.395, -22.8097, 6.47908, 146.497, -4.01896, 54.0005, 41.5968, -2.28882e-05, 54.6932, 40.7786, 13.8072, 13.1979, -22.5812, 19.59, 14.9212, 36.483, 22.8097, 21.8033, 136.321, 13.8072, 23.1043, -4.37612, -22.8097, 21.7076, 145.867, -10.3778, 51.9674, 93.3653, -19.5946, 21.5893, 74.1545, -6.95724, 52.1082, 43.8468, 22.8097, 6.47908, 146.497, -22.314, 21.6006, 146.77, -22.8097, 20.6713, 146.497, -7.69851, 55.3747, 94.5755, -5.31394, 56.5348, 94.9846, 4.01444, 54.0005, 41.5968, 5.30943, 56.5348, 94.9846, 6.95273, 52.1082, 43.8468, 10.3733, 51.9674, 93.3653, 19.59, 21.5893, 74.1545, 22.8097, 21.7076, 145.867, -22.8097, 21.3922, 146.225, -22.314, 22.2088, 146.037, -7.69851, 55.2395, 101.053, -10.3778, 51.7816, 102.11, 22.8097, 20.6713, 146.497, 22.3095, 21.6006, 146.77, -5.31394, 56.4109, 100.695, 7.694, 55.3747, 94.5755, 5.30943, 56.4109, 100.695, 7.694, 55.2395, 101.053, 10.3733, 51.7816, 102.11, 22.3095, 22.2088, 146.037, 22.8097, 21.3922, 146.225)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_fuuj3"]
+transparency = 1
+shading_mode = 0
+vertex_color_use_as_albedo = true
+albedo_color = Color(0.462745, 0.462745, 0.462745, 0.501961)
+albedo_texture = ExtResource("3_60pa1")
+billboard_mode = 3
+billboard_keep_scale = true
+particles_anim_h_frames = 1
+particles_anim_v_frames = 1
+particles_anim_loop = false
+proximity_fade_enabled = true
+proximity_fade_distance = 0.5
+
+[sub_resource type="QuadMesh" id="QuadMesh_ob8tr"]
+material = SubResource("StandardMaterial3D_fuuj3")
+
+[sub_resource type="Curve" id="Curve_wu5p6"]
+_data = [Vector2(0, 0), 0.0, 0.0, 0, 0, Vector2(1, 1), 0.0, 0.0, 0, 0]
+point_count = 2
+
+[sub_resource type="Gradient" id="Gradient_qowbe"]
+colors = PackedColorArray(1, 1, 1, 1, 1, 1, 1, 0)
 
 [sub_resource type="LabelSettings" id="LabelSettings_0wk6h"]
 outline_size = 8
@@ -519,85 +532,100 @@ _data = {
 "boost": SubResource("Animation_uxnvf")
 }
 
-[node name="Kart" type="VehicleBody3D" groups=["driver"]]
-mass = 150.0
+[node name="NewestKart" type="VehicleBody3D" groups=["driver"]]
+mass = 50.0
+gravity_scale = 4.0
 center_of_mass_mode = 1
-center_of_mass = Vector3(0, -0.1, 0)
-script = ExtResource("1_uqsbg")
-power_curve = SubResource("Curve_hvsxp")
-steering_curve = SubResource("Curve_l6ljh")
+center_of_mass = Vector3(0, 0, 1.2)
+script = ExtResource("1_umyah")
 
-[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
-transform = Transform3D(4, 0, 0, 0, 0.5, 0, 0, 0, 1.5, 0, 0, 0)
-visible = false
-mesh = SubResource("BoxMesh_5mmql")
+[node name="FrontLeft" type="VehicleWheel3D" parent="."]
+transform = Transform3D(0.75, 0, 0, 0, 0.75, 0, 0, 0, 0.75, 0.802131, -0.242188, 1.57491)
+use_as_steering = true
+wheel_roll_influence = 0.01
+wheel_radius = 0.6
+wheel_rest_length = 0.2
+wheel_friction_slip = 1.5
+suspension_stiffness = 120.0
+
+[node name="RF3" type="MeshInstance3D" parent="FrontLeft"]
+transform = Transform3D(-4.68204e-08, -0.620155, -9.36408e-08, -0.620155, 4.68204e-08, 5.42156e-08, -5.42156e-08, 9.36408e-08, -0.620155, 0.445496, 0, -0.0083456)
+material_override = SubResource("StandardMaterial3D_kvki2")
+mesh = SubResource("ArrayMesh_bj3hp")
+skeleton = NodePath("")
+
+[node name="FrontRight2" type="VehicleWheel3D" parent="."]
+transform = Transform3D(0.75, 0, 0, 0, 0.75, 0, 0, 0, 0.75, -0.802, -0.242, 1.575)
+use_as_steering = true
+wheel_roll_influence = 0.01
+wheel_radius = 0.6
+wheel_rest_length = 0.2
+wheel_friction_slip = 1.5
+suspension_stiffness = 120.0
+
+[node name="RF2" type="MeshInstance3D" parent="FrontRight2"]
+transform = Transform3D(-4.68204e-08, -0.620155, -9.36408e-08, -0.620155, 4.68204e-08, 5.42156e-08, -5.42156e-08, 9.36408e-08, -0.620155, 0.451004, -0.000250071, -0.00846887)
+material_override = SubResource("StandardMaterial3D_kvki2")
+mesh = SubResource("ArrayMesh_bj3hp")
+skeleton = NodePath("")
+
+[node name="BackLeft" type="VehicleWheel3D" parent="."]
+transform = Transform3D(0.75, 0, 0, 0, 0.75, 0, 0, 0, 0.75, 0.802, -0.242, -1.427)
+use_as_traction = true
+wheel_roll_influence = 0.01
+wheel_radius = 0.6
+wheel_rest_length = 0.2
+wheel_friction_slip = 1.0
+suspension_stiffness = 100.0
+
+[node name="RF2" type="MeshInstance3D" parent="BackLeft"]
+transform = Transform3D(-4.68204e-08, -0.620155, -9.36408e-08, -0.620155, 4.68204e-08, 5.42157e-08, -5.42156e-08, 9.36408e-08, -0.620155, 0.445671, -0.000250071, -0.00580215)
+material_override = SubResource("StandardMaterial3D_kvki2")
+mesh = SubResource("ArrayMesh_bj3hp")
+skeleton = NodePath("")
+
+[node name="BackRight" type="VehicleWheel3D" parent="."]
+transform = Transform3D(0.75, 0, 0, 0, 0.75, 0, 0, 0, 0.75, -0.802, -0.242, -1.4274)
+use_as_traction = true
+wheel_roll_influence = 0.01
+wheel_radius = 0.6
+wheel_rest_length = 0.2
+wheel_friction_slip = 1.0
+suspension_stiffness = 100.0
+
+[node name="RF" type="MeshInstance3D" parent="BackRight"]
+transform = Transform3D(-4.68204e-08, -0.620155, -9.36408e-08, -0.620155, 4.68204e-08, 5.42157e-08, -5.42156e-08, 9.36408e-08, -0.620155, 0.451004, -0.000250071, -0.00527227)
+material_override = SubResource("StandardMaterial3D_kvki2")
+mesh = SubResource("ArrayMesh_bj3hp")
+skeleton = NodePath("")
+
+[node name="Cube_001" type="MeshInstance3D" parent="." groups=["driver"]]
+transform = Transform3D(-0.03, 0, 2.62268e-09, 0, 0.03, 0, -2.62268e-09, 0, -0.03, -8.74228e-08, -0.242188, 2.06865)
+mesh = SubResource("ArrayMesh_anp51")
+skeleton = NodePath("")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.06643, 0)
-shape = SubResource("BoxShape3D_swpoy")
+transform = Transform3D(-0.03, 0, 2.62268e-09, 0, 0.03, 0, -2.62268e-09, 0, -0.03, -8.74228e-08, -0.242188, 2.06865)
+shape = SubResource("ConvexPolygonShape3D_70e1c")
 
-[node name="front_left" type="VehicleWheel3D" parent="."]
-transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 1.5, 0, -0.8)
-use_as_traction = true
-use_as_steering = true
-suspension_stiffness = 50.0
-
-[node name="RF3" type="MeshInstance3D" parent="front_left"]
-transform = Transform3D(-3.51153e-08, -0.465116, -7.02306e-08, -0.465116, 3.51153e-08, 4.06617e-08, -4.06617e-08, 7.02306e-08, -0.465116, 0.336253, 0, 0)
-material_override = SubResource("StandardMaterial3D_kvki2")
-mesh = SubResource("ArrayMesh_bj3hp")
-skeleton = NodePath("")
-
-[node name="front_right" type="VehicleWheel3D" parent="."]
-transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 1.5, 0, 0.8)
-use_as_traction = true
-use_as_steering = true
-suspension_stiffness = 50.0
-
-[node name="RF2" type="MeshInstance3D" parent="front_right"]
-transform = Transform3D(-3.51153e-08, -0.465116, -7.02306e-08, -0.465116, 3.51153e-08, 4.06617e-08, -4.06617e-08, 7.02306e-08, -0.465116, 0.336253, 0, 0)
-material_override = SubResource("StandardMaterial3D_kvki2")
-mesh = SubResource("ArrayMesh_bj3hp")
-skeleton = NodePath("")
-
-[node name="back_left" type="VehicleWheel3D" parent="."]
-transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -1.5, 0, -0.8)
-use_as_traction = true
-wheel_friction_slip = 21.0
-suspension_stiffness = 50.0
-
-[node name="RF2" type="MeshInstance3D" parent="back_left"]
-transform = Transform3D(-3.51153e-08, -0.465116, -7.02306e-08, -0.465116, 3.51153e-08, 4.06618e-08, -4.06617e-08, 7.02306e-08, -0.465116, 0.336253, 0, 0)
-material_override = SubResource("StandardMaterial3D_kvki2")
-mesh = SubResource("ArrayMesh_bj3hp")
-skeleton = NodePath("")
-
-[node name="back_right" type="VehicleWheel3D" parent="."]
-transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -1.5, 0, 0.8)
-use_as_traction = true
-wheel_friction_slip = 21.0
-suspension_stiffness = 50.0
-
-[node name="RF" type="MeshInstance3D" parent="back_right"]
-transform = Transform3D(-3.51153e-08, -0.465116, -7.02306e-08, -0.465116, 3.51153e-08, 4.06618e-08, -4.06617e-08, 7.02306e-08, -0.465116, 0.336253, 0, 0)
-material_override = SubResource("StandardMaterial3D_kvki2")
-mesh = SubResource("ArrayMesh_bj3hp")
-skeleton = NodePath("")
-
-[node name="Cube_001" type="MeshInstance3D" parent="."]
-transform = Transform3D(-1.31134e-09, 0, -0.03, 0, 0.03, 0, 0.03, 0, -1.31134e-09, 2, 0, 0)
-mesh = SubResource("ArrayMesh_anp51")
-skeleton = NodePath("")
-
-[node name="Cube_002" type="MeshInstance3D" parent="."]
-transform = Transform3D(-1.31134e-09, 0, -0.03, 0, 0.03, 0, 0.03, 0, -1.31134e-09, 2, 0, 0)
-material_override = SubResource("StandardMaterial3D_is1fn")
-mesh = SubResource("ArrayMesh_anp51")
-skeleton = NodePath("")
+[node name="CPUParticles3D" type="CPUParticles3D" parent="."]
+transform = Transform3D(0.75, 0, 0, 0, 0.75, 0, 0, 0, 0.75, 0.151272, -0.107174, -2.18309)
+amount = 125
+lifetime = 1.25
+mesh = SubResource("QuadMesh_ob8tr")
+direction = Vector3(0, 1, -0.5)
+gravity = Vector3(0, 0, 0)
+initial_velocity_min = 1.0
+initial_velocity_max = 1.0
+damping_min = 0.05
+damping_max = 0.05
+angle_max = 360.0
+scale_amount_curve = SubResource("Curve_wu5p6")
+color_ramp = SubResource("Gradient_qowbe")
 
 [node name="Node3D" type="Node3D" parent="."]
-visible = false
-script = ExtResource("3_2ro21")
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 0, -0.242188, 0.0686483)
+script = ExtResource("4_1u7xl")
 
 [node name="Camera3D" type="Camera3D" parent="Node3D"]
 transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -6.49116, 2.79808, 0)
@@ -607,7 +635,7 @@ layout_mode = 3
 anchors_preset = 0
 offset_right = 40.0
 offset_bottom = 40.0
-script = ExtResource("4_qpy08")
+script = ExtResource("5_adp6q")
 
 [node name="Label" type="Label" parent="Node3D/Camera3D/Control"]
 modulate = Color(0, 0, 0, 1)
@@ -653,11 +681,12 @@ offset_bottom = 147.0
 label_settings = SubResource("LabelSettings_0wk6h")
 
 [node name="item_manager" type="Node3D" parent="."]
-script = ExtResource("4_wa8w0")
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 0, -0.242188, 0.0686483)
+script = ExtResource("6_1qoo7")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="item_manager"]
 unique_name_in_owner = true
-root_node = NodePath("../..")
+root_node = NodePath("")
 libraries = {
 "": SubResource("AnimationLibrary_57bev")
 }

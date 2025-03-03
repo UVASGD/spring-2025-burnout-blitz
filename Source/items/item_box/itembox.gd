@@ -23,7 +23,7 @@ func _on_area_3d_body_entered(body):
 			despawn_player.play("despawn")
 			SignalBus.emit_signal("driver_item_taken")
 			regen_timer.start()
-		if body.is_in_group("devil"):
+		if body.is_in_group("devil") and body is CharacterBody3D:
 			item_available = false
 			despawn_player.play("despawn")
 			SignalBus.emit_signal("devil_item_taken")
