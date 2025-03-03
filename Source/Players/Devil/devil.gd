@@ -20,9 +20,9 @@ var gravity = ProjectSettings.get_setting("physics/3d/default_gravity")
 
 @export var camera_move_speed:int = 2
 
-var top_camera_active = false
-var top_camera_speed = 10.0  # Speed for moving the top camera
-var top_camera_offset = Vector3(0, 10, 0)  # Raise the camera above the player
+var top_camera_active:bool = false
+@export var top_camera_speed:float = 50.0  # Speed for moving the top camera
+var top_camera_offset:Vector3 = Vector3(0, 100, 0)  # Raise the camera above the player
 
 func _ready():
 	# Lock and hide the mouse
@@ -101,12 +101,13 @@ func switch_camera():
 		camera = top_camera
 		top_camera_active = true
 		Input.mouse_mode = Input.MOUSE_MODE_VISIBLE
+		velocity = Vector3.ZERO
 	else:
 		camera = normal_camera
 		top_camera_active = false
 		# Reset top camera position
 		top_camera.global_transform.origin = global_transform.origin
 		Input.mouse_mode = Input.MOUSE_MODE_CAPTURED
-	
+	SignalBus.emit_signal("toggle_crosshair")
 	await get_tree().process_frame  # Ensure changes take effect before continuing
 	camera.current = true

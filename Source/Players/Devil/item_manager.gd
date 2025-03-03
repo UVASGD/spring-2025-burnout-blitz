@@ -2,9 +2,9 @@ extends Node3D
 class_name DevilItemManager
 
 @onready var boost = preload("res://Source/items/driver_items/boost.tscn")
-@onready var missile = preload("res://Source/items/devil_items/missile/missile.tscn")
+@onready var trident = preload("res://Source/items/devil_items/trident/trident.tscn")
 
-var all_items:Array[String] = ["boost","missile"]
+var all_items:Array[String] = ["boost","trident"]
 func _ready():
 	SignalBus.connect("devil_giving_item", insert_item)
 
@@ -17,8 +17,8 @@ func insert_item(item_name:String):
 				add_child(item)
 				#$".".get_child(1).hide()
 				item.global_transform.origin = self.global_transform.origin
-			"missile":
-				item = missile.instantiate()
+			"trident":
+				item = trident.instantiate()
 				add_child(item)
 				item.global_transform.origin = self.global_transform.origin
 
