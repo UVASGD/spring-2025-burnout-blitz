@@ -265,9 +265,9 @@ skeleton = NodePath("")
 transform = Transform3D(20, 0, 0, 0, 20, 0, 0, 0, 20, 0, -87.5138, 0)
 skeleton = NodePath("../..")
 script = ExtResource("2_cvu1g")
-_fromWidth = 6.0
+_fromWidth = 3.0
 _toWidth = 0.5
-_startColor = Color(5, 1, 0, 1)
+_startColor = Color(0.997, 0.446533, 0.378, 1)
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
 transform = Transform3D(-4.37114e-08, 4.37114e-08, -1, 1, 0, -4.37114e-08, 0, -1, -4.37114e-08, -0.00848389, -0.229736, 0.00439453)
