@@ -15,6 +15,7 @@ func _ready():
 	num_laps_left = num_laps
 	SignalBus.emit_signal("update_laps_left", str(num_laps_left))
 	SignalBus.connect("driver_item_taken", give_driver_item)
+	SignalBus.connect("devil_item_taken", give_devil_item)
 	SignalBus.connect("update_checkpoint", add_checkpoint)
 	
 	
@@ -31,6 +32,7 @@ func give_driver_item():
 func add_checkpoint(nm):
 	if nm not in checkpoints_array and len(checkpoints_array) < num_checkpoints:
 		checkpoints_array.append(nm)
+		print(str(len(checkpoints_array)) + "checkpoints achieved!")
 	elif len(checkpoints_array) == num_checkpoints and num_laps_left > 0:
 		num_laps_left -= 1
 		print(str(num_laps_left) +  "laps left!")
