@@ -465,7 +465,7 @@ stretch = true
 [node name="left_side" type="SubViewport" parent="GridContainer/SubViewportContainer" index="0"]
 unique_name_in_owner = true
 handle_input_locally = false
-size = Vector2i(574, 648)
+size = Vector2i(958, 1080)
 render_target_update_mode = 4
 
 [node name="Kart" parent="GridContainer/SubViewportContainer/left_side" index="0" instance=ExtResource("3_umgwh")]
@@ -482,7 +482,7 @@ stretch = true
 [node name="right_side" type="SubViewport" parent="GridContainer/SubViewportContainer2" index="0"]
 unique_name_in_owner = true
 handle_input_locally = false
-size = Vector2i(574, 648)
+size = Vector2i(958, 1080)
 render_target_update_mode = 4
 
 [node name="Devil" parent="GridContainer/SubViewportContainer2/right_side" index="0" instance=ExtResource("4_jrfvc")]
