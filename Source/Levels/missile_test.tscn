@@ -433,7 +433,7 @@ blend_shape_mode = 0
 shadow_mesh = SubResource("ArrayMesh_arcdx")
 
 [node name="LevelExample" instance=ExtResource("1_ivy8x")]
-driver_items_on_map = Array[String](["boost"])
+driver_items_on_map = Array[String](["shield"])
 devil_items_on_map = Array[String](["missile", "trident"])
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="." index="0"]
@@ -649,7 +649,7 @@ transform = Transform3D(41.9083, 0, -27.2707, 0, 50, 0, 27.2707, 0, 41.9083, 774
 script = ExtResource("13_7ql34")
 
 [node name="Plane" type="MeshInstance3D" parent="warship4" index="0"]
-transform = Transform3D(3.61021e-06, 0.997296, -0.0734463, 1, -3.61998e-06, 0, -2.65876e-07, -0.0734463, -0.997296, 0, 0, 0)
+transform = Transform3D(3.61021e-06, 0.997295, -0.0734462, 1, -3.61997e-06, 0, -2.65876e-07, -0.0734462, -0.997295, 0, 0, 0)
 material_override = SubResource("ShaderMaterial_jange")
 mesh = SubResource("ArrayMesh_wdtin")
 skeleton = NodePath("")
