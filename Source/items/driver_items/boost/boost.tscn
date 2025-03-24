@@ -1,20 +1,20 @@
 [gd_scene load_steps=5 format=3 uid="uid://bcd6j1u4xwaau"]
 
-[ext_resource type="Script" path="res://Source/Karts/boost.gd" id="1_tp4wm"]
-[ext_resource type="Shader" uid="uid://e67ccuhnce2t" path="res://Assets/shaders/visual_shader_test.tres" id="2_6mhp8"]
+[ext_resource type="Script" path="res://Source/items/driver_items/boost/boost.gd" id="1_mkj3t"]
+[ext_resource type="Shader" uid="uid://e67ccuhnce2t" path="res://Assets/shaders/visual_shader_test.tres" id="2_1k3yo"]
 
 [sub_resource type="BoxMesh" id="BoxMesh_5watk"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_c43kn"]
 render_priority = 0
-shader = ExtResource("2_6mhp8")
+shader = ExtResource("2_1k3yo")
 shader_parameter/ColorParameter = Color(0.226707, 0.226707, 0.226707, 1)
 shader_parameter/Strength = 2.0
 shader_parameter/LightColor = Color(5, 0.298, 0.236, 1)
 shader_parameter/FloatParameter = 0.375
 
 [node name="boost" type="Node3D"]
-script = ExtResource("1_tp4wm")
+script = ExtResource("1_mkj3t")
 item_name = "boost"
 animation_name = "boost"
 
