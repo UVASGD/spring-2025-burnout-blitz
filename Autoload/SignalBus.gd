@@ -10,6 +10,7 @@ signal out_of_bounds
 signal driver_change_invul
 
 signal update_checkpoint(name:String)
+signal revert_checkpoints
 
 signal update_laps_left(laps_left:String)
 

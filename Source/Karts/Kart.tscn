@@ -550,7 +550,7 @@ _data = {
 }
 
 [node name="Kart" type="VehicleBody3D" groups=["driver"]]
-mass = 150.0
+mass = 200.0
 center_of_mass_mode = 1
 center_of_mass = Vector3(0, -0.1, 0)
 script = ExtResource("1_uqsbg")
