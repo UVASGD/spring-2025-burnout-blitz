@@ -37,6 +37,7 @@ func add_checkpoint(nm):
 		num_laps_left -= 1
 		print(str(num_laps_left) +  "laps left!")
 		SignalBus.emit_signal("update_laps_left", str(num_laps_left))
+		SignalBus.emit_signal("revert_checkpoints")
 		checkpoints_array = []
 
 #func has_passed_all_checkpoints(checkpoints:Array[Node3D]):
