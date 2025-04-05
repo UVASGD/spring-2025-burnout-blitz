@@ -82,7 +82,7 @@ blend_shape_mode = 0
 shadow_mesh = SubResource("ArrayMesh_oveuf")
 
 [node name="missile_instance" type="Area3D"]
-transform = Transform3D(1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 0, 0)
+transform = Transform3D(2, 0, 0, 0, -8.74228e-08, -2, 0, 2, -8.74228e-08, 0, 0, 0)
 script = ExtResource("1_skixg")
 explosion_force_amount = 50
 
