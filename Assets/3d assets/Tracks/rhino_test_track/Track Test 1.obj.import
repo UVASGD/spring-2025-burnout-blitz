@@ -1,0 +1,22 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://cd46g8i2qe1b1"
+path="res://.godot/imported/Track Test 1.obj-79c5833ed8272a0edbce2f105ff03914.mesh"
+
+[deps]
+
+files=["res://.godot/imported/Track Test 1.obj-79c5833ed8272a0edbce2f105ff03914.mesh"]
+
+source_file="res://Assets/3d assets/Tracks/rhino_test_track/Track Test 1.obj"
+dest_files=["res://.godot/imported/Track Test 1.obj-79c5833ed8272a0edbce2f105ff03914.mesh", "res://.godot/imported/Track Test 1.obj-79c5833ed8272a0edbce2f105ff03914.mesh"]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+optimize_mesh=true
+force_disable_mesh_compression=false
