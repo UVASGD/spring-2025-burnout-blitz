@@ -8,3 +8,6 @@ func use():
 
 func play_animation(animation_name):
 	SignalBus.emit_signal("driver_play_animation", animation_name)
+
+func play_animation_backwards(animation_name):
+	SignalBus.emit_signal("driver_play_animation_backwards", animation_name)
