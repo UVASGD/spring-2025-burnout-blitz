@@ -1,7 +1,7 @@
 extends Node3D
 class_name DevilItemManager
 
-@onready var boost = preload("res://Source/items/driver_items/boost.tscn")
+@onready var boost = preload("res://Source/items/driver_items/boost/boost.tscn")
 @onready var trident = preload("res://Source/items/devil_items/trident/trident.tscn")
 @onready var missile = preload("res://Source/items/devil_items/missile/missile.tscn")
 
