@@ -30,6 +30,8 @@ func give_driver_item():
 		print("giving item: " + random_item_name)
 
 func add_checkpoint(nm):
+	if num_laps_left <= 0:
+		SignalBus.emit_signal("end_track")
 	if nm not in checkpoints_array and len(checkpoints_array) < num_checkpoints:
 		checkpoints_array.append(nm)
 		print(str(len(checkpoints_array)) + "checkpoints achieved!")
