@@ -30,8 +30,9 @@ func give_driver_item():
 		print("giving item: " + random_item_name)
 
 func add_checkpoint(nm):
-	if num_laps_left <= 0:
-		SignalBus.emit_signal("end_track")
+	#if num_laps_left <= 0:
+		#print("ending track")
+		#SignalBus.emit_signal("end_track")
 	if nm not in checkpoints_array and len(checkpoints_array) < num_checkpoints:
 		checkpoints_array.append(nm)
 		print(str(len(checkpoints_array)) + "checkpoints achieved!")
@@ -41,6 +42,10 @@ func add_checkpoint(nm):
 		SignalBus.emit_signal("update_laps_left", str(num_laps_left))
 		SignalBus.emit_signal("revert_checkpoints")
 		checkpoints_array = []
+		
+		if num_laps_left <= 0:
+			print("ending track")
+			SignalBus.emit_signal("end_track")
 
 #func has_passed_all_checkpoints(checkpoints:Array[Node3D]):
 	#for checkpoint in checkpoints:

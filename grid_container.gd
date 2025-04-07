@@ -19,6 +19,7 @@ func _ready():
 	$".".add_theme_constant_override("h_separation", 0)
 
 func end_game():
+	Engine.time_scale = 0.05
 	%SubViewportContainer.visible = false
 	%SubViewportContainer2.visible = false
 	end_lap.visible = true
