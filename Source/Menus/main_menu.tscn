@@ -40,7 +40,7 @@ fit_content = true
 scroll_active = false
 autowrap_mode = 0
 
-[node name="Button" type="Button" parent="Control"]
+[node name="Versus" type="Button" parent="Control"]
 layout_mode = 0
 offset_left = 463.0
 offset_top = 248.0
@@ -51,7 +51,7 @@ theme_override_fonts/font = ExtResource("2_cw1h7")
 theme_override_font_sizes/font_size = 31
 text = "Versus"
 
-[node name="Button3" type="Button" parent="Control"]
+[node name="TimeTrials" type="Button" parent="Control"]
 layout_mode = 0
 offset_left = 463.0
 offset_top = 342.0
@@ -62,7 +62,7 @@ theme_override_fonts/font = ExtResource("2_cw1h7")
 theme_override_font_sizes/font_size = 31
 text = "Time Trials"
 
-[node name="Button4" type="Button" parent="Control"]
+[node name="Tutorial" type="Button" parent="Control"]
 layout_mode = 0
 offset_left = 465.0
 offset_top = 433.0
@@ -72,4 +72,5 @@ theme_override_fonts/font = ExtResource("2_cw1h7")
 theme_override_font_sizes/font_size = 31
 text = "Tutorial"
 
-[connection signal="pressed" from="Control/Button" to="." method="_on_button_pressed"]
+[connection signal="pressed" from="Control/Versus" to="." method="_on_versus_pressed"]
+[connection signal="pressed" from="Control/TimeTrials" to="." method="_on_time_trials_pressed"]

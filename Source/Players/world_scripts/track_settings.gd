@@ -1,6 +1,10 @@
 extends Node3D
 class_name track_settings 
 
+@onready var game_container = self.get_parent()
+
+
+@export var is_versus:bool = true
 @export var num_laps:int = 3
 @export var driver_items_on_map:Array[String] = []
 @export var devil_items_on_map:Array[String] = []
@@ -17,6 +21,7 @@ func _ready():
 	SignalBus.connect("driver_item_taken", give_driver_item)
 	SignalBus.connect("devil_item_taken", give_devil_item)
 	SignalBus.connect("update_checkpoint", add_checkpoint)
+	SignalBus.connect("back_to_menu", back_to_menu)
 	
 	
 func initialize_num_checkpoints(checkpoints:Node3D):
@@ -71,3 +76,13 @@ func give_devil_item():
 	#
 	#
 	#
+ 
+func back_to_menu():
+	match is_versus:
+		true:
+			await game_container.spawn_main_menu()
+			queue_free()
+
+		false:
+			pass
+	
