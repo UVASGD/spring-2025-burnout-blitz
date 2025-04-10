@@ -40,13 +40,37 @@ fit_content = true
 scroll_active = false
 autowrap_mode = 0
 
-[node name="Button" type="Button" parent="Control"]
+[node name="Versus" type="Button" parent="Control"]
 layout_mode = 0
-offset_left = 508.0
-offset_top = 269.0
-offset_right = 607.0
-offset_bottom = 316.0
+offset_left = 463.0
+offset_top = 248.0
+offset_right = 648.0
+offset_bottom = 331.0
+theme_override_colors/font_color = Color(0.965998, 0, 0.337831, 1)
 theme_override_fonts/font = ExtResource("2_cw1h7")
-text = "Play"
+theme_override_font_sizes/font_size = 31
+text = "Versus"
 
-[connection signal="pressed" from="Control/Button" to="." method="_on_button_pressed"]
+[node name="TimeTrials" type="Button" parent="Control"]
+layout_mode = 0
+offset_left = 463.0
+offset_top = 342.0
+offset_right = 647.0
+offset_bottom = 425.0
+theme_override_colors/font_color = Color(0.616435, 0.794752, 0.908539, 1)
+theme_override_fonts/font = ExtResource("2_cw1h7")
+theme_override_font_sizes/font_size = 31
+text = "Time Trials"
+
+[node name="Tutorial" type="Button" parent="Control"]
+layout_mode = 0
+offset_left = 465.0
+offset_top = 433.0
+offset_right = 649.0
+offset_bottom = 516.0
+theme_override_fonts/font = ExtResource("2_cw1h7")
+theme_override_font_sizes/font_size = 31
+text = "Tutorial"
+
+[connection signal="pressed" from="Control/Versus" to="." method="_on_versus_pressed"]
+[connection signal="pressed" from="Control/TimeTrials" to="." method="_on_time_trials_pressed"]

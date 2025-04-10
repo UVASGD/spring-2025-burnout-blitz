@@ -21,5 +21,7 @@ signal devil_item_taken
 signal devil_giving_item
 signal clear_devil_item
 signal devil_play_animation
-
 signal toggle_crosshair
+
+# Menu Signals
+signal back_to_menu

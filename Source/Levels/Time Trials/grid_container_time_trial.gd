@@ -13,10 +13,9 @@ func _ready():
 	right_side.handle_input_locally = true
 
 	%SubViewportContainer.visible = true
-	%SubViewportContainer2.visible = true
+	%SubViewportContainer2.visible = false
 	end_lap.visible = false
 	#end_lap.stretch = true
-	$".".add_theme_constant_override("h_separation", 0)
 
 func end_game():
 	Engine.time_scale = 0.05

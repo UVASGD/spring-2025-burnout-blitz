@@ -1,4 +1,4 @@
-[gd_scene load_steps=20 format=4 uid="uid://onxc0n3pblmf"]
+[gd_scene load_steps=23 format=4 uid="uid://onxc0n3pblmf"]
 
 [ext_resource type="Script" path="res://Source/Players/Devil/devil.gd" id="1_rmkk6"]
 [ext_resource type="Script" path="res://Source/Players/Devil/control.gd" id="2_4eiw5"]
@@ -84,8 +84,8 @@ _surfaces = [{
 blend_shape_mode = 0
 shadow_mesh = SubResource("ArrayMesh_64edp")
 
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_cha6c"]
-albedo_color = Color(23.784, 0.077, 0.051, 1)
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ipws5"]
+albedo_color = Color(100, 0.068, 0.042, 1)
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ysbqi"]
 
@@ -119,6 +119,116 @@ _surfaces = [{
 }]
 blend_shape_mode = 0
 shadow_mesh = SubResource("ArrayMesh_rptw7")
+
+[sub_resource type="Animation" id="Animation_lixka"]
+resource_name = "sigil_spawn"
+length = 0.25
+step = 0.01
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("head/Node3D/Center:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.03, 0.25),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector3(0, 0, 0), Vector3(0, 0, 3.14159), Vector3(0, 0, 6.28319)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("head/Node3D/Center:scale")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.03, 0.25),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector3(0.25, 0.25, 0.25), Vector3(0.625, 0.625, 0.625), Vector3(1, 1, 1)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("head/Node3D/Center:visible")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("head/Node3D/Center/Sigil:transparency")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0, 0.25),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [1.0, 0.0]
+}
+
+[sub_resource type="Animation" id="Animation_eiyie"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("head/Node3D/Center:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(0, 0, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("head/Node3D/Center:scale")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(0.25, 0.25, 0.25)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("head/Node3D/Center:visible")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("head/Node3D/Center/Sigil:transparency")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_yj1rg"]
+_data = {
+"RESET": SubResource("Animation_eiyie"),
+"sigil_spawn": SubResource("Animation_lixka")
+}
 
 [node name="Devil" type="CharacterBody3D" groups=["devil", "enemy"]]
 script = ExtResource("1_rmkk6")
@@ -199,13 +309,18 @@ transform = Transform3D(1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 0, 
 [node name="Node3D" type="Node3D" parent="head" groups=["devil_head"]]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.47592, 0)
 
-[node name="Sigil" type="MeshInstance3D" parent="head/Node3D"]
-transform = Transform3D(0.05, 0, 0, 0, -2.18557e-09, -0.05, 0, 0.05, -2.18557e-09, -1.58734, -5.68754, -1.40384e-07)
-material_override = SubResource("StandardMaterial3D_cha6c")
+[node name="Center" type="Node3D" parent="head/Node3D"]
+transform = Transform3D(0.25, 0, 0, 0, 0.25, 0, 0, 0, 0.25, 0, 0.412, -0.004)
+visible = false
+
+[node name="Sigil" type="MeshInstance3D" parent="head/Node3D/Center"]
+transform = Transform3D(0.05, 0, 0, 0, -2.18557e-09, -0.05, 0, 0.05, -2.18557e-09, -1.6, -6.1, 0)
+material_override = SubResource("StandardMaterial3D_ipws5")
 mesh = SubResource("ArrayMesh_1orw3")
 skeleton = NodePath("")
 
 [node name="item_manager" type="Node3D" parent="."]
+unique_name_in_owner = true
 script = ExtResource("2_8cq1q")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="item_manager"]
@@ -214,4 +329,8 @@ script = ExtResource("2_8cq1q")
 unique_name_in_owner = true
 transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 32.365, -1.41472e-06)
 
-[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+[node name="sigil_anim_player" type="AnimationPlayer" parent="."]
+unique_name_in_owner = true
+libraries = {
+"": SubResource("AnimationLibrary_yj1rg")
+}
