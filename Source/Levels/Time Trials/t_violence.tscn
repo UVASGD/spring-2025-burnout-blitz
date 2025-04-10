@@ -1,22 +1,22 @@
-[gd_scene load_steps=68 format=4 uid="uid://bjmr0w5p6jbo2"]
+[gd_scene load_steps=68 format=4 uid="uid://derr7r4qllg24"]
 
-[ext_resource type="PackedScene" uid="uid://ct7oupewt4kt4" path="res://Source/Levels/level_template.tscn" id="1_ivy8x"]
-[ext_resource type="Script" path="res://grid_container.gd" id="2_aunsw"]
-[ext_resource type="PackedScene" uid="uid://cd1ipr66rv03m" path="res://Source/Karts/Kart.tscn" id="3_umgwh"]
-[ext_resource type="PackedScene" uid="uid://onxc0n3pblmf" path="res://Source/Players/Devil/devil.tscn" id="4_jrfvc"]
-[ext_resource type="Script" path="res://Source/Players/Devil/crosshair.gd" id="5_u5o4k"]
-[ext_resource type="Shader" uid="uid://e67ccuhnce2t" path="res://Assets/shaders/visual_shader_test.tres" id="6_j6h6n"]
-[ext_resource type="PackedScene" uid="uid://8tqcf7iv1oeu" path="res://Source/items/spawner/spawner.tscn" id="7_d06vt"]
-[ext_resource type="PackedScene" uid="uid://b26f7wpiumuqe" path="res://Assets/3d assets/models/cannon.tscn" id="7_jy416"]
-[ext_resource type="Script" path="res://Source/Levels/out_of_bounds.gd" id="8_p783o"]
-[ext_resource type="Shader" path="res://Source/Levels/new_water.gdshader" id="8_psss3"]
-[ext_resource type="PackedScene" uid="uid://y002h5o1oxy6" path="res://Assets/3d assets/checkpoints/checkpoint.tscn" id="9_fdibe"]
-[ext_resource type="PackedScene" uid="uid://3x70mkghl8em" path="res://Assets/3d assets/models/water.tscn" id="10_tlht5"]
-[ext_resource type="Script" path="res://Source/Levels/warship.gd" id="11_cseun"]
-[ext_resource type="Script" path="res://Source/Levels/warship_4.gd" id="13_7ql34"]
-[ext_resource type="PackedScene" uid="uid://b7io2x7qv10pf" path="res://Assets/3d assets/models/pirate_ship.tscn" id="16_wso1f"]
-[ext_resource type="PackedScene" uid="uid://ct1ay4r4amdto" path="res://Assets/3d assets/destructable_models/breakable_column.tscn" id="17_q8jq1"]
-[ext_resource type="AudioStream" uid="uid://cnmsliqgvtq52" path="res://Assets/Audio/underthewater.mp3" id="18_12i3g"]
+[ext_resource type="PackedScene" uid="uid://ct7oupewt4kt4" path="res://Source/Levels/level_template.tscn" id="1_q0tef"]
+[ext_resource type="Script" path="res://Source/Levels/Time Trials/grid_container_time_trial.gd" id="2_p0vcn"]
+[ext_resource type="PackedScene" uid="uid://cd1ipr66rv03m" path="res://Source/Karts/Kart.tscn" id="3_2ksde"]
+[ext_resource type="PackedScene" uid="uid://onxc0n3pblmf" path="res://Source/Players/Devil/devil.tscn" id="4_vd1an"]
+[ext_resource type="Script" path="res://Source/Players/Devil/crosshair.gd" id="5_2klmh"]
+[ext_resource type="PackedScene" uid="uid://8tqcf7iv1oeu" path="res://Source/items/spawner/spawner.tscn" id="6_f2cyr"]
+[ext_resource type="PackedScene" uid="uid://b26f7wpiumuqe" path="res://Assets/3d assets/models/cannon.tscn" id="7_vic1m"]
+[ext_resource type="Script" path="res://Source/Levels/out_of_bounds.gd" id="8_2t2of"]
+[ext_resource type="PackedScene" uid="uid://y002h5o1oxy6" path="res://Assets/3d assets/checkpoints/checkpoint.tscn" id="9_5ehr6"]
+[ext_resource type="Script" path="res://Source/Levels/warship.gd" id="10_vmmk2"]
+[ext_resource type="Shader" uid="uid://e67ccuhnce2t" path="res://Assets/shaders/visual_shader_test.tres" id="11_4u4o0"]
+[ext_resource type="Script" path="res://Source/Levels/warship_4.gd" id="12_77i8g"]
+[ext_resource type="PackedScene" uid="uid://3x70mkghl8em" path="res://Assets/3d assets/models/water.tscn" id="13_h2a7s"]
+[ext_resource type="Shader" path="res://Source/Levels/new_water.gdshader" id="14_b0gg4"]
+[ext_resource type="PackedScene" uid="uid://b7io2x7qv10pf" path="res://Assets/3d assets/models/pirate_ship.tscn" id="15_5cbhu"]
+[ext_resource type="PackedScene" uid="uid://ct1ay4r4amdto" path="res://Assets/3d assets/destructable_models/breakable_column.tscn" id="16_gu8f2"]
+[ext_resource type="AudioStream" uid="uid://cnmsliqgvtq52" path="res://Assets/Audio/underthewater.mp3" id="17_kna8u"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_tos7i"]
 sky_top_color = Color(0.819444, 0.8802, 1, 1)
@@ -221,7 +221,7 @@ data = PackedVector3Array(0, 0.5, 0.5, 3.2875, -0.5, 0.5, -3.2875, -0.5, 0.5, 0,
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_jange"]
 resource_local_to_scene = true
 render_priority = 0
-shader = ExtResource("6_j6h6n")
+shader = ExtResource("11_4u4o0")
 shader_parameter/ColorParameter = Color(0.226707, 0.226707, 0.226707, 1)
 shader_parameter/Strength = 2.0
 shader_parameter/LightColor = Color(5, 0.298, 0.236, 1)
@@ -416,7 +416,7 @@ noise = SubResource("FastNoiseLite_gm4kg")
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_p4cu8"]
 render_priority = 0
-shader = ExtResource("8_psss3")
+shader = ExtResource("14_b0gg4")
 shader_parameter/water_color = Color(0.322336, 0.616324, 1, 1)
 shader_parameter/uv_scale = 2.0
 shader_parameter/time_scale = 0.25
@@ -541,10 +541,9 @@ _surfaces = [{
 blend_shape_mode = 0
 shadow_mesh = SubResource("ArrayMesh_arcdx")
 
-[node name="LevelExample" instance=ExtResource("1_ivy8x")]
+[node name="LevelExample" instance=ExtResource("1_q0tef")]
 num_laps = 1
-driver_items_on_map = Array[String](["shield"])
-devil_items_on_map = Array[String](["missile", "trident"])
+driver_items_on_map = Array[String](["boost"])
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="." index="0"]
 environment = SubResource("Environment_x6786")
@@ -561,12 +560,10 @@ grow_horizontal = 2
 grow_vertical = 2
 size_flags_horizontal = 4
 size_flags_vertical = 4
-columns = 2
-script = ExtResource("2_aunsw")
+script = ExtResource("2_p0vcn")
 
 [node name="SubViewportContainer" type="SubViewportContainer" parent="GridContainer" index="0"]
 unique_name_in_owner = true
-visible = false
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
@@ -577,9 +574,9 @@ stretch = true
 unique_name_in_owner = true
 handle_input_locally = false
 size = Vector2i(2, 2)
-render_target_update_mode = 0
+render_target_update_mode = 4
 
-[node name="Kart" parent="GridContainer/SubViewportContainer/left_side" index="0" instance=ExtResource("3_umgwh")]
+[node name="Kart" parent="GridContainer/SubViewportContainer/left_side" index="0" instance=ExtResource("3_2ksde")]
 unique_name_in_owner = true
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 14.5951, -156.855, -180.198)
 
@@ -597,7 +594,7 @@ handle_input_locally = false
 size = Vector2i(2, 2)
 render_target_update_mode = 0
 
-[node name="Devil" parent="GridContainer/SubViewportContainer2/right_side" index="0" instance=ExtResource("4_jrfvc")]
+[node name="Devil" parent="GridContainer/SubViewportContainer2/right_side" index="0" instance=ExtResource("4_vd1an")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.10319, -106.637, -1.46951)
 
 [node name="CenterContainer" type="CenterContainer" parent="GridContainer/SubViewportContainer2/right_side" index="1"]
@@ -613,21 +610,23 @@ offset_right = 20.0
 offset_bottom = 20.0
 grow_horizontal = 2
 grow_vertical = 2
-script = ExtResource("5_u5o4k")
+script = ExtResource("5_2klmh")
 
 [node name="Camera3D" type="Camera3D" parent="GridContainer/SubViewportContainer2/right_side" index="2"]
 
 [node name="end_lap" type="SubViewportContainer" parent="GridContainer" index="2"]
 unique_name_in_owner = true
+visible = false
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
+stretch = true
 
 [node name="end_lap_sub_viewport" type="SubViewport" parent="GridContainer/end_lap" index="0"]
 unique_name_in_owner = true
 handle_input_locally = false
-size = Vector2i(1920, 1080)
-render_target_update_mode = 4
+size = Vector2i(2, 2)
+render_target_update_mode = 0
 
 [node name="Camera" type="Node3D" parent="GridContainer/end_lap/end_lap_sub_viewport" index="0"]
 transform = Transform3D(0.9, 0, 0, 0, 0.893678, -0.106486, 0, 0.106486, 0.893678, 46.5975, -159.639, -180.997)
@@ -654,13 +653,13 @@ skeleton = NodePath("")
 transform = Transform3D(1, 0, 1.42109e-14, 0, 1, 0, -1.42109e-14, 0, 1, 0, 0, 0)
 shape = SubResource("ConcavePolygonShape3D_1nvpf")
 
-[node name="Spawner2" parent="." index="4" instance=ExtResource("7_d06vt")]
+[node name="Spawner2" parent="." index="4" instance=ExtResource("6_f2cyr")]
 transform = Transform3D(-0.120145, 0.0150948, 0.992642, 0.124658, 0.9922, 0, -0.984899, 0.123741, -0.12109, 33.7547, -158.662, -182.189)
 
-[node name="Spawner3" parent="." index="5" instance=ExtResource("7_d06vt")]
+[node name="Spawner3" parent="." index="5" instance=ExtResource("6_f2cyr")]
 transform = Transform3D(-0.120145, 0.0150948, 0.992642, 0.124658, 0.9922, 0, -0.984899, 0.123741, -0.12109, 34.4842, -159.309, -176.208)
 
-[node name="Spawner4" parent="." index="6" instance=ExtResource("7_d06vt")]
+[node name="Spawner4" parent="." index="6" instance=ExtResource("6_f2cyr")]
 transform = Transform3D(-0.120145, 0.0150948, 0.992642, 0.124658, 0.9922, 0, -0.984899, 0.123741, -0.12109, 32.8189, -157.763, -189.859)
 
 [node name="Platform" type="MeshInstance3D" parent="." index="7"]
@@ -674,15 +673,15 @@ mesh = SubResource("CylinderMesh_53lmk")
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Platform/StaticBody3D" index="0"]
 shape = SubResource("CylinderShape3D_cuobt")
 
-[node name="ItemSpawner" parent="Platform" index="1" instance=ExtResource("7_d06vt")]
+[node name="ItemSpawner" parent="Platform" index="1" instance=ExtResource("6_f2cyr")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.41565, -8.08813)
 
-[node name="cannon" parent="Platform" index="2" instance=ExtResource("7_jy416")]
+[node name="cannon" parent="Platform" index="2" instance=ExtResource("7_vic1m")]
 
 [node name="checkpoint_manager" type="Node3D" parent="." index="8"]
 
 [node name="out_of_bounds" type="Node3D" parent="checkpoint_manager" index="0"]
-script = ExtResource("8_p783o")
+script = ExtResource("8_2t2of")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="checkpoint_manager/out_of_bounds" index="0"]
 transform = Transform3D(11410.7, 0, 0, 0, 1, 0, 0, 0, 8012.38, 0, -180.03, 0)
@@ -699,11 +698,11 @@ shape = SubResource("ConvexPolygonShape3D_k48w8")
 unique_name_in_owner = true
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -165.058, 0)
 
-[node name="Startpoint" parent="checkpoint_manager/checkpoints" index="0" instance=ExtResource("9_fdibe")]
+[node name="Startpoint" parent="checkpoint_manager/checkpoints" index="0" instance=ExtResource("9_5ehr6")]
 transform = Transform3D(0.9, 0, 0, 0, 0.893678, -0.106486, 0, 0.106486, 0.893678, 46.5975, 5.41948, -180.997)
 is_startpoint = true
 
-[node name="Checkpoint" parent="checkpoint_manager/checkpoints" index="1" instance=ExtResource("9_fdibe")]
+[node name="Checkpoint" parent="checkpoint_manager/checkpoints" index="1" instance=ExtResource("9_5ehr6")]
 transform = Transform3D(0.839991, 4.65661e-09, -0.323132, -0.0382322, 0.893678, -0.0993855, 0.320863, 0.106486, 0.834091, 145.538, 3.91137, -168.34)
 
 [node name="MeshInstance3D2" type="MeshInstance3D" parent="." index="9"]
@@ -726,12 +725,12 @@ mesh = SubResource("PrismMesh_2o41d")
 [node name="CollisionShape3D" type="CollisionShape3D" parent="MeshInstance3D3/StaticBody3D" index="0"]
 shape = SubResource("ConcavePolygonShape3D_s2ah3")
 
-[node name="ItemSpawner" parent="." index="11" instance=ExtResource("7_d06vt")]
+[node name="ItemSpawner" parent="." index="11" instance=ExtResource("6_f2cyr")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.17935, 55.286, -5.86007)
 
 [node name="warship3" type="Node3D" parent="." index="12"]
 transform = Transform3D(-35.9506, 24.2142, -24.9245, 11.7542, 42.2222, 24.065, 32.7016, 11.4436, -36.0506, -454.294, -213.294, 1474.68)
-script = ExtResource("11_cseun")
+script = ExtResource("10_vmmk2")
 
 [node name="Plane" type="MeshInstance3D" parent="warship3" index="0"]
 transform = Transform3D(0, 0.997299, -0.073447, 1, 0, 0, 0, -0.073447, -0.997299, 0, 0, 0)
@@ -747,7 +746,7 @@ libraries = {
 
 [node name="warship4" type="Node3D" parent="." index="13"]
 transform = Transform3D(41.9083, 0, -27.2707, 0, 50, 0, 27.2707, 0, 41.9083, 774.698, -140.663, 696.331)
-script = ExtResource("13_7ql34")
+script = ExtResource("12_77i8g")
 
 [node name="Plane" type="MeshInstance3D" parent="warship4" index="0"]
 transform = Transform3D(3.61021e-06, 0.997294, -0.0734461, 1, -3.61997e-06, 0, -2.65876e-07, -0.0734461, -0.997294, 0, 0, 0)
@@ -770,7 +769,7 @@ material_override = SubResource("StandardMaterial3D_mmjn8")
 mesh = SubResource("ArrayMesh_1orw3")
 skeleton = NodePath("")
 
-[node name="Water" parent="." index="14" instance=ExtResource("10_tlht5")]
+[node name="Water" parent="." index="14" instance=ExtResource("13_h2a7s")]
 transform = Transform3D(9000, 0, 0, 0, 923.577, 0, 0, 0, 15870, 44.0405, -588.439, -184.355)
 visible = false
 skeleton = NodePath("")
@@ -781,32 +780,32 @@ material_override = SubResource("ShaderMaterial_p4cu8")
 mesh = SubResource("BoxMesh_qqcik")
 skeleton = NodePath("../checkpoint_manager/out_of_bounds")
 
-[node name="Node3D" parent="." index="16" instance=ExtResource("16_wso1f")]
+[node name="Node3D" parent="." index="16" instance=ExtResource("15_5cbhu")]
 transform = Transform3D(-2.246, 0, -1.98884, 0, 3, 0, 1.98884, 0, -2.246, -560.375, -175.593, -1060.22)
 
-[node name="Node3D2" parent="." index="17" instance=ExtResource("16_wso1f")]
+[node name="Node3D2" parent="." index="17" instance=ExtResource("15_5cbhu")]
 transform = Transform3D(-2.47481, 0, -1.69568, 0, 3, 0, 1.69568, 0, -2.47481, -758.765, -175.593, -1020.75)
 
-[node name="BreakableColumn" parent="." index="18" instance=ExtResource("17_q8jq1")]
+[node name="BreakableColumn" parent="." index="18" instance=ExtResource("16_gu8f2")]
 transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 12.155, -156.477, -192.001)
 
-[node name="BreakableColumn2" parent="." index="19" instance=ExtResource("17_q8jq1")]
+[node name="BreakableColumn2" parent="." index="19" instance=ExtResource("16_gu8f2")]
 transform = Transform3D(0.118837, 0, -0.992914, 0, 1, 0, 0.992914, 0, 0.118837, -5.17732, -154.518, -189.412)
 
-[node name="BreakableColumn3" parent="." index="20" instance=ExtResource("17_q8jq1")]
+[node name="BreakableColumn3" parent="." index="20" instance=ExtResource("16_gu8f2")]
 transform = Transform3D(0.118837, 0, -0.992914, 0, 1, 0, 0.992914, 0, 0.118837, -22.055, -152.367, -188.387)
 
-[node name="BreakableColumn4" parent="." index="21" instance=ExtResource("17_q8jq1")]
+[node name="BreakableColumn4" parent="." index="21" instance=ExtResource("16_gu8f2")]
 transform = Transform3D(-0.0872078, 0, 0.99619, 0, 1, 0, -0.99619, 0, -0.0872078, 12.155, -158.468, -170.156)
 
-[node name="BreakableColumn5" parent="." index="22" instance=ExtResource("17_q8jq1")]
+[node name="BreakableColumn5" parent="." index="22" instance=ExtResource("16_gu8f2")]
 transform = Transform3D(-0.204974, 0, 0.978767, 0, 1, 0, -0.978767, 0, -0.204974, -2.58129, -157.364, -167.722)
 
-[node name="BreakableColumn6" parent="." index="23" instance=ExtResource("17_q8jq1")]
+[node name="BreakableColumn6" parent="." index="23" instance=ExtResource("16_gu8f2")]
 transform = Transform3D(-0.204974, 0, 0.978767, 0, 1, 0, -0.978767, 0, -0.204974, -19.459, -155.478, -166.696)
 
 [node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="." index="24"]
-stream = ExtResource("18_12i3g")
+stream = ExtResource("17_kna8u")
 volume_db = 10.0
 autoplay = true
 

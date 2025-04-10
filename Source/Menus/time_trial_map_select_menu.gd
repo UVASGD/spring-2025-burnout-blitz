@@ -1,17 +1,14 @@
 extends CanvasLayer
-class_name MapSelect
+class_name MapSelectMenu
 
 @onready var game_container = get_parent()
-@export var is_versus:bool = true
 
 func _ready():
-	Engine.time_scale = 1
 	Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE)
+	Engine.time_scale = 1
+
 func _on_button_pressed() -> void:
-	if is_versus:
-		game_container.spawn_level("V_Violence")
-	else:
-		game_container.spawn_level("T_Violence")
+	game_container.spawn_level(1)
 	queue_free()
 
 

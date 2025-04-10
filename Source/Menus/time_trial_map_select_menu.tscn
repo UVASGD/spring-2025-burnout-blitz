@@ -1,10 +1,10 @@
-[gd_scene load_steps=3 format=3 uid="uid://bf6kr4elwfn3m"]
+[gd_scene load_steps=3 format=3 uid="uid://q3vq6inwsqnp"]
 
-[ext_resource type="Script" path="res://Source/Menus/map_select_menu.gd" id="1_0leyl"]
-[ext_resource type="Texture2D" uid="uid://bqgdqunh31dfa" path="res://Assets/UI/Screenshot 2025-04-07 041052.png" id="2_t4jmy"]
+[ext_resource type="Script" path="res://Source/Menus/time_trial_map_select_menu.gd" id="1_dbavu"]
+[ext_resource type="Texture2D" uid="uid://bqgdqunh31dfa" path="res://Assets/UI/Screenshot 2025-04-07 041052.png" id="2_kf1rg"]
 
 [node name="MapSelectMenu" type="CanvasLayer"]
-script = ExtResource("1_0leyl")
+script = ExtResource("1_dbavu")
 
 [node name="Control" type="Control" parent="."]
 layout_mode = 3
@@ -28,7 +28,7 @@ offset_top = 248.0
 offset_right = 1264.0
 offset_bottom = 909.0
 scale = Vector2(0.29, 0.29)
-icon = ExtResource("2_t4jmy")
+icon = ExtResource("2_kf1rg")
 
 [node name="Back" type="Button" parent="Control"]
 layout_mode = 0

@@ -1,9 +1,15 @@
 class_name devil_items extends Node
 @export var item_name: String
 @export var animation_name: String
+@export var is_top_down: bool = false
+@export var item_instance: PackedScene
+@export var num_uses: int
 
 
 func use():
+	pass
+
+func use_top_down(insert_position: Vector3, spawn_parent: Node):
 	pass
 
 func play_animation(animation_name):
