@@ -7,12 +7,14 @@ var missile_instance = preload("res://Source/items/devil_items/missile/missile_i
 @onready var devil  # The devil's head or where you want the missile to spawn
 
 func _ready():
+	num_uses = 1
 	is_being_used = false
 	devil = get_tree().get_nodes_in_group("devil_head")[0]  # Find the devil's head in the group
 
 func use():
 	if !is_being_used:
 		is_being_used = true
+		num_uses -= 1
 		
 		# Get the devil's position (using global_position in Godot 4)
 		var spawn_position = devil.global_position
