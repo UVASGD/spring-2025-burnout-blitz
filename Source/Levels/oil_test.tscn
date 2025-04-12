@@ -1,4 +1,4 @@
-[gd_scene load_steps=69 format=4 uid="uid://f7mo143p4kia"]
+[gd_scene load_steps=70 format=4 uid="uid://f7mo143p4kia"]
 
 [ext_resource type="PackedScene" uid="uid://ct7oupewt4kt4" path="res://Source/Levels/level_template.tscn" id="1_fw1tx"]
 [ext_resource type="Script" path="res://grid_container.gd" id="2_n7d75"]
@@ -18,6 +18,7 @@
 [ext_resource type="PackedScene" uid="uid://ct1ay4r4amdto" path="res://Assets/3d assets/destructable_models/breakable_column.tscn" id="16_svy4k"]
 [ext_resource type="AudioStream" uid="uid://cnmsliqgvtq52" path="res://Assets/Audio/underthewater.mp3" id="17_bdwl1"]
 [ext_resource type="PackedScene" uid="uid://cdmuakwnlfybd" path="res://Assets/3d assets/models/Bagger.tscn" id="18_hlmwj"]
+[ext_resource type="PackedScene" uid="uid://db3bklf47obba" path="res://Source/items/devil_items/breakablewall/breakablewall_instance.tscn" id="19_cobf7"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_tos7i"]
 sky_top_color = Color(0.819444, 0.8802, 1, 1)
@@ -652,7 +653,7 @@ skeleton = NodePath("")
 [node name="StaticBody3D" type="StaticBody3D" parent="Cube2" index="0"]
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Cube2/StaticBody3D" index="0"]
-transform = Transform3D(1, 0, 1.42109e-14, 0, 1, 0, -1.42109e-14, 0, 1, 0, 0, 0)
+transform = Transform3D(1, 0, 2.84217e-14, 0, 1, 0, -2.84217e-14, 0, 1, 0, 0, 0)
 shape = SubResource("ConcavePolygonShape3D_1nvpf")
 
 [node name="Spawner2" parent="." index="4" instance=ExtResource("6_ihi00")]
@@ -751,7 +752,7 @@ transform = Transform3D(41.9083, 0, -27.2707, 0, 50, 0, 27.2707, 0, 41.9083, 774
 script = ExtResource("12_guxw0")
 
 [node name="Plane" type="MeshInstance3D" parent="warship4" index="0"]
-transform = Transform3D(3.61021e-06, 0.997293, -0.073446, 1, -3.61997e-06, 0, -2.65876e-07, -0.073446, -0.997293, 0, 0, 0)
+transform = Transform3D(3.61021e-06, 0.997292, -0.073446, 1, -3.61997e-06, 0, -2.65876e-07, -0.073446, -0.997292, 0, 0, 0)
 material_override = SubResource("ShaderMaterial_jange")
 mesh = SubResource("ArrayMesh_wdtin")
 skeleton = NodePath("")
@@ -833,6 +834,18 @@ skeleton = NodePath("")
 
 [node name="Bagger" parent="." index="26" instance=ExtResource("18_hlmwj")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 99.7378, -191.675, -435.577)
+
+[node name="BreakablewallInstance" parent="." index="27" instance=ExtResource("19_cobf7")]
+transform = Transform3D(1.33801, 0, -0.7725, 0, 1.545, 0, 0.7725, 0, 1.33801, 169.52, -155.63, -154.917)
+
+[node name="BreakablewallInstance2" parent="." index="28" instance=ExtResource("19_cobf7")]
+transform = Transform3D(1.02403, 0, -1.15689, 0, 1.545, 0, 1.15689, 0, 1.02403, 180.875, -155.63, -144.668)
+
+[node name="BreakablewallInstance3" parent="." index="29" instance=ExtResource("19_cobf7")]
+transform = Transform3D(1.02403, 0, -1.15689, 0, 1.545, 0, 1.15689, 0, 1.02403, 198.637, -155.63, -129.466)
+
+[node name="BreakablewallInstance4" parent="." index="30" instance=ExtResource("19_cobf7")]
+transform = Transform3D(1.02403, 0, -1.15689, 0, 1.545, 0, 1.15689, 0, 1.02403, 212.678, -155.63, -113.604)
 
 [connection signal="body_entered" from="checkpoint_manager/out_of_bounds/MeshInstance3D/Area3D" to="checkpoint_manager/out_of_bounds" method="_on_area_3d_body_entered"]
 [connection signal="animation_finished" from="warship4/w4_anim_player" to="warship4" method="_on_w_4_anim_player_animation_finished"]
