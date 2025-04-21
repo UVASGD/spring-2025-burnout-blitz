@@ -27,6 +27,10 @@ func _on_area_3d_body_entered(body):
 	
 func tele_to_checkpoint():
 	if is_active:
+		driver.linear_velocity = Vector3.ZERO
+		driver.angular_velocity = Vector3.ZERO
+		var current_rotation:Vector3 = driver.rotation
+		driver.rotation = Vector3(0, current_rotation.y, 0)
 		driver.global_transform.origin = global_transform.origin
 		
 func turn_off_checkpoint(nm:String):

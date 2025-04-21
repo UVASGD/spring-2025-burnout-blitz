@@ -4,3 +4,4 @@
 
 [node name="Missile" type="Node3D"]
 script = ExtResource("1_ac341")
+num_uses = 1

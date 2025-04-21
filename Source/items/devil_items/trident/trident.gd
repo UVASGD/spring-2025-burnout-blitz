@@ -9,10 +9,12 @@ var trident_instance = preload("res://Source/items/devil_items/trident/trident_i
 
 func _ready():
 	is_being_used = false
+	is_top_down = false
 
 func use():
 	if !is_being_used:
 		is_being_used = true
+		num_uses -= 1
 		var t_instance = trident_instance.instantiate()
 		t_instance.speed = speed
 		t_instance.rotation_speed = rotation_speed

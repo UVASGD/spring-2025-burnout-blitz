@@ -3,11 +3,12 @@ extends CharacterBody3D
 const SPEED = 5.0
 const JUMP_VELOCITY = 4.5
 
-@onready var oil_spill = preload("res://Source/items/devil_items/oil spill/oil_spill.tscn")
+@onready var oil_spill = preload("res://Source/items/devil_items/oil_spill/oil_spill_inst.tscn")
 
 @onready var pivot = %twist # Handles pitch (vertical rotation)
 @onready var head = %head
 @onready var camera
+@onready var item_manager = %item_manager
 
 @onready var normal_camera = %Camera3D
 @onready var top_camera = %top_camera
@@ -67,6 +68,9 @@ func _physics_process(delta):
 	
 	if Input.is_action_just_pressed("left_click"):
 		left_click()
+	if Input.is_action_just_pressed('test_controllable_button'):
+		var controllable_nodes = get_tree().get_nodes_in_group("controllable")
+		switch_to_controllable(controllable_nodes[1].name)
 	
 	if top_camera_active:
 		move_top_camera(delta)
@@ -113,19 +117,41 @@ func switch_camera():
 	camera.current = true
 
 func left_click():
-	var mouse_pos = get_viewport().get_mouse_position()
-	var ray_length = 1000
-	var from = top_camera.project_ray_origin(mouse_pos)
-	var to = from + top_camera.project_ray_normal(mouse_pos) * ray_length
-	var space = top_camera.get_world_3d().direct_space_state
-	var ray_query = PhysicsRayQueryParameters3D.new()
-	ray_query.from = from
-	ray_query.to = to
-	var raycast_result = space.intersect_ray(ray_query)
-	if raycast_result:
-		var oil_inst = oil_spill.instantiate()
-		get_parent().add_child(oil_inst)
-		oil_inst.global_position = Vector3(raycast_result.get("position"))
+	if item_manager.get_child_count() == 2 and item_manager.get_child(1).is_top_down and top_camera_active:
+		var item = item_manager.get_child(1)
+		
+		var mouse_pos = get_viewport().get_mouse_position()
+		var ray_length = 1000
+		var from = top_camera.project_ray_origin(mouse_pos)
+		var to = from + top_camera.project_ray_normal(mouse_pos) * ray_length
+		var space = top_camera.get_world_3d().direct_space_state
+		var ray_query = PhysicsRayQueryParameters3D.new()
+		
+		ray_query.from = from
+		ray_query.to = to
+		var raycast_result = space.intersect_ray(ray_query)
+		
+		if raycast_result:
+			var detected_obj = raycast_result.get("collider")
+			if detected_obj.is_in_group("controllable"):
+				switch_to_controllable(name)
+				print("obtained object!")
+			else:
+				print("uh oh")
+			var insert_position = (raycast_result.get("position"))
+			print("ray result: ", insert_position)
+			item.use_top_down(insert_position, get_parent())
+			
+		#if raycast_result:
+			#var oil_inst = oil_spill.instantiate()
+			#get_parent().add_child(oil_inst)
+			#oil_inst.global_position = Vector3(raycast_result.get("position"))
 
+func switch_to_controllable(c_name):
+	SignalBus.emit_signal("change_screen_visibility", "SubViewportContainer2")
+	SignalBus.emit_signal("change_screen_visibility", "Controllable")
+	SignalBus.emit_signal("activate_controllable", c_name)
+	pass
 
+	
 # This is the method to convert the crosshair position (Vector2) to a world position (Vector3)
