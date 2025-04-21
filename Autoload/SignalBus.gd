@@ -15,6 +15,7 @@ signal update_checkpoint(name:String)
 signal revert_checkpoints
 signal update_laps_left(laps_left:String)
 signal end_track
+signal map_has_controllable(name:String)
 
 # Devil Signals
 signal devil_item_taken
@@ -23,5 +24,12 @@ signal clear_devil_item
 signal devil_play_animation
 signal toggle_crosshair
 
+# Item Signals
+# Bagger
+signal activate_controllable(c_name: String)
+
 # Menu Signals
 signal back_to_menu
+
+#Split screen signals
+signal change_screen_visibility(name:String)
