@@ -9,6 +9,8 @@ extends GridContainer
 
 func _ready():
 	SignalBus.connect("end_track", end_game)
+	SignalBus.connect("change_screen_visibility", change_screen_visibility)
+	%Controllable.visible = false
 	left_side.handle_input_locally = false
 	right_side.handle_input_locally = true
 
@@ -22,6 +24,7 @@ func end_game():
 	Engine.time_scale = 0.05
 	%SubViewportContainer.visible = false
 	%SubViewportContainer2.visible = false
+	%Controllable.visible = false
 	end_lap.visible = true
 	anim_player.play("end_camera_ang_1")
 	await anim_player.animation_finished
@@ -32,3 +35,6 @@ func end_game():
 	SignalBus.emit_signal("back_to_menu")
 	
 	#TODO: Put in function for transitioning to the menu
+
+func change_screen_visibility(name:String):
+	get_node(name).visible = !get_node(name).visible
