@@ -7,7 +7,9 @@ class_name DevilItemManager
 @onready var missile = preload("res://Source/items/devil_items/missile/missile.tscn")
 @onready var oil_spill = preload("res://Source/items/devil_items/oil_spill/oil_spill.tscn")
 
-var all_items:Array[String] = ["trident", "missile", "oil_spill"]
+@onready var bagger = preload("res://Source/items/devil_items/Bagger/bagger.tscn")
+
+var all_items:Array[String] = ["trident", "missile", "oil_spill", "bagger"]
 func _ready():
 	SignalBus.connect("devil_giving_item", insert_item)
 
@@ -30,6 +32,12 @@ func insert_item(item_name:String):
 				item = oil_spill.instantiate()
 				add_child(item)
 				item.global_transform.origin = self.global_transform.origin
+			"bagger":
+				sigil_anim_player.play("sigil_spawn")
+				item = bagger.instantiate()
+				add_child(item)
+				item.global_transform.origin = self.global_transform.origin
+
 
 				
 

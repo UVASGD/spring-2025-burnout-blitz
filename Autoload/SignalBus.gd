@@ -26,7 +26,7 @@ signal toggle_crosshair
 
 # Item Signals
 # Bagger
-signal activate_controllable(c_name: String)
+signal activate_controllable(c_name: String, num_uses: int)
 
 # Menu Signals
 signal back_to_menu

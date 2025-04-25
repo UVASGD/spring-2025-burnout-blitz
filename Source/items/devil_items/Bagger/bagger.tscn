@@ -6,4 +6,4 @@
 script = ExtResource("1_a8rnr")
 item_name = "bagger"
 is_top_down = true
-num_uses = 1
+num_uses = 3

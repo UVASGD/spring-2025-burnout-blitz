@@ -5,14 +5,19 @@ extends CharacterBody3D
 @onready var Rotator:Node3D = %Rotator
 @onready var anim_player:AnimationPlayer = %AnimationPlayer
 
-var is_on = false
-var can_rotate = true
+var is_on:bool = false
+
+var num_uses:int = 1
+var can_attack:bool = false
+var can_rotate:bool = true
 var rot_speed:float = 0.005
 var horizontal_angle:float = 0.0
 
 func _ready():
 	SignalBus.connect("activate_controllable", turn_on)
 	Camera.current = true
+	
+	
 	pass
 	
 func _physics_process(delta):
@@ -27,20 +32,29 @@ func _unhandled_input(event):
 	
 	
 
-func turn_on(c_name):
+func turn_on(c_name, n_uses):
 	if c_name == self.name:
 		is_on = true
 		Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
+		num_uses = n_uses
 	
 func exit():
 	is_on = false
+	can_attack = false
+	num_uses = 0
+	SignalBus.emit_signal("change_screen_visibility", "SubViewportContainer2")
+	SignalBus.emit_signal("change_screen_visibility", "Controllable")
 	
 func attack():
-	can_rotate = false
-	anim_player.play("attack")
-	await anim_player.animation_finished
-	can_rotate = true
-	
+	if is_on and not can_attack:
+		can_attack = true
+	elif is_on and can_attack:
+		can_rotate = false
+		anim_player.play("attack")
+		await anim_player.animation_finished
+		can_rotate = true
+		exit()
+		
 
 
 

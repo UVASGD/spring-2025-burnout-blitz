@@ -25,7 +25,6 @@ SignalBus="*res://Autoload/SignalBus.gd"
 
 [display]
 
-window/size/mode=3
 window/size/initial_position_type=2
 window/stretch/mode="viewport"
 
