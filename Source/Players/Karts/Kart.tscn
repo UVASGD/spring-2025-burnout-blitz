@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" path="res://Source/Players/Karts/test_car.gd" id="1_uqsbg"]
 [ext_resource type="Script" path="res://Source/Players/Karts/kart_camera.gd" id="3_2ro21"]
-[ext_resource type="FontFile" uid="uid://bqwipp1vl7qqn" path="res://Assets/Resources/black-mud.regular.ttf" id="4_mk4na"]
+[ext_resource type="FontFile" uid="uid://bqwipp1vl7qqn" path="res://Source/Resources/black-mud.regular.ttf" id="4_mk4na"]
 [ext_resource type="Script" path="res://Source/Players/Karts/driver_ui.gd" id="4_qpy08"]
 [ext_resource type="Script" path="res://Source/Players/Karts/item_manager.gd" id="4_wa8w0"]
 [ext_resource type="Texture2D" uid="uid://cof060r2m0j8b" path="res://Source/HUD/speedBar.png" id="4_x5u17"]

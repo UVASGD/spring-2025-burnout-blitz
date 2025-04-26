@@ -1,7 +1,7 @@
 [gd_scene load_steps=6 format=3 uid="uid://pi15m50x1uc4"]
 
 [ext_resource type="Script" path="res://Source/items/devil_items/black hole/black_hole_inst.gd" id="1_ytk72"]
-[ext_resource type="Shader" uid="uid://e67ccuhnce2t" path="res://Assets/shaders/visual_shader_test.tres" id="2_olswj"]
+[ext_resource type="Shader" uid="uid://e67ccuhnce2t" path="res://Source/Resources/shaders/visual_shader_test.tres" id="2_olswj"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_84r01"]
 render_priority = 0

@@ -1,7 +1,7 @@
 [gd_scene load_steps=5 format=3 uid="uid://to4x7nrxmvuw"]
 
 [ext_resource type="Script" path="res://Source/items/driver_items/shield/shield.gd" id="1_yvnng"]
-[ext_resource type="Shader" uid="uid://e67ccuhnce2t" path="res://Assets/shaders/visual_shader_test.tres" id="2_otjna"]
+[ext_resource type="Shader" uid="uid://e67ccuhnce2t" path="res://Source/Resources/shaders/visual_shader_test.tres" id="2_otjna"]
 
 [sub_resource type="SphereMesh" id="SphereMesh_83nrf"]
 

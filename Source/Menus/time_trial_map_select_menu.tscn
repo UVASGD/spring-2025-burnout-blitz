@@ -1,7 +1,7 @@
 [gd_scene load_steps=3 format=3 uid="uid://q3vq6inwsqnp"]
 
 [ext_resource type="Script" path="res://Source/Menus/time_trial_map_select_menu.gd" id="1_dbavu"]
-[ext_resource type="Texture2D" uid="uid://bqgdqunh31dfa" path="res://Assets/UI/Screenshot 2025-04-07 041052.png" id="2_kf1rg"]
+[ext_resource type="Texture2D" uid="uid://bqgdqunh31dfa" path="res://Source/UI/Screenshot 2025-04-07 041052.png" id="2_kf1rg"]
 
 [node name="MapSelectMenu" type="CanvasLayer"]
 script = ExtResource("1_dbavu")
