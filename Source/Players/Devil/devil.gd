@@ -68,6 +68,9 @@ func _physics_process(delta):
 	
 	if Input.is_action_just_pressed("left_click"):
 		left_click()
+	if Input.is_action_just_pressed('test_controllable_button'):
+		var controllable_nodes = get_tree().get_nodes_in_group("controllable")
+		switch_to_controllable(controllable_nodes[1].name)
 	
 	if top_camera_active:
 		move_top_camera(delta)
@@ -129,6 +132,12 @@ func left_click():
 		var raycast_result = space.intersect_ray(ray_query)
 		
 		if raycast_result:
+			var detected_obj = raycast_result.get("collider")
+			if detected_obj.is_in_group("controllable"):
+				switch_to_controllable(name)
+				print("obtained object!")
+			else:
+				print("uh oh")
 			var insert_position = (raycast_result.get("position"))
 			print("ray result: ", insert_position)
 			item.use_top_down(insert_position, get_parent())
@@ -138,5 +147,11 @@ func left_click():
 			#get_parent().add_child(oil_inst)
 			#oil_inst.global_position = Vector3(raycast_result.get("position"))
 
+func switch_to_controllable(c_name):
+	SignalBus.emit_signal("change_screen_visibility", "SubViewportContainer2")
+	SignalBus.emit_signal("change_screen_visibility", "Controllable")
+	SignalBus.emit_signal("activate_controllable", c_name)
+	pass
 
+	
 # This is the method to convert the crosshair position (Vector2) to a world position (Vector3)

@@ -3,7 +3,6 @@ class_name track_settings
 
 @onready var game_container = self.get_parent()
 
-
 @export var is_versus:bool = true
 @export var num_laps:int = 3
 @export var driver_items_on_map:Array[String] = []

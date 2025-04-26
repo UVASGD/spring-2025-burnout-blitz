@@ -4,6 +4,7 @@ class_name devil_items extends Node
 @export var is_top_down: bool = false
 @export var item_instance: PackedScene
 @export var num_uses: int
+@export var is_controllable: bool = false
 
 
 func use():
