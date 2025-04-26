@@ -2,7 +2,7 @@
 
 [ext_resource type="PackedScene" uid="uid://ct7oupewt4kt4" path="res://Source/Levels/level_template.tscn" id="1_ivy8x"]
 [ext_resource type="Script" path="res://grid_container.gd" id="2_aunsw"]
-[ext_resource type="PackedScene" uid="uid://cd1ipr66rv03m" path="res://Source/Karts/Kart.tscn" id="3_umgwh"]
+[ext_resource type="PackedScene" uid="uid://cd1ipr66rv03m" path="res://Source/Players/Karts/Kart.tscn" id="3_umgwh"]
 [ext_resource type="PackedScene" uid="uid://onxc0n3pblmf" path="res://Source/Players/Devil/devil.tscn" id="4_jrfvc"]
 [ext_resource type="Script" path="res://Source/Players/Devil/crosshair.gd" id="5_u5o4k"]
 [ext_resource type="Shader" uid="uid://e67ccuhnce2t" path="res://Assets/shaders/visual_shader_test.tres" id="6_j6h6n"]
