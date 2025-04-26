@@ -26,6 +26,6 @@ func use():
 
 		var root_scene = get_tree().root.get_child(get_tree().root.get_child_count() - 1)
 		root_scene.add_child(t_instance)
-		SignalBus.emit_signal("clear_devil_item")
+		clear_item()
 		self.queue_free()
 		#get_parent().add_child(m_instance)

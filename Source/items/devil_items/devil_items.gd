@@ -15,3 +15,6 @@ func use_top_down(insert_position: Vector3, spawn_parent: Node):
 
 func play_animation(animation_name):
 	SignalBus.emit_signal("devil_play_animation", animation_name)
+
+func clear_item():
+	SignalBus.emit_signal("clear_devil_item")

@@ -120,13 +120,9 @@ func switch_camera():
 	camera.current = true
 
 func left_click():
-	if item_manager.get_child_count() >= 2 and item_manager.get_child(1).is_top_down and top_camera_active:
-		var item = item_manager.get_child(1)
-		
-		var num_uses:int = item.num_uses
-		
+	if top_camera_active:
 		var mouse_pos = get_viewport().get_mouse_position()
-		var ray_length = 1000
+		var ray_length = 100000
 		var from = top_camera.project_ray_origin(mouse_pos)
 		var to = from + top_camera.project_ray_normal(mouse_pos) * ray_length
 		var space = top_camera.get_world_3d().direct_space_state
@@ -138,21 +134,29 @@ func left_click():
 		
 		if raycast_result:
 			var detected_obj = raycast_result.get("collider")
-			if detected_obj.is_in_group("controllable"):
-				if not is_using_controllable:
-					switch_to_controllable(detected_obj.name, num_uses)
-					print("obtained object!")
+			if detected_obj.get_parent().is_in_group("platform"):
+				detected_obj = detected_obj.get_parent()
+				self.global_position = detected_obj.get_child(3).global_position
+				switch_camera()
+			elif item_manager.get_child_count() >= 2 and item_manager.get_child(1).is_top_down and top_camera_active:
+				var item = item_manager.get_child(1)
 				
-			else:
-				print("uh oh")
-			var insert_position = (raycast_result.get("position"))
-			print("ray result: ", insert_position)
-			item.use_top_down(insert_position, get_parent())
-			
-		#if raycast_result:
-			#var oil_inst = oil_spill.instantiate()
-			#get_parent().add_child(oil_inst)
-			#oil_inst.global_position = Vector3(raycast_result.get("position"))
+				var num_uses:int = item.num_uses
+				
+				
+
+				if detected_obj.is_in_group("controllable"):
+					if not is_using_controllable:
+						switch_to_controllable(detected_obj.name, num_uses)
+						print("obtained object!")
+						
+				else:
+					print("uh oh")
+				var insert_position = (raycast_result.get("position"))
+				print("ray result: ", insert_position)
+				item.use_top_down(insert_position, get_parent())
+				
+
 
 func switch_to_controllable(c_name, num_uses):
 	var c_node

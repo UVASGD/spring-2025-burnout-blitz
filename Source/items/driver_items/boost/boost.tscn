@@ -1,7 +1,7 @@
 [gd_scene load_steps=5 format=3 uid="uid://bcd6j1u4xwaau"]
 
 [ext_resource type="Script" path="res://Source/items/driver_items/boost/boost.gd" id="1_mkj3t"]
-[ext_resource type="Shader" uid="uid://e67ccuhnce2t" path="res://Assets/shaders/visual_shader_test.tres" id="2_1k3yo"]
+[ext_resource type="Shader" uid="uid://e67ccuhnce2t" path="res://Source/Resources/shaders/visual_shader_test.tres" id="2_1k3yo"]
 
 [sub_resource type="BoxMesh" id="BoxMesh_5watk"]
 

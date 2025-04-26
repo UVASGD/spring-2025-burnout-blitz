@@ -1,7 +1,7 @@
 [gd_scene load_steps=9 format=3 uid="uid://vgc43l0fh8lq"]
 
 [ext_resource type="Script" path="res://Source/items/devil_items/explosion.gd" id="1_dynrn"]
-[ext_resource type="Shader" uid="uid://e67ccuhnce2t" path="res://Assets/shaders/visual_shader_test.tres" id="2_5ylb2"]
+[ext_resource type="Shader" uid="uid://e67ccuhnce2t" path="res://Source/Resources/shaders/visual_shader_test.tres" id="2_5ylb2"]
 
 [sub_resource type="SphereMesh" id="SphereMesh_gyqqa"]
 
