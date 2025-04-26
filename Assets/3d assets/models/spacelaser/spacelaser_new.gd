@@ -2,8 +2,6 @@ extends CharacterBody3D
 
 
 @onready var Camera:Camera3D = %Camera3D
-@onready var Rotator:Node3D = %Rotator
-@onready var anim_player:AnimationPlayer = %AnimationPlayer
 
 var is_on:bool = false
 
@@ -12,6 +10,7 @@ var can_attack:bool = false
 var can_rotate:bool = true
 var rot_speed:float = 0.005
 var horizontal_angle:float = 0.0
+var sens:float = 0.2
 
 func _ready():
 	SignalBus.connect("activate_controllable", turn_on)
@@ -26,10 +25,21 @@ func _physics_process(delta):
 		attack()
 	
 func _unhandled_input(event):
-	if event is InputEventMouseMotion and is_on and can_rotate:
-		horizontal_angle -= event.relative.x * rot_speed
+	if event is InputEventMouseButton and is_on:
+		Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
 		
-		Rotator.rotation.y = horizontal_angle
+	if Input.get_mouse_mode() == Input.MOUSE_MODE_CAPTURED and is_on:
+		if event is InputEventMouseMotion:
+			rotate_y(deg_to_rad(-event.relative.x * sens))
+			self.rotation.x = self.rotation.x + deg_to_rad(event.relative.y * sens)
+			#self.rotation.x = clamp(
+				#self.rotation.x - deg_to_rad(event.relative.y * sens),
+				#deg_to_rad(-90),  # Minimum pitch angle
+				#deg_to_rad(45)    # Maximum pitch angle
+			#)
+			#head.rotation.x = pivot.rotation.x
+			#head.rotation.y = pivot.rotation.y
+			#print("marker rotation" + str($head/Node3D.rotation.y))
 	
 	
 
@@ -53,8 +63,8 @@ func attack():
 	if is_on and can_attack:
 		can_rotate = false
 		can_attack = false
-		anim_player.play("attack")
-		await anim_player.animation_finished
+		#anim_player.play("attack")
+		#await anim_player.animation_finished
 		can_rotate = true
 		exit()
 		

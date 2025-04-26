@@ -1,4 +1,4 @@
-[gd_scene load_steps=104 format=4 uid="uid://cdmuakwnlfybd"]
+[gd_scene load_steps=103 format=4 uid="uid://cdmuakwnlfybd"]
 
 [ext_resource type="Script" path="res://Assets/3d assets/models/bagger.gd" id="1_ay758"]
 
@@ -530,7 +530,6 @@ blend_shape_mode = 0
 shadow_mesh = SubResource("ArrayMesh_f5cv7")
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_35xdk"]
-albedo_color = Color(0, 0, 0, 1)
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_x4qsq"]
 albedo_color = Color(0.381703, 0.381703, 0.381703, 1)
@@ -634,9 +633,6 @@ _surfaces = [{
 }]
 blend_shape_mode = 0
 shadow_mesh = SubResource("ArrayMesh_nmo0e")
-
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_8vhld"]
-albedo_color = Color(0, 0, 0, 1)
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_i2ild"]
 albedo_color = Color(0, 0, 0, 1)
@@ -956,6 +952,57 @@ _surfaces = [{
 blend_shape_mode = 0
 shadow_mesh = SubResource("ArrayMesh_jt462")
 
+[sub_resource type="Animation" id="Animation_mhtyv"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Rotator/FrontScaffoldingRotator:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(-0.196384, 0, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Rotator/FrontScaffoldingRotator/SawSPin:rotation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(-0.470628, 3.14159, 1.5708)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Rotator/Camera3D:position")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(2.72953, 5.56292, -3.69829)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Rotator/FrontScaffoldingRotator/RightIris:material_override:albedo_color")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(0, 0, 0, 1)]
+}
+
 [sub_resource type="Animation" id="Animation_nlm5n"]
 resource_name = "attack"
 length = 1.5
@@ -996,44 +1043,17 @@ tracks/2/keys = {
 "update": 0,
 "values": [Vector3(2.72953, 5.56292, -3.69829), Vector3(2.72953, 5.79232, -4.37473), Vector3(2.72953, 5.85749, -4.5669), Vector3(2.72953, 5.64383, -3.93687), Vector3(2.72953, 1.28695, 2.20464), Vector3(2.72953, 1.28695, 2.20464), Vector3(2.72953, 5.56292, -3.69829)]
 }
-
-[sub_resource type="Animation" id="Animation_mhtyv"]
-length = 0.001
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("Rotator/FrontScaffoldingRotator:rotation")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Rotator/FrontScaffoldingRotator/RightIris:material_override:albedo_color")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0, 0.3, 0.9, 1.5),
+"transitions": PackedFloat32Array(3.03143, 1, 1, 9.18957),
 "update": 0,
-"values": [Vector3(-0.196384, 0, 0)]
-}
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath("Rotator/FrontScaffoldingRotator/SawSPin:rotation")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Vector3(-0.470628, 3.14159, 1.5708)]
-}
-tracks/2/type = "value"
-tracks/2/imported = false
-tracks/2/enabled = true
-tracks/2/path = NodePath("Rotator/Camera3D:position")
-tracks/2/interp = 1
-tracks/2/loop_wrap = true
-tracks/2/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Vector3(2.72953, 5.56292, -3.69829)]
+"values": [Color(0, 0, 0, 1), Color(100, 0, 0, 1), Color(100, 0, 0, 1), Color(0, 0, 0, 1)]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_x86c3"]
@@ -1149,7 +1169,7 @@ mesh = SubResource("ArrayMesh_ptngl")
 skeleton = NodePath("")
 
 [node name="SawSPin" type="Node3D" parent="Rotator/FrontScaffoldingRotator"]
-transform = Transform3D(5.04831e-09, 0.0605656, -4.71918e-09, 0.0539811, -2.35959e-09, 0.0274632, 0.0274632, -6.49527e-09, -0.0539811, 0.656651, -0.296472, 26.5059)
+transform = Transform3D(1.49622e-07, 0.0605656, 1.36852e-07, 0.0539811, -1.95411e-07, 0.0274632, 0.0274632, 5.41282e-08, -0.0539811, 0.656651, -0.296472, 26.5059)
 
 [node name="Sawblade" type="MeshInstance3D" parent="Rotator/FrontScaffoldingRotator/SawSPin"]
 transform = Transform3D(1, 0, -1.49012e-08, 0, 1, 0, 1.49012e-08, 0, 1, -88.7925, 0, 9.00415)
@@ -1179,12 +1199,6 @@ skeleton = NodePath("")
 transform = Transform3D(0, 0.670533, 0, -0.670533, 0, 0, 0, 0, 0.670533, 0.0362983, 19.758, 3.85433)
 material_override = SubResource("StandardMaterial3D_4rkqg")
 mesh = SubResource("ArrayMesh_l5mdp")
-skeleton = NodePath("")
-
-[node name="Plane_002" type="MeshInstance3D" parent="Rotator/FrontScaffoldingRotator"]
-transform = Transform3D(-1.32608e-09, 0.0303373, 0, -0.0303373, -1.32608e-09, 0, 0, 0, 0.0303373, -1.3091, 2.43785, 26.8033)
-material_override = SubResource("StandardMaterial3D_8vhld")
-mesh = SubResource("ArrayMesh_ptngl")
 skeleton = NodePath("")
 
 [node name="RightIris" type="MeshInstance3D" parent="Rotator/FrontScaffoldingRotator"]
