@@ -15,5 +15,3 @@ func clear():
 
 func update_laps_left_label(laps_left:String):
 	%laps_left.text = laps_left
-
-	

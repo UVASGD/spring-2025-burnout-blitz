@@ -9,7 +9,8 @@ var direction = Vector3.LEFT
 
 func _physics_process(delta: float) -> void:
 	var current_velocity = car.get_linear_velocity()
-	$Camera3D/Control/Label.text = str(current_velocity.length()) 
+	$Camera3D/Control/Label.text = str(floor(current_velocity.length()))
+	$Camera3D/Control/TextureProgressBar.value = (current_velocity.length() / 60) * 100
 	current_velocity.y = 0
 	
 	if current_velocity.length_squared() > 1:

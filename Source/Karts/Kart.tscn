@@ -1,9 +1,11 @@
-[gd_scene load_steps=30 format=4 uid="uid://cd1ipr66rv03m"]
+[gd_scene load_steps=32 format=4 uid="uid://cd1ipr66rv03m"]
 
 [ext_resource type="Script" path="res://Source/Karts/test_car.gd" id="1_uqsbg"]
 [ext_resource type="Script" path="res://Source/Karts/kart_camera.gd" id="3_2ro21"]
+[ext_resource type="FontFile" uid="uid://bqwipp1vl7qqn" path="res://Assets/Resources/black-mud.regular.ttf" id="4_mk4na"]
 [ext_resource type="Script" path="res://Source/Karts/driver_ui.gd" id="4_qpy08"]
 [ext_resource type="Script" path="res://Source/Karts/item_manager.gd" id="4_wa8w0"]
+[ext_resource type="Texture2D" uid="uid://cof060r2m0j8b" path="res://HUD/speedBar.png" id="4_x5u17"]
 
 [sub_resource type="Curve" id="Curve_hvsxp"]
 
@@ -643,11 +645,13 @@ script = ExtResource("4_qpy08")
 [node name="Label" type="Label" parent="Node3D/Camera3D/Control"]
 modulate = Color(0, 0, 0, 1)
 layout_mode = 0
-offset_left = 2.0
-offset_top = 40.0
-offset_right = 132.0
-offset_bottom = 127.0
+offset_left = 321.0
+offset_top = 574.0
+offset_right = 451.0
+offset_bottom = 661.0
 scale = Vector2(3, 3)
+theme_override_fonts/font = ExtResource("4_mk4na")
+theme_override_font_sizes/font_size = 10
 text = "Test"
 
 [node name="ci_label" type="Label" parent="Node3D/Camera3D/Control"]
@@ -670,10 +674,10 @@ label_settings = SubResource("LabelSettings_0wk6h")
 [node name="laps_left" type="Label" parent="Node3D/Camera3D/Control"]
 unique_name_in_owner = true
 layout_mode = 0
-offset_left = 89.0
-offset_top = 14.0
-offset_right = 171.0
-offset_bottom = 37.0
+offset_left = 91.0
+offset_top = 16.0
+offset_right = 173.0
+offset_bottom = 39.0
 label_settings = SubResource("LabelSettings_0wk6h")
 
 [node name="current_item" type="Label" parent="Node3D/Camera3D/Control"]
@@ -682,6 +686,19 @@ offset_top = 124.0
 offset_right = 40.0
 offset_bottom = 147.0
 label_settings = SubResource("LabelSettings_0wk6h")
+
+[node name="TextureProgressBar" type="TextureProgressBar" parent="Node3D/Camera3D/Control"]
+layout_mode = 0
+offset_left = 13.0
+offset_top = 558.0
+offset_right = 313.0
+offset_bottom = 758.0
+scale = Vector2(1, 0.5)
+value = 50.0
+texture_under = ExtResource("4_x5u17")
+texture_progress = ExtResource("4_x5u17")
+tint_under = Color(0, 0, 0, 1)
+tint_progress = Color(0.776988, 0.200782, 0.3838, 1)
 
 [node name="item_manager" type="Node3D" parent="."]
 script = ExtResource("4_wa8w0")
