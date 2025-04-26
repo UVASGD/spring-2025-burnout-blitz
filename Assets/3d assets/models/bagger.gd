@@ -16,6 +16,7 @@ var horizontal_angle:float = 0.0
 func _ready():
 	SignalBus.connect("activate_controllable", turn_on)
 	Camera.current = true
+	can_attack = true
 	
 	
 	pass
@@ -35,6 +36,7 @@ func _unhandled_input(event):
 func turn_on(c_name, n_uses):
 	if c_name == self.name:
 		is_on = true
+		can_attack = true
 		Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
 		num_uses = n_uses
 	
@@ -44,12 +46,13 @@ func exit():
 	num_uses = 0
 	SignalBus.emit_signal("change_screen_visibility", "SubViewportContainer2")
 	SignalBus.emit_signal("change_screen_visibility", "Controllable")
+	SignalBus.emit_signal("devil_controllable_status")
 	
 func attack():
-	if is_on and not can_attack:
-		can_attack = true
-	elif is_on and can_attack:
+
+	if is_on and can_attack:
 		can_rotate = false
+		can_attack = false
 		anim_player.play("attack")
 		await anim_player.animation_finished
 		can_rotate = true

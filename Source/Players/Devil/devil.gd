@@ -27,12 +27,15 @@ var top_camera_active:bool = false
 @export var top_camera_speed:float = 50.0  # Speed for moving the top camera
 var top_camera_offset:Vector3 = Vector3(0, 100, 0)  # Raise the camera above the player
 
+var is_using_controllable:bool = false
+
 func _ready():
 	# Lock and hide the mouse
 	camera = normal_camera
 	camera.current = true
 	top_camera.current = false
 	Input.mouse_mode = Input.MOUSE_MODE_CAPTURED
+	SignalBus.connect("devil_controllable_status", change_controllable_status)
 
 func _unhandled_input(event):
 	if event is InputEventMouseButton and not top_camera_active:
@@ -136,8 +139,10 @@ func left_click():
 		if raycast_result:
 			var detected_obj = raycast_result.get("collider")
 			if detected_obj.is_in_group("controllable"):
-				switch_to_controllable(detected_obj.name, num_uses)
-				print("obtained object!")
+				if not is_using_controllable:
+					switch_to_controllable(detected_obj.name, num_uses)
+					print("obtained object!")
+				
 			else:
 				print("uh oh")
 			var insert_position = (raycast_result.get("position"))
@@ -164,9 +169,6 @@ func switch_to_controllable(c_name, num_uses):
 		
 	var c_node_pos = c_node.global_position
 	
-	if r_viewport_controllables.get_child_count() < 1:
-		push_error("No node in 'right_viewport_controllable' group")
-		return
 	
 
 	if r_viewport_controllables.get_child_count() > 0:
@@ -188,6 +190,7 @@ func switch_to_controllable(c_name, num_uses):
 		r_viewport_controllables.add_child(c_node)
 		c_node.global_position = c_node_pos
 	
+	is_using_controllable = true
 		
 		
 		
@@ -197,5 +200,7 @@ func switch_to_controllable(c_name, num_uses):
 	SignalBus.emit_signal("activate_controllable", c_name, num_uses)
 	pass
 
+func change_controllable_status():
+	is_using_controllable = ! is_using_controllable
 	
 # This is the method to convert the crosshair position (Vector2) to a world position (Vector3)

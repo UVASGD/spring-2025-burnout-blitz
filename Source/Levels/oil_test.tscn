@@ -1,4 +1,4 @@
-[gd_scene load_steps=70 format=4 uid="uid://f7mo143p4kia"]
+[gd_scene load_steps=71 format=4 uid="uid://f7mo143p4kia"]
 
 [ext_resource type="PackedScene" uid="uid://ct7oupewt4kt4" path="res://Source/Levels/level_template.tscn" id="1_fw1tx"]
 [ext_resource type="Script" path="res://grid_container.gd" id="2_n7d75"]
@@ -6,6 +6,7 @@
 [ext_resource type="PackedScene" uid="uid://onxc0n3pblmf" path="res://Source/Players/Devil/devil.tscn" id="4_6jxj4"]
 [ext_resource type="Script" path="res://Source/Players/Devil/crosshair.gd" id="5_ax860"]
 [ext_resource type="PackedScene" uid="uid://8tqcf7iv1oeu" path="res://Source/items/spawner/spawner.tscn" id="6_ihi00"]
+[ext_resource type="PackedScene" uid="uid://3gkng1wdrlpp" path="res://Assets/3d assets/models/spacelaser/spacelaser_new.tscn" id="7_637vu"]
 [ext_resource type="PackedScene" uid="uid://b26f7wpiumuqe" path="res://Assets/3d assets/models/cannon.tscn" id="7_u04p3"]
 [ext_resource type="Script" path="res://Source/Levels/out_of_bounds.gd" id="8_dtloo"]
 [ext_resource type="PackedScene" uid="uid://y002h5o1oxy6" path="res://Assets/3d assets/checkpoints/checkpoint.tscn" id="9_ypyv5"]
@@ -628,15 +629,15 @@ stretch = true
 [node name="controllables_parent" type="Node3D" parent="GridContainer/Controllable" index="0" groups=["controllables_parent"]]
 
 [node name="Bagger2" parent="GridContainer/Controllable/controllables_parent" index="0" instance=ExtResource("18_hlmwj")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -420.749, -191.675, -435.577)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -246.574, -150.225, -359.858)
 
-[node name="right_side" type="SubViewport" parent="GridContainer/Controllable" index="1" groups=["right_viewport_controllable"]]
+[node name="Bagger" parent="GridContainer/Controllable/controllables_parent" index="1" instance=ExtResource("18_hlmwj")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 99.7378, -191.675, -435.577)
+
+[node name="right_viewport_controllable" type="SubViewport" parent="GridContainer/Controllable" index="1" groups=["right_viewport_controllable"]]
 handle_input_locally = false
 size = Vector2i(574, 648)
 render_target_update_mode = 4
-
-[node name="Bagger" parent="GridContainer/Controllable/right_side" index="0" instance=ExtResource("18_hlmwj")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 99.7378, -191.675, -435.577)
 
 [node name="end_lap" type="SubViewportContainer" parent="GridContainer" index="3"]
 unique_name_in_owner = true
@@ -675,6 +676,9 @@ skeleton = NodePath("")
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Cube2/StaticBody3D" index="0"]
 transform = Transform3D(1, 0, 2.84217e-14, 0, 1, 0, -2.84217e-14, 0, 1, 0, 0, 0)
 shape = SubResource("ConcavePolygonShape3D_1nvpf")
+
+[node name="SpacelaserNew" parent="Cube2/StaticBody3D" index="1" instance=ExtResource("7_637vu")]
+transform = Transform3D(9.73536e-09, -0.05, 2.18557e-09, 0, -2.18557e-09, -0.05, 0.05, 9.73536e-09, -4.25546e-16, 8.728, 128.878, 74.9296)
 
 [node name="Spawner2" parent="." index="4" instance=ExtResource("6_ihi00")]
 transform = Transform3D(-0.120145, 0.0150948, 0.992642, 0.124658, 0.9922, 0, -0.984899, 0.123741, -0.12109, 33.7547, -158.662, -182.189)
@@ -772,7 +776,7 @@ transform = Transform3D(41.9083, 0, -27.2707, 0, 50, 0, 27.2707, 0, 41.9083, 774
 script = ExtResource("12_guxw0")
 
 [node name="Plane" type="MeshInstance3D" parent="warship4" index="0"]
-transform = Transform3D(3.61021e-06, 0.997289, -0.0734458, 1, -3.61995e-06, 0, -2.65876e-07, -0.0734458, -0.997289, 0, 0, 0)
+transform = Transform3D(3.61021e-06, 0.997288, -0.0734457, 1, -3.61995e-06, 0, -2.65876e-07, -0.0734457, -0.997288, 0, 0, 0)
 material_override = SubResource("ShaderMaterial_jange")
 mesh = SubResource("ArrayMesh_wdtin")
 skeleton = NodePath("")
