@@ -634,6 +634,9 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -246.574, -150.225, -359.858)
 [node name="Bagger" parent="GridContainer/Controllable/controllables_parent" index="1" instance=ExtResource("18_hlmwj")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 99.7378, -191.675, -435.577)
 
+[node name="SpacelaserNew" parent="GridContainer/Controllable/controllables_parent" index="2" instance=ExtResource("7_637vu")]
+transform = Transform3D(-6.95455e-09, -0.0890214, -0.233613, -2.66454e-15, 0.233613, -0.0890214, 0.25, -2.47641e-09, -6.4987e-09, 408.058, -24.7367, 26.7359)
+
 [node name="right_viewport_controllable" type="SubViewport" parent="GridContainer/Controllable" index="1" groups=["right_viewport_controllable"]]
 handle_input_locally = false
 size = Vector2i(574, 648)
@@ -676,9 +679,6 @@ skeleton = NodePath("")
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Cube2/StaticBody3D" index="0"]
 transform = Transform3D(1, 0, 2.84217e-14, 0, 1, 0, -2.84217e-14, 0, 1, 0, 0, 0)
 shape = SubResource("ConcavePolygonShape3D_1nvpf")
-
-[node name="SpacelaserNew" parent="Cube2/StaticBody3D" index="1" instance=ExtResource("7_637vu")]
-transform = Transform3D(9.73536e-09, -0.05, 2.18557e-09, 0, -2.18557e-09, -0.05, 0.05, 9.73536e-09, -4.25546e-16, 8.728, 128.878, 74.9296)
 
 [node name="Spawner2" parent="." index="4" instance=ExtResource("6_ihi00")]
 transform = Transform3D(-0.120145, 0.0150948, 0.992642, 0.124658, 0.9922, 0, -0.984899, 0.123741, -0.12109, 33.7547, -158.662, -182.189)

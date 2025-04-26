@@ -1,6 +1,7 @@
-[gd_scene load_steps=26 format=4 uid="uid://3gkng1wdrlpp"]
+[gd_scene load_steps=28 format=4 uid="uid://3gkng1wdrlpp"]
 
 [ext_resource type="PackedScene" uid="uid://d0u734u8g0kyx" path="res://Assets/3d assets/models/spacelaser/laser.tscn" id="1_o627c"]
+[ext_resource type="Script" path="res://Assets/3d assets/models/spacelaser/spacelaser_new.gd" id="1_x0udf"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_qfiai"]
 albedo_color = Color(0.194349, 0.194349, 0.194349, 1)
@@ -217,7 +218,11 @@ _surfaces = [{
 blend_shape_mode = 0
 shadow_mesh = SubResource("ArrayMesh_vd1xw")
 
-[node name="SpacelaserNew" type="Node3D"]
+[sub_resource type="BoxShape3D" id="BoxShape3D_jhkq6"]
+size = Vector3(699.855, 280.669, 824.78)
+
+[node name="SpacelaserNew" type="CharacterBody3D" groups=["controllable"]]
+script = ExtResource("1_x0udf")
 
 [node name="Chasis" type="MeshInstance3D" parent="."]
 transform = Transform3D(18.9915, 0, 0, 0, 18.9915, 0, 0, 0, 18.9915, 0, 0, 0)
@@ -256,4 +261,12 @@ mesh = SubResource("ArrayMesh_wlc0b")
 skeleton = NodePath("")
 
 [node name="Laser" parent="." instance=ExtResource("1_o627c")]
-transform = Transform3D(100, 0, 0, 0, -4.37114e-06, 100, 0, -100, -4.37114e-06, 0, 37.9265, 492.83)
+transform = Transform3D(100, 0, 0, 0, -4.37114e-06, 100, 0, -100, -4.37114e-06, 0, 37.9265, 490.211)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.204132, 42.3651, 104.436)
+shape = SubResource("BoxShape3D_jhkq6")
+
+[node name="Camera3D" type="Camera3D" parent="."]
+unique_name_in_owner = true
+transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 227.985, 319.233, -451.595)
