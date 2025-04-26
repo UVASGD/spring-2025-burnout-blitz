@@ -1,9 +1,15 @@
-[gd_scene load_steps=103 format=4 uid="uid://cdmuakwnlfybd"]
+[gd_scene load_steps=106 format=4 uid="uid://cdmuakwnlfybd"]
 
 [ext_resource type="Script" path="res://Assets/3d assets/models/bagger.gd" id="1_ay758"]
+[ext_resource type="Shader" uid="uid://e67ccuhnce2t" path="res://Assets/shaders/visual_shader_test.tres" id="2_hltiw"]
 
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_mfyrw"]
-albedo_color = Color(0.770753, 0.536158, 0.194496, 1)
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_qflf3"]
+render_priority = 0
+shader = ExtResource("2_hltiw")
+shader_parameter/ColorParameter = Color(0.770753, 0.536158, 0.194496, 1)
+shader_parameter/Strength = 2.0
+shader_parameter/LightColor = Color(5, 0.298, 0.236, 1)
+shader_parameter/FloatParameter = -0.01
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_efcel"]
 
@@ -184,6 +190,14 @@ _surfaces = [{
 }]
 blend_shape_mode = 0
 shadow_mesh = SubResource("ArrayMesh_6kdvp")
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_vsydm"]
+render_priority = 0
+shader = ExtResource("2_hltiw")
+shader_parameter/ColorParameter = Color(0.770753, 0.536158, 0.194496, 1)
+shader_parameter/Strength = 2.0
+shader_parameter/LightColor = Color(5, 0.298, 0.236, 1)
+shader_parameter/FloatParameter = -0.015
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_k3ff7"]
 
@@ -392,8 +406,13 @@ _surfaces = [{
 blend_shape_mode = 0
 shadow_mesh = SubResource("ArrayMesh_8jm6v")
 
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_xtvod"]
-albedo_color = Color(0, 0, 0, 1)
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_movd5"]
+render_priority = 0
+shader = ExtResource("2_hltiw")
+shader_parameter/ColorParameter = Color(0.770753, 0.536158, 0.194496, 1)
+shader_parameter/Strength = 2.0
+shader_parameter/LightColor = Color(5, 0.298, 0.236, 1)
+shader_parameter/FloatParameter = -0.055
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_32jmm"]
 
@@ -884,6 +903,9 @@ _surfaces = [{
 blend_shape_mode = 0
 shadow_mesh = SubResource("ArrayMesh_7xo2g")
 
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_mfyrw"]
+albedo_color = Color(0.770753, 0.536158, 0.194496, 1)
+
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_7nvp3"]
 
 [sub_resource type="ArrayMesh" id="ArrayMesh_aouh8"]
@@ -1069,7 +1091,7 @@ script = ExtResource("1_ay758")
 
 [node name="Cylinder" type="MeshInstance3D" parent="Bagger"]
 transform = Transform3D(32.0937, 0, 0, 0, 32.0937, 0, 0, 0, 32.0937, 0, 96.6888, 38.8994)
-material_override = SubResource("StandardMaterial3D_mfyrw")
+material_override = SubResource("ShaderMaterial_qflf3")
 mesh = SubResource("ArrayMesh_11wj5")
 skeleton = NodePath("")
 
@@ -1113,19 +1135,19 @@ transform = Transform3D(0.237255, 0, 0, 0, 0.237255, 0, 0, 0, 0.237255, 0, 1.065
 
 [node name="Scaffolding_Back" type="MeshInstance3D" parent="Rotator/BackScaffoldingRotator"]
 transform = Transform3D(1, 0, 0, 0, 0.239658, 0.970857, 0, -0.970857, 0.239658, 0, 0.326458, -1.62278)
-material_override = SubResource("StandardMaterial3D_mfyrw")
+material_override = SubResource("ShaderMaterial_vsydm")
 mesh = SubResource("ArrayMesh_33n87")
 skeleton = NodePath("")
 
 [node name="scaffolding_backup_002" type="MeshInstance3D" parent="Rotator/BackScaffoldingRotator"]
 transform = Transform3D(1, 0, 0, 0, 0.239658, 0.970857, 0, -0.970857, 0.239658, 0, 0.326458, -1.62278)
-material_override = SubResource("StandardMaterial3D_mfyrw")
+material_override = SubResource("ShaderMaterial_vsydm")
 mesh = SubResource("ArrayMesh_kunrn")
 skeleton = NodePath("")
 
 [node name="scaffolding_backup_003" type="MeshInstance3D" parent="Rotator/BackScaffoldingRotator"]
 transform = Transform3D(1, 0, 0, 0, 0.239658, 0.970857, 0, -0.970857, 0.239658, 0, 0.326458, -1.62278)
-material_override = SubResource("StandardMaterial3D_mfyrw")
+material_override = SubResource("ShaderMaterial_vsydm")
 mesh = SubResource("ArrayMesh_hvm2e")
 skeleton = NodePath("")
 
@@ -1152,13 +1174,13 @@ transform = Transform3D(0.237255, 0, 0, 0, 0.232695, 0.0462943, 0, -0.0462943, 0
 
 [node name="scaffolding_backup_006" type="MeshInstance3D" parent="Rotator/FrontScaffoldingRotator"]
 transform = Transform3D(1, 0, 0, 0, 0.981349, -0.192234, 0, 0.192234, 0.981349, 0, 0.424503, 17.6637)
-material_override = SubResource("StandardMaterial3D_xtvod")
+material_override = SubResource("ShaderMaterial_movd5")
 mesh = SubResource("ArrayMesh_mgmpg")
 skeleton = NodePath("")
 
 [node name="scaffolding_backup_008" type="MeshInstance3D" parent="Rotator/FrontScaffoldingRotator"]
 transform = Transform3D(0, 0, -1, -0.981349, -0.192234, 0, -0.192234, 0.981349, 0, -0.889161, 4.90987, 1.51098)
-material_override = SubResource("StandardMaterial3D_mfyrw")
+material_override = SubResource("ShaderMaterial_movd5")
 mesh = SubResource("ArrayMesh_garli")
 skeleton = NodePath("")
 
@@ -1227,7 +1249,7 @@ skeleton = NodePath("")
 
 [node name="Scaffolding" type="MeshInstance3D" parent="Rotator/FrontScaffoldingRotator"]
 transform = Transform3D(1, 0, 0, 0, 0.980705, -0.192234, 0, 0.192108, 0.981349, 0, 0.444767, -0.498673)
-material_override = SubResource("StandardMaterial3D_mfyrw")
+material_override = SubResource("ShaderMaterial_movd5")
 mesh = SubResource("ArrayMesh_kuyxi")
 skeleton = NodePath("")
 
