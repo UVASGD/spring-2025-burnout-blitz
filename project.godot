@@ -25,10 +25,6 @@ SignalBus="*res://Autoload/SignalBus.gd"
 
 [display]
 
-<<<<<<< HEAD
-=======
-window/size/mode=3
->>>>>>> f2b3447f32f8e57e1ea890db6c7671f62b72c959
 window/size/initial_position_type=2
 window/stretch/mode="viewport"
 
