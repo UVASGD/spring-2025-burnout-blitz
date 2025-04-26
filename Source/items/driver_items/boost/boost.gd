@@ -19,5 +19,5 @@ func use():
 
 func _on_timer_timeout():
 	SignalBus.emit_signal("update_engine_force", "restore", 2)
-	SignalBus.emit_signal("clear_item")
+	clear_item()
 	$".".queue_free()

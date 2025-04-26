@@ -68,9 +68,20 @@ offset_left = 465.0
 offset_top = 433.0
 offset_right = 649.0
 offset_bottom = 516.0
+theme_override_colors/font_color = Color(0.995323, 0.459782, 0.253771, 1)
 theme_override_fonts/font = ExtResource("2_cw1h7")
 theme_override_font_sizes/font_size = 31
 text = "Tutorial"
+
+[node name="Credits" type="Button" parent="Control"]
+layout_mode = 0
+offset_left = 465.0
+offset_top = 525.0
+offset_right = 649.0
+offset_bottom = 608.0
+theme_override_fonts/font = ExtResource("2_cw1h7")
+theme_override_font_sizes/font_size = 31
+text = "Credits"
 
 [connection signal="pressed" from="Control/Versus" to="." method="_on_versus_pressed"]
 [connection signal="pressed" from="Control/TimeTrials" to="." method="_on_time_trials_pressed"]
