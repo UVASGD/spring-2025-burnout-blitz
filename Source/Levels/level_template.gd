@@ -6,5 +6,3 @@ class_name LevelTemplate
 func _ready():
 	super._ready()
 	initialize_num_checkpoints(checkpoints_node)
-	
-	

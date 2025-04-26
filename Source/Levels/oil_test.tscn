@@ -547,7 +547,7 @@ shadow_mesh = SubResource("ArrayMesh_arcdx")
 [node name="LevelExample" instance=ExtResource("1_fw1tx")]
 num_laps = 1
 driver_items_on_map = Array[String](["boost"])
-devil_items_on_map = Array[String](["black_hole"])
+devil_items_on_map = Array[String](["shark"])
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="." index="0"]
 environment = SubResource("Environment_x6786")
@@ -776,7 +776,7 @@ transform = Transform3D(41.9083, 0, -27.2707, 0, 50, 0, 27.2707, 0, 41.9083, 774
 script = ExtResource("12_guxw0")
 
 [node name="Plane" type="MeshInstance3D" parent="warship4" index="0"]
-transform = Transform3D(3.61021e-06, 0.997289, -0.0734458, 1, -3.61995e-06, 0, -2.65876e-07, -0.0734458, -0.997289, 0, 0, 0)
+transform = Transform3D(3.61021e-06, 0.997288, -0.0734457, 1, -3.61995e-06, 0, -2.65876e-07, -0.0734457, -0.997288, 0, 0, 0)
 material_override = SubResource("ShaderMaterial_jange")
 mesh = SubResource("ArrayMesh_wdtin")
 skeleton = NodePath("")
