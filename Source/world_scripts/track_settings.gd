@@ -22,7 +22,10 @@ func _ready():
 	SignalBus.connect("update_checkpoint", add_checkpoint)
 	SignalBus.connect("back_to_menu", back_to_menu)
 	
-	
+
+func _physics_process(delta: float) -> void:
+	print(get_tree().get_root().get_children())
+
 func initialize_num_checkpoints(checkpoints:Node3D):
 	num_checkpoints = checkpoints.get_child_count()
 func give_driver_item():
@@ -79,7 +82,7 @@ func give_devil_item():
 func back_to_menu():
 	match is_versus:
 		true:
-			await game_container.spawn_main_menu()
+			get_tree().get_root().get_node("/root/GameContainer").spawn_main_menu()
 			queue_free()
 
 		false:

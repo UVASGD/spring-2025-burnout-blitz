@@ -20,51 +20,19 @@ shader_parameter/noise_tex = ExtResource("3_qdv1m")
 [node name="MainMenu" type="CanvasLayer"]
 script = ExtResource("1_3oxnt")
 
-[node name="Control" type="Control" parent="."]
-layout_mode = 3
-anchors_preset = 0
-offset_right = 901.0
-offset_bottom = 568.0
+[node name="ColorRect" type="ColorRect" parent="."]
+offset_right = 1159.0
+offset_bottom = 655.0
+color = Color(0, 0, 0, 1)
 
-[node name="Control" type="ColorRect" parent="Control"]
+[node name="Control2" type="ColorRect" parent="."]
 clip_children = 2
 material = SubResource("ShaderMaterial_6dn2v")
-layout_mode = 0
 offset_top = -44.0
 offset_right = 1153.0
 offset_bottom = 646.0
 
-[node name="LabelShadow" type="RichTextLabel" parent="Control/Control"]
-modulate = Color(0, 0, 0, 0.74902)
-layout_mode = 0
-offset_left = 168.0
-offset_top = 50.0
-offset_right = 1007.0
-offset_bottom = 338.0
-theme_override_fonts/normal_font = ExtResource("2_cw1h7")
-theme_override_font_sizes/normal_font_size = 121
-text = "Burnout Blitz"
-fit_content = true
-scroll_active = false
-autowrap_mode = 0
-
-[node name="Label" type="RichTextLabel" parent="Control/Control"]
-modulate = Color(0.996078, 0.0235294, 0.254902, 1)
-material = SubResource("ShaderMaterial_m87wf")
-layout_mode = 0
-offset_left = 163.0
-offset_top = 46.0
-offset_right = 1002.0
-offset_bottom = 334.0
-theme_override_fonts/normal_font = ExtResource("2_cw1h7")
-theme_override_font_sizes/normal_font_size = 121
-text = "Burnout Blitz"
-fit_content = true
-scroll_active = false
-autowrap_mode = 0
-
-[node name="Versus" type="Button" parent="Control"]
-layout_mode = 0
+[node name="Versus" type="Button" parent="."]
 offset_left = 184.0
 offset_top = 500.0
 offset_right = 369.0
@@ -74,8 +42,7 @@ theme_override_fonts/font = ExtResource("2_cw1h7")
 theme_override_font_sizes/font_size = 31
 text = "Versus"
 
-[node name="TimeTrials" type="Button" parent="Control"]
-layout_mode = 0
+[node name="TimeTrials" type="Button" parent="."]
 offset_left = 384.0
 offset_top = 500.0
 offset_right = 568.0
@@ -85,8 +52,7 @@ theme_override_fonts/font = ExtResource("2_cw1h7")
 theme_override_font_sizes/font_size = 31
 text = "Time Trials"
 
-[node name="Tutorial" type="Button" parent="Control"]
-layout_mode = 0
+[node name="Tutorial" type="Button" parent="."]
 offset_left = 584.0
 offset_top = 500.0
 offset_right = 768.0
@@ -96,8 +62,7 @@ theme_override_fonts/font = ExtResource("2_cw1h7")
 theme_override_font_sizes/font_size = 31
 text = "Tutorial"
 
-[node name="Credits" type="Button" parent="Control"]
-layout_mode = 0
+[node name="Credits" type="Button" parent="."]
 offset_left = 784.0
 offset_top = 500.0
 offset_right = 968.0
@@ -106,13 +71,40 @@ theme_override_fonts/font = ExtResource("2_cw1h7")
 theme_override_font_sizes/font_size = 31
 text = "Credits"
 
-[connection signal="mouse_entered" from="Control/Versus" to="." method="_on_versus_mouse_entered"]
-[connection signal="mouse_exited" from="Control/Versus" to="." method="_on_versus_mouse_exited"]
-[connection signal="pressed" from="Control/Versus" to="." method="_on_versus_pressed"]
-[connection signal="mouse_entered" from="Control/TimeTrials" to="." method="_on_time_trials_mouse_entered"]
-[connection signal="mouse_exited" from="Control/TimeTrials" to="." method="_on_time_trials_mouse_exited"]
-[connection signal="pressed" from="Control/TimeTrials" to="." method="_on_time_trials_pressed"]
-[connection signal="mouse_entered" from="Control/Tutorial" to="." method="_on_tutorial_mouse_entered"]
-[connection signal="mouse_exited" from="Control/Tutorial" to="." method="_on_tutorial_mouse_exited"]
-[connection signal="mouse_entered" from="Control/Credits" to="." method="_on_credits_mouse_entered"]
-[connection signal="mouse_exited" from="Control/Credits" to="." method="_on_credits_mouse_exited"]
+[node name="LabelShadow" type="RichTextLabel" parent="."]
+modulate = Color(0, 0, 0, 0.74902)
+offset_left = 168.0
+offset_top = 6.0
+offset_right = 1007.0
+offset_bottom = 294.0
+theme_override_fonts/normal_font = ExtResource("2_cw1h7")
+theme_override_font_sizes/normal_font_size = 121
+text = "Burnout Blitz"
+fit_content = true
+scroll_active = false
+autowrap_mode = 0
+
+[node name="Label" type="RichTextLabel" parent="."]
+modulate = Color(0.996078, 0.0235294, 0.254902, 1)
+material = SubResource("ShaderMaterial_m87wf")
+offset_left = 163.0
+offset_top = 2.0
+offset_right = 1002.0
+offset_bottom = 290.0
+theme_override_fonts/normal_font = ExtResource("2_cw1h7")
+theme_override_font_sizes/normal_font_size = 121
+text = "Burnout Blitz"
+fit_content = true
+scroll_active = false
+autowrap_mode = 0
+
+[connection signal="mouse_entered" from="Versus" to="." method="_on_versus_mouse_entered"]
+[connection signal="mouse_exited" from="Versus" to="." method="_on_versus_mouse_exited"]
+[connection signal="pressed" from="Versus" to="." method="_on_versus_pressed"]
+[connection signal="mouse_entered" from="TimeTrials" to="." method="_on_time_trials_mouse_entered"]
+[connection signal="mouse_exited" from="TimeTrials" to="." method="_on_time_trials_mouse_exited"]
+[connection signal="pressed" from="TimeTrials" to="." method="_on_time_trials_pressed"]
+[connection signal="mouse_entered" from="Tutorial" to="." method="_on_tutorial_mouse_entered"]
+[connection signal="mouse_exited" from="Tutorial" to="." method="_on_tutorial_mouse_exited"]
+[connection signal="mouse_entered" from="Credits" to="." method="_on_credits_mouse_entered"]
+[connection signal="mouse_exited" from="Credits" to="." method="_on_credits_mouse_exited"]

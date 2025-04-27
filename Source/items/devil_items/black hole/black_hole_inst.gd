@@ -27,7 +27,8 @@ func _on_body_entered(body: Node3D) -> void:
 		kart_body = body
 
 func _on_body_exited(body: Node3D) -> void:
-	kart_body = null
+	if body.is_in_group("driver"):
+		kart_body = null
 
 func _on_setup_timer_timeout() -> void:
 	setup = true

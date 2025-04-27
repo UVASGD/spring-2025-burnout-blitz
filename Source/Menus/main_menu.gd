@@ -18,31 +18,31 @@ func _ready():
 func _physics_process(delta: float) -> void:
 	if versus_hovered:
 		var hover_tween = create_tween()
-		hover_tween.tween_property($Control/Versus, "global_position:y", button_yh, 0.2)
+		hover_tween.tween_property($Versus, "global_position:y", button_yh, 0.2)
 	else:
 		var hover_tween = create_tween()
-		hover_tween.tween_property($Control/Versus, "global_position:y", button_y, 0.2)
+		hover_tween.tween_property($Versus, "global_position:y", button_y, 0.2)
 		
 	if trials_hovered:
 		var hover_tween2 = create_tween()
-		hover_tween2.tween_property($Control/TimeTrials, "global_position:y", button_yh, 0.2)
+		hover_tween2.tween_property($TimeTrials, "global_position:y", button_yh, 0.2)
 	else:
 		var hover_tween2 = create_tween()
-		hover_tween2.tween_property($Control/TimeTrials, "global_position:y", button_y, 0.2)
+		hover_tween2.tween_property($TimeTrials, "global_position:y", button_y, 0.2)
 		
 	if tutorial_hovered:
 		var hover_tween3 = create_tween()
-		hover_tween3.tween_property($Control/Tutorial, "global_position:y", button_yh, 0.2)
+		hover_tween3.tween_property($Tutorial, "global_position:y", button_yh, 0.2)
 	else:
 		var hover_tween3 = create_tween()
-		hover_tween3.tween_property($Control/Tutorial, "global_position:y", button_y, 0.2)
+		hover_tween3.tween_property($Tutorial, "global_position:y", button_y, 0.2)
 		
 	if credits_hovered:
 		var hover_tween4 = create_tween()
-		hover_tween4.tween_property($Control/Credits, "global_position:y", button_yh, 0.2)
+		hover_tween4.tween_property($Credits, "global_position:y", button_yh, 0.2)
 	else:
 		var hover_tween4 = create_tween()
-		hover_tween4.tween_property($Control/Credits, "global_position:y", button_y, 0.2)
+		hover_tween4.tween_property($Credits, "global_position:y", button_y, 0.2)
 
 func _on_versus_pressed() -> void:
 	# Variable within the function is is_versus which is set to true

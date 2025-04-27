@@ -18,6 +18,7 @@ func _ready():
 	spawn_main_menu()
 	
 func spawn_main_menu():
+	$AudioStreamPlayer.play()
 	var main_menu_inst = main_menu_scene.instantiate()
 	add_child(main_menu_inst)
 	
@@ -27,6 +28,7 @@ func spawn_map_select_menu(is_versus:bool):
 	add_child(map_select_menu_inst)
 
 func spawn_level(name : String):
+	$AudioStreamPlayer.stop()
 	var level_inst = levels.get(name).instantiate()
 	#level_inst.global_position = Vector3(0,0,0)
 	add_child(level_inst)

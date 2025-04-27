@@ -547,7 +547,7 @@ shadow_mesh = SubResource("ArrayMesh_arcdx")
 [node name="LevelExample" instance=ExtResource("1_fw1tx")]
 num_laps = 1
 driver_items_on_map = Array[String](["boost"])
-devil_items_on_map = Array[String](["shark"])
+devil_items_on_map = Array[String](["ufo"])
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="." index="0"]
 environment = SubResource("Environment_x6786")
@@ -833,7 +833,6 @@ transform = Transform3D(-0.204974, 0, 0.978767, 0, 1, 0, -0.978767, 0, -0.204974
 
 [node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="." index="24"]
 stream = ExtResource("17_bdwl1")
-volume_db = 10.0
 autoplay = true
 
 [node name="Node3D3" type="Node3D" parent="." index="25"]
