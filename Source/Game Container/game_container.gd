@@ -5,8 +5,8 @@ class_name GameContainer
 @onready var map_select_menu_scene = preload("res://Source/Menus/map_select_menu.tscn")
 
 @onready var levels = {
-	"V_Violence" : preload("res://Source/Levels/missile_test.tscn"),
-	"V_Greed" : 2,
+	"V_Violence" : preload("res://Source/Levels/Versus/v_violence.tscn"),
+	"V_Greed" : preload("res://Source/Levels/Versus/v_greed.tscn"),
 	"V_Limbo" : 3,
 	
 	"T_Violence": preload("res://Source/Levels/Time Trials/t_violence.tscn"),
