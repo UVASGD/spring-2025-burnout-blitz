@@ -32,6 +32,10 @@ window/stretch/mode="viewport"
 
 Driver=""
 
+[gui]
+
+theme/custom_font="res://Source/Resources/black-mud.regular.ttf"
+
 [input]
 
 move_forward={

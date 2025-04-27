@@ -13,11 +13,12 @@ offset_right = 848.0
 offset_bottom = 534.0
 
 [node name="Label" type="Label" parent="Control"]
+modulate = Color(0.996078, 0.0235294, 0.254902, 1)
 layout_mode = 0
-offset_left = 315.0
-offset_top = 68.0
-offset_right = 658.0
-offset_bottom = 145.0
+offset_left = 418.0
+offset_top = 54.0
+offset_right = 762.0
+offset_bottom = 188.0
 theme_override_font_sizes/font_size = 56
 text = "Select a map"
 
@@ -34,9 +35,18 @@ icon = ExtResource("2_t4jmy")
 layout_mode = 0
 offset_left = 21.0
 offset_top = 20.0
-offset_right = 199.0
-offset_bottom = 90.0
-text = "Back Button"
+offset_right = 152.0
+offset_bottom = 114.0
+theme_override_font_sizes/font_size = 36
+text = "Back"
+
+[node name="Label" type="Label" parent="."]
+offset_left = 166.0
+offset_top = 440.0
+offset_right = 331.0
+offset_bottom = 550.0
+theme_override_font_sizes/font_size = 46
+text = "Violence"
 
 [connection signal="pressed" from="Control/Button" to="." method="_on_button_pressed"]
 [connection signal="pressed" from="Control/Back" to="." method="_on_back_pressed"]
