@@ -16,6 +16,7 @@ func _ready():
 
 	%SubViewportContainer.visible = true
 	%SubViewportContainer2.visible = true
+	%Controllable.visible = false
 	end_lap.visible = false
 	#end_lap.stretch = true
 	$".".add_theme_constant_override("h_separation", 0)
