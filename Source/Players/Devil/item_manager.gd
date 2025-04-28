@@ -15,6 +15,7 @@ class_name DevilItemManager
 
 var all_items:Array[String] = ["trident", "missile", "shark", "oil_spill", "bagger", "breakable_wall", "black_hole", "ufo", "spacelaser"]
 
+var norm_0_top_1_control_2: int
 func _ready():
 	SignalBus.connect("devil_giving_item", insert_item)
 
@@ -23,47 +24,56 @@ func insert_item(item_name:String):
 		var item
 		match item_name:
 			"trident":
+				norm_0_top_1_control_2 = 0
 				sigil_anim_player.play("sigil_spawn")
 				item = trident.instantiate()
 				add_child(item)
 				item.global_transform.origin = self.global_transform.origin
 			"missile":
+				norm_0_top_1_control_2 = 0
 				sigil_anim_player.play("sigil_spawn")
 				item = missile.instantiate()
 				add_child(item)
 				item.global_transform.origin = self.global_transform.origin
 			"oil_spill":
-				sigil_anim_player.play("sigil_spawn")
+				norm_0_top_1_control_2 = 1
+				sigil_anim_player.play("sigil_spawn_top_down")
 				item = oil_spill.instantiate()
 				add_child(item)
 				item.global_transform.origin = self.global_transform.origin
 			"bagger":
-				sigil_anim_player.play("sigil_spawn")
+				norm_0_top_1_control_2 = 2
+				sigil_anim_player.play("sigil_spawn_top_down_controllable")
 				item = bagger.instantiate()
 				add_child(item)
 				item.global_transform.origin = self.global_transform.origin		
 			"black_hole":
-				sigil_anim_player.play("sigil_spawn")
+				norm_0_top_1_control_2 = 1
+				sigil_anim_player.play("sigil_spawn_top_down")
 				item = black_hole.instantiate()
 				add_child(item)
 				item.global_transform.origin = self.global_transform.origin
 			"shark":
-				sigil_anim_player.play("sigil_spawn")
+				norm_0_top_1_control_2 = 1
+				sigil_anim_player.play("sigil_spawn_top_down")
 				item = shark.instantiate()
 				add_child(item)
 				item.global_transform.origin = self.global_transform.origin
 			"breakable_wall":
-				sigil_anim_player.play("sigil_spawn")
+				norm_0_top_1_control_2 = 1
+				sigil_anim_player.play("sigil_spawn_top_down")
 				item = breakable_wall.instantiate()
 				add_child(item)
 				item.global_transform.origin = self.global_transform.origin
 			"ufo":
-				sigil_anim_player.play("sigil_spawn")
+				norm_0_top_1_control_2 = 1
+				sigil_anim_player.play("sigil_spawn_top_down")
 				item = ufo.instantiate()
 				add_child(item)
 				item.global_transform.origin = self.global_transform.origin
 			"spacelaser":
-				sigil_anim_player.play("sigil_spawn")
+				norm_0_top_1_control_2 = 2
+				sigil_anim_player.play("sigil_spawn_top_down_controllable")
 				item = spacelaser.instantiate()
 				add_child(item)
 				item.global_transform.origin = self.global_transform.origin
@@ -79,6 +89,12 @@ func use_item():
 		var child_node = self.get_child(1)
 		child_node.use()
 		if child_node.num_uses <= 0:
+			match norm_0_top_1_control_2:
+				1:
+					sigil_anim_player.play_backwards("sigil_spawn")
+				2:
+					sigil_anim_player.play_backwards("sigil_spawn_top_down")
+				3:
+					sigil_anim_player.play_backwards("sigil_spawn_top_down_controllable")
 			
-			sigil_anim_player.play_backwards("sigil_spawn")
 		

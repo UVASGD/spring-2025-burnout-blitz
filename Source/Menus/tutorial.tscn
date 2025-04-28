@@ -1,0 +1,152 @@
+[gd_scene load_steps=15 format=3 uid="uid://cbmb46s6xkobf"]
+
+[ext_resource type="Script" path="res://Source/Menus/tutorial.gd" id="1_mar64"]
+[ext_resource type="FontFile" uid="uid://bqwipp1vl7qqn" path="res://Source/Resources/black-mud.regular.ttf" id="2_aib5f"]
+[ext_resource type="Texture2D" uid="uid://dinbe87t3obk2" path="res://Source/Menus/tutorial_images/Screenshot (1578).png" id="3_dhxk7"]
+[ext_resource type="Texture2D" uid="uid://ctpheboybfcpu" path="res://Source/Menus/tutorial_images/Screenshot (1579).png" id="4_uutwl"]
+[ext_resource type="Texture2D" uid="uid://dcsiytqy3xib0" path="res://Source/Menus/tutorial_images/Screenshot (1580).png" id="5_oa2bh"]
+[ext_resource type="Texture2D" uid="uid://c81wrel68bk4u" path="res://Source/Menus/tutorial_images/Screenshot (1581).png" id="6_ff881"]
+[ext_resource type="Texture2D" uid="uid://bjdmdsh7gh7s" path="res://Source/Menus/tutorial_images/Screenshot (1582).png" id="7_sy07n"]
+[ext_resource type="Texture2D" uid="uid://ch7kxkju5hduh" path="res://Source/Menus/tutorial_images/Screenshot (1593).png" id="8_qjvfp"]
+[ext_resource type="Texture2D" uid="uid://csn0o7kubuevq" path="res://Source/Menus/tutorial_images/Screenshot (1594).png" id="9_si1r2"]
+[ext_resource type="Texture2D" uid="uid://dp24t651xj3bi" path="res://Source/Menus/tutorial_images/Screenshot (1595).png" id="10_c2teg"]
+[ext_resource type="Texture2D" uid="uid://bjh17u5kwvana" path="res://Source/Menus/tutorial_images/Screenshot (1596).png" id="11_eyobf"]
+[ext_resource type="Texture2D" uid="uid://caipcldx0fs1d" path="res://Source/Menus/tutorial_images/Screenshot (1597).png" id="12_qmhv0"]
+[ext_resource type="Texture2D" uid="uid://bi6bo1dqngry" path="res://Source/Menus/tutorial_images/Screenshot (1598).png" id="13_kdn4v"]
+[ext_resource type="Texture2D" uid="uid://cfwm6njypfh7u" path="res://Source/Menus/tutorial_images/Screenshot (1599).png" id="14_sea1s"]
+
+[node name="MapSelectMenu" type="CanvasLayer"]
+script = ExtResource("1_mar64")
+
+[node name="Label4" type="Label" parent="."]
+visible = false
+modulate = Color(0.996078, 0.0235294, 0.254902, 1)
+offset_left = 418.0
+offset_top = 54.0
+offset_right = 762.0
+offset_bottom = 188.0
+theme_override_font_sizes/font_size = 56
+text = "Select a map"
+
+[node name="Control" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -741.0
+offset_top = -433.0
+offset_right = 107.0
+offset_bottom = 101.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Back" type="Button" parent="Control"]
+layout_mode = 0
+offset_left = -198.0
+offset_top = -87.0
+offset_right = -67.0
+offset_bottom = 7.0
+theme_override_font_sizes/font_size = 36
+text = "Back"
+
+[node name="Versus" type="Button" parent="."]
+unique_name_in_owner = true
+offset_left = 1028.0
+offset_top = 818.0
+offset_right = 1213.0
+offset_bottom = 918.0
+theme_override_colors/font_color = Color(0.965998, 0, 0.337831, 1)
+theme_override_fonts/font = ExtResource("2_aib5f")
+theme_override_font_sizes/font_size = 31
+text = "Next"
+
+[node name="Versus2" type="Button" parent="."]
+unique_name_in_owner = true
+offset_left = 663.0
+offset_top = 819.0
+offset_right = 848.0
+offset_bottom = 919.0
+theme_override_colors/font_color = Color(0.965998, 0, 0.337831, 1)
+theme_override_fonts/font = ExtResource("2_aib5f")
+theme_override_font_sizes/font_size = 31
+text = "Previous"
+
+[node name="Control2" type="Control" parent="."]
+z_index = -1
+layout_mode = 3
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -20.0
+offset_right = 20.0
+offset_bottom = 20.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Screenshot(1578)" type="Sprite2D" parent="Control2"]
+position = Vector2(18, 22)
+texture = ExtResource("3_dhxk7")
+
+[node name="Screenshot(1578)2" type="Sprite2D" parent="Control2"]
+visible = false
+position = Vector2(18, 22)
+texture = ExtResource("4_uutwl")
+
+[node name="Screenshot(1578)3" type="Sprite2D" parent="Control2"]
+visible = false
+position = Vector2(18, 22)
+texture = ExtResource("5_oa2bh")
+
+[node name="Screenshot(1578)4" type="Sprite2D" parent="Control2"]
+visible = false
+position = Vector2(18, 22)
+texture = ExtResource("6_ff881")
+
+[node name="Screenshot(1578)5" type="Sprite2D" parent="Control2"]
+visible = false
+position = Vector2(18, 22)
+texture = ExtResource("7_sy07n")
+
+[node name="Screenshot(1578)6" type="Sprite2D" parent="Control2"]
+visible = false
+position = Vector2(18, 22)
+texture = ExtResource("8_qjvfp")
+
+[node name="Screenshot(1578)7" type="Sprite2D" parent="Control2"]
+visible = false
+position = Vector2(18, 22)
+texture = ExtResource("9_si1r2")
+
+[node name="Screenshot(1578)8" type="Sprite2D" parent="Control2"]
+visible = false
+position = Vector2(18, 22)
+texture = ExtResource("10_c2teg")
+
+[node name="Screenshot(1578)9" type="Sprite2D" parent="Control2"]
+visible = false
+position = Vector2(18, 22)
+texture = ExtResource("11_eyobf")
+
+[node name="Screenshot(1578)10" type="Sprite2D" parent="Control2"]
+visible = false
+position = Vector2(18, 22)
+texture = ExtResource("12_qmhv0")
+
+[node name="Screenshot(1578)11" type="Sprite2D" parent="Control2"]
+visible = false
+position = Vector2(18, 22)
+texture = ExtResource("13_kdn4v")
+
+[node name="Screenshot(1578)12" type="Sprite2D" parent="Control2"]
+visible = false
+position = Vector2(18, 22)
+texture = ExtResource("14_sea1s")
+
+[connection signal="pressed" from="Control/Back" to="." method="_on_back_pressed"]
+[connection signal="pressed" from="Versus" to="." method="_on_versus_pressed"]
+[connection signal="pressed" from="Versus2" to="." method="_on_versus_2_pressed"]

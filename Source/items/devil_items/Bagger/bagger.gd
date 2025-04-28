@@ -7,4 +7,5 @@ func _ready():
 	SignalBus.connect("bagger_attack", decrement_uses)
 	
 func decrement_uses():
+	SignalBus.emit_signal("clear_devil_item")
 	queue_free()

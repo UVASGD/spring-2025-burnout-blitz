@@ -56,12 +56,17 @@ func _physics_process(delta: float) -> void:
 func _on_versus_pressed() -> void:
 	# Variable within the function is is_versus which is set to true
 	game_container.spawn_map_select_menu(true)
-	queue_free()	
+	self.queue_free()	
 
 func _on_time_trials_pressed():
 	# Variable within the function is is_versus which is set to false since this is time trials
 	game_container.spawn_map_select_menu(false)
-	queue_free()	
+	self.queue_free()	
+
+func _on_tutorial_pressed():
+	game_container.spawn_tutorial()
+	self.queue_free()
+	pass # Replace with function body.
 
 func _on_versus_mouse_entered() -> void:
 	versus_hovered = true
@@ -81,5 +86,12 @@ func _on_credits_mouse_exited() -> void:
 	credits_hovered = false
 
 
-func _on_exit_mouse_entered():
-	pass # Replace with function body.
+
+
+
+func _on_exit_pressed():
+	get_tree().quit()
+
+
+func _on_credits_pressed():
+	game_container.spawn_credits()

@@ -1,0 +1,48 @@
+[gd_scene load_steps=3 format=3 uid="uid://ct4x8pd65eb71"]
+
+[ext_resource type="Texture2D" uid="uid://do4sbadt7c64t" path="res://Source/Menus/Screenshot (1600).png" id="1_1ai4l"]
+[ext_resource type="Script" path="res://Source/Menus/credits.gd" id="1_gn77m"]
+
+[node name="MapSelectMenu" type="CanvasLayer"]
+script = ExtResource("1_gn77m")
+
+[node name="Label4" type="Label" parent="."]
+visible = false
+modulate = Color(0.996078, 0.0235294, 0.254902, 1)
+offset_left = 418.0
+offset_top = 54.0
+offset_right = 762.0
+offset_bottom = 188.0
+theme_override_font_sizes/font_size = 56
+text = "Select a map"
+
+[node name="Control" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -741.0
+offset_top = -433.0
+offset_right = 107.0
+offset_bottom = 101.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Back" type="Button" parent="Control"]
+layout_mode = 0
+offset_left = -198.0
+offset_top = -87.0
+offset_right = -67.0
+offset_bottom = 7.0
+theme_override_font_sizes/font_size = 36
+text = "Back"
+
+[node name="Screenshot(1600)" type="Sprite2D" parent="."]
+z_index = -1
+position = Vector2(966, 542)
+scale = Vector2(1.01, 1.01)
+texture = ExtResource("1_1ai4l")
+
+[connection signal="pressed" from="Control/Back" to="." method="_on_back_pressed"]

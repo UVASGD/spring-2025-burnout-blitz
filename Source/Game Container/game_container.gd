@@ -3,6 +3,8 @@ class_name GameContainer
 
 @onready var main_menu_scene = preload("res://Source/Menus/main_menu.tscn")
 @onready var map_select_menu_scene = preload("res://Source/Menus/map_select_menu.tscn")
+@onready var tutorial_scene = preload("res://Source/Menus/tutorial.tscn")
+@onready var credits = preload("res://Source/Menus/Credits.tscn")
 
 @onready var levels = {
 	"V_Violence" : preload("res://Source/Levels/Versus/v_violence.tscn"),
@@ -33,5 +35,11 @@ func spawn_level(name : String):
 	var level_inst = levels.get(name).instantiate()
 	#level_inst.global_position = Vector3(0,0,0)
 	add_child(level_inst)
+
+func spawn_tutorial():
+	var tutorial_inst = tutorial_scene.instantiate()
+	add_child(tutorial_inst)
 	
-	
+func spawn_credits():
+	var credits_inst = credits.instantiate()
+	add_child(credits_inst)
