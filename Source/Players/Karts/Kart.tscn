@@ -1,8 +1,7 @@
-[gd_scene load_steps=32 format=4 uid="uid://cd1ipr66rv03m"]
+[gd_scene load_steps=31 format=4 uid="uid://cd1ipr66rv03m"]
 
 [ext_resource type="Script" path="res://Source/Players/Karts/test_car.gd" id="1_uqsbg"]
 [ext_resource type="Script" path="res://Source/Players/Karts/kart_camera.gd" id="3_2ro21"]
-[ext_resource type="FontFile" uid="uid://bqwipp1vl7qqn" path="res://Source/Resources/black-mud.regular.ttf" id="4_mk4na"]
 [ext_resource type="Script" path="res://Source/Players/Karts/driver_ui.gd" id="4_qpy08"]
 [ext_resource type="Script" path="res://Source/Players/Karts/item_manager.gd" id="4_wa8w0"]
 [ext_resource type="Texture2D" uid="uid://cof060r2m0j8b" path="res://Source/HUD/speedBar.png" id="4_x5u17"]
@@ -336,6 +335,7 @@ shadow_mesh = SubResource("ArrayMesh_s0apb")
 albedo_color = Color(0.150668, 0.0441706, 0.0738868, 1)
 
 [sub_resource type="LabelSettings" id="LabelSettings_0wk6h"]
+font_size = 30
 outline_size = 8
 outline_color = Color(0, 0, 0, 1)
 
@@ -644,57 +644,57 @@ offset_right = 40.0
 offset_bottom = 40.0
 script = ExtResource("4_qpy08")
 
-[node name="Label" type="Label" parent="Node3D/Camera3D/Control"]
-modulate = Color(0, 0, 0, 1)
-layout_mode = 0
-offset_left = 321.0
-offset_top = 574.0
-offset_right = 451.0
-offset_bottom = 661.0
-scale = Vector2(3, 3)
-theme_override_fonts/font = ExtResource("4_mk4na")
-theme_override_font_sizes/font_size = 10
-text = "Test"
-
 [node name="ci_label" type="Label" parent="Node3D/Camera3D/Control"]
 layout_mode = 0
+offset_left = 9.0
 offset_top = 101.0
-offset_right = 40.0
-offset_bottom = 124.0
+offset_right = 357.0
+offset_bottom = 221.0
 text = "Current Item: "
+label_settings = SubResource("LabelSettings_0wk6h")
+
+[node name="Label" type="Label" parent="Node3D/Camera3D/Control"]
+layout_mode = 0
+offset_left = 9.0
+offset_top = 395.0
+offset_right = 357.0
+offset_bottom = 515.0
+text = "Test"
 label_settings = SubResource("LabelSettings_0wk6h")
 
 [node name="ll_label" type="Label" parent="Node3D/Camera3D/Control"]
 layout_mode = 0
-offset_left = 9.0
+offset_left = 18.0
 offset_top = 14.0
-offset_right = 91.0
-offset_bottom = 37.0
+offset_right = 256.0
+offset_bottom = 134.0
 text = "Laps Left:"
 label_settings = SubResource("LabelSettings_0wk6h")
 
 [node name="laps_left" type="Label" parent="Node3D/Camera3D/Control"]
 unique_name_in_owner = true
 layout_mode = 0
-offset_left = 91.0
+offset_left = 174.0
 offset_top = 16.0
-offset_right = 173.0
-offset_bottom = 39.0
+offset_right = 256.0
+offset_bottom = 88.0
 label_settings = SubResource("LabelSettings_0wk6h")
 
 [node name="current_item" type="Label" parent="Node3D/Camera3D/Control"]
 layout_mode = 0
-offset_top = 124.0
-offset_right = 40.0
-offset_bottom = 147.0
+offset_left = 225.0
+offset_top = 105.0
+offset_right = 293.0
+offset_bottom = 177.0
 label_settings = SubResource("LabelSettings_0wk6h")
 
 [node name="TextureProgressBar" type="TextureProgressBar" parent="Node3D/Camera3D/Control"]
 layout_mode = 0
-offset_left = 13.0
-offset_top = 558.0
-offset_right = 313.0
-offset_bottom = 758.0
+offset_left = 3.0
+offset_top = 766.0
+offset_right = 303.0
+offset_bottom = 966.0
+rotation = -1.57079
 scale = Vector2(1, 0.5)
 value = 50.0
 texture_under = ExtResource("4_x5u17")

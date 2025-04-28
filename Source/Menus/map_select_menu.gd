@@ -12,9 +12,17 @@ func _on_button_pressed() -> void:
 		game_container.spawn_level("V_Violence")
 	else:
 		game_container.spawn_level("T_Violence")
-	queue_free()
+	self.queue_free()
 
 
 func _on_back_pressed():
 	game_container.spawn_main_menu()
-	queue_free()
+	self.queue_free()
+
+
+func _on_button_2_pressed():
+	if is_versus:
+		game_container.spawn_level("V_Greed")
+	else:
+		game_container.spawn_level("T_Greed")
+	self.queue_free()

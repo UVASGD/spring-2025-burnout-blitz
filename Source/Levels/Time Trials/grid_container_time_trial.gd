@@ -8,10 +8,11 @@ extends GridContainer
 
 
 func _ready():
+	Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
 	SignalBus.connect("end_track", end_game)
 	left_side.handle_input_locally = false
 	right_side.handle_input_locally = true
-
+	%Controllable.visible = false
 	%SubViewportContainer.visible = true
 	%SubViewportContainer2.visible = false
 	end_lap.visible = false
