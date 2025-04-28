@@ -51,6 +51,7 @@ func exit():
 func attack():
 
 	if is_on and can_attack:
+		SignalBus.emit_signal("bagger_attack")
 		can_rotate = false
 		can_attack = false
 		anim_player.play("attack")

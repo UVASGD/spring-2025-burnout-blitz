@@ -27,5 +27,10 @@ wait_time = 1.5
 one_shot = true
 autostart = true
 
+[node name="Timer" type="Timer" parent="."]
+unique_name_in_owner = true
+wait_time = 5.0
+
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]
 [connection signal="timeout" from="SetupTimer" to="." method="_on_setup_timer_timeout"]
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

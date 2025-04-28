@@ -19,6 +19,7 @@ var steering_time: float = 0
 
 var invul_on = false
 var flipping_car:bool = false
+var force_being_applied:bool = false
 
 func _ready():
 	ENGINE_POWER = default_engine_power

@@ -8,6 +8,7 @@ extends GridContainer
 
 
 func _ready():
+	self.columns = 1
 	Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
 	SignalBus.connect("end_track", end_game)
 	left_side.handle_input_locally = false

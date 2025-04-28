@@ -1,0 +1,7 @@
+[gd_scene load_steps=2 format=3 uid="uid://bjws41s5yafio"]
+
+[ext_resource type="Script" path="res://Source/items/devil_items/spacelaser/spacelaser.gd" id="1_8b85f"]
+
+[node name="spacelaser" type="Node3D"]
+script = ExtResource("1_8b85f")
+is_top_down = true

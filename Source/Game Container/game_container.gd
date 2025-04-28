@@ -7,11 +7,11 @@ class_name GameContainer
 @onready var levels = {
 	"V_Violence" : preload("res://Source/Levels/Versus/v_violence.tscn"),
 	"V_Greed" : preload("res://Source/Levels/Versus/v_greed.tscn"),
-	"V_Limbo" : 3,
+	"V_Limbo" : preload("res://Source/Levels/Versus/v_limbo.tscn"),
 	
 	"T_Violence": preload("res://Source/Levels/Time Trials/t_violence.tscn"),
 	"T_Greed":preload("res://Source/Levels/Time Trials/t_greed.tscn"),
-	"T_Limbo":6,	
+	"T_Limbo":preload("res://Source/Levels/Time Trials/t_limbo.tscn"),
 }
 
 func _ready():

@@ -6,6 +6,9 @@ class_name OilSpill
 
 @onready var setup : bool = false
 
+func _ready():
+	%Timer.start()
+
 func _on_body_entered(body: Node3D) -> void:
 	if body.is_in_group("driver") and setup:
 		var direction = (body.global_transform.origin - global_transform.origin).normalized()
@@ -19,3 +22,8 @@ func _on_body_entered(body: Node3D) -> void:
 
 func _on_setup_timer_timeout() -> void:
 	setup = true
+
+
+func _on_timer_timeout():
+	queue_free()
+	pass # Replace with function body.

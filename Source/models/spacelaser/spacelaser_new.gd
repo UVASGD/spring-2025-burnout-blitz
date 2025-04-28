@@ -2,6 +2,7 @@ extends CharacterBody3D
 
 
 @onready var Camera:Camera3D = %Camera3D
+@onready var laser = %laser
 
 var is_on:bool = false
 
@@ -10,7 +11,7 @@ var can_attack:bool = false
 var can_rotate:bool = true
 var rot_speed:float = 0.005
 var horizontal_angle:float = 0.0
-var sens:float = 0.2
+var sens:float = 0.1
 
 func _ready():
 	SignalBus.connect("activate_controllable", turn_on)
@@ -59,13 +60,13 @@ func exit():
 	SignalBus.emit_signal("devil_controllable_status")
 	
 func attack():
-
 	if is_on and can_attack:
-		can_rotate = false
-		can_attack = false
-		#anim_player.play("attack")
-		#await anim_player.animation_finished
-		can_rotate = true
+		SignalBus.emit_signal("laser_attack")
+		laser.activate()
+		sens = sens / 2
+		await get_tree().create_timer(5.0).timeout
+		laser.deactivate()
+		sens = sens * 2
 		exit()
 		
 

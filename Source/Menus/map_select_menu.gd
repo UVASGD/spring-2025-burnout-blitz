@@ -26,3 +26,13 @@ func _on_button_2_pressed():
 	else:
 		game_container.spawn_level("T_Greed")
 	self.queue_free()
+
+
+func _on_button_3_pressed():
+	if is_versus:
+		game_container.spawn_level("V_Limbo")
+	else:
+		game_container.spawn_level("T_Limbo")
+	self.queue_free()
+	
+	pass # Replace with function body.

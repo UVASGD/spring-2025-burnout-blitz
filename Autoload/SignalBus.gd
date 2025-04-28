@@ -28,6 +28,10 @@ signal toggle_crosshair
 # Bagger
 signal activate_controllable(c_name: String, num_uses: int)
 signal devil_controllable_status()
+signal bagger_attack
+signal bagger_out_uses
+
+signal laser_attack
 
 # Menu Signals
 signal back_to_menu

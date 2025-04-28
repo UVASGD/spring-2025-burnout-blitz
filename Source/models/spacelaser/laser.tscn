@@ -1,14 +1,21 @@
-[gd_scene load_steps=4 format=3 uid="uid://d0u734u8g0kyx"]
+[gd_scene load_steps=5 format=3 uid="uid://d0u734u8g0kyx"]
 
 [ext_resource type="Script" path="res://Source/models/spacelaser/laser.gd" id="1_jj1uj"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_u8p8w"]
-albedo_color = Color(0.318, 0.673, 50, 1)
+resource_local_to_scene = true
+albedo_color = Color(0, 0.8, 80, 1)
 
 [sub_resource type="CylinderMesh" id="CylinderMesh_np8f0"]
+resource_local_to_scene = true
 top_radius = 0.03
 bottom_radius = 0.03
 height = 0.01
+
+[sub_resource type="CylinderShape3D" id="CylinderShape3D_js5x7"]
+resource_local_to_scene = true
+height = 0.170398
+radius = 0.45
 
 [node name="Laser" type="RayCast3D"]
 target_position = Vector3(0, -1e+12, 0)
@@ -18,3 +25,14 @@ script = ExtResource("1_jj1uj")
 material_override = SubResource("StandardMaterial3D_u8p8w")
 transparency = 0.8
 mesh = SubResource("CylinderMesh_np8f0")
+
+[node name="Area3D" type="Area3D" parent="beam_mesh"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="beam_mesh/Area3D"]
+transform = Transform3D(0.075, 0, 0, 0, 0.075, 0, 0, 0, 0.075, 0, 0, 0)
+shape = SubResource("CylinderShape3D_js5x7")
+
+[node name="OmniLight3D" type="OmniLight3D" parent="beam_mesh"]
+light_color = Color(0.318, 0.673, 50, 1)
+
+[connection signal="body_entered" from="beam_mesh/Area3D" to="." method="_on_area_3d_body_entered"]

@@ -11,8 +11,9 @@ class_name DevilItemManager
 @onready var bagger = preload("res://Source/items/devil_items/Bagger/bagger.tscn")
 @onready var breakable_wall = preload("res://Source/items/devil_items/breakablewall/breakable_wall.tscn")
 @onready var ufo = preload("res://Source/items/devil_items/UFO/ufo.tscn")
+@onready var spacelaser = preload("res://Source/items/devil_items/spacelaser/spacelaser.tscn")
 
-var all_items:Array[String] = ["trident", "missile", "shark", "oil_spill", "bagger", "breakable_wall", "black_hole", "ufo"]
+var all_items:Array[String] = ["trident", "missile", "shark", "oil_spill", "bagger", "breakable_wall", "black_hole", "ufo", "spacelaser"]
 
 func _ready():
 	SignalBus.connect("devil_giving_item", insert_item)
@@ -61,6 +62,13 @@ func insert_item(item_name:String):
 				item = ufo.instantiate()
 				add_child(item)
 				item.global_transform.origin = self.global_transform.origin
+			"spacelaser":
+				sigil_anim_player.play("sigil_spawn")
+				item = spacelaser.instantiate()
+				add_child(item)
+				item.global_transform.origin = self.global_transform.origin
+
+				
 
 func _input(event):
 	if event.is_action_pressed("use_devil_item"):

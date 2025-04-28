@@ -235,17 +235,20 @@ skeleton = NodePath("")
 
 [node name="Cylinder" type="MeshInstance3D" parent="shark_version_2"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -66.2388, 56.2118)
+visible = false
 mesh = SubResource("ArrayMesh_qgvc4")
 skeleton = NodePath("")
 
 [node name="Cylinder_001" type="MeshInstance3D" parent="shark_version_2"]
 transform = Transform3D(10.8224, -4.66553, 5.13189, 6.20927, 10.7551, -3.31671, -3.09005, 5.27147, 11.3089, 49.5025, -46.4385, 65.2534)
+visible = false
 material_override = SubResource("StandardMaterial3D_biafc")
 mesh = SubResource("ArrayMesh_kqcyq")
 skeleton = NodePath("")
 
 [node name="Cylinder_002" type="MeshInstance3D" parent="shark_version_2"]
 transform = Transform3D(14.8554, 0.202241, 3.41149, 1.70011, 12.7628, -8.15977, -2.96459, 8.33254, 12.4154, -0.104106, -6.30458, -272.763)
+visible = false
 material_override = SubResource("StandardMaterial3D_biafc")
 mesh = SubResource("ArrayMesh_ojh6t")
 skeleton = NodePath("")
