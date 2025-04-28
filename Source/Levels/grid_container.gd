@@ -10,7 +10,7 @@ extends GridContainer
 func _ready():
 	SignalBus.connect("end_track", end_game)
 	SignalBus.connect("change_screen_visibility", change_screen_visibility)
-	#%Controllable.visible = false
+	%Controllable.visible = false
 	left_side.handle_input_locally = false
 	right_side.handle_input_locally = true
 

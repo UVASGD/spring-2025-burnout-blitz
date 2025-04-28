@@ -8,3 +8,6 @@ func _on_area_3d_body_entered(body):
 		await destr.destroy()
 		self.queue_free()
 	pass # Replace with function body.
+
+func _on_timer_timeout() -> void:
+	self.queue_free()

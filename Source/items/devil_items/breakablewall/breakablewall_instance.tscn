@@ -70,4 +70,10 @@ shard_container = NodePath("../..")
 unique_name_in_owner = true
 shape = SubResource("ConvexPolygonShape3D_y3b3h")
 
+[node name="Timer" type="Timer" parent="."]
+wait_time = 8.0
+one_shot = true
+autostart = true
+
 [connection signal="body_entered" from="Area3D" to="." method="_on_area_3d_body_entered"]
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
